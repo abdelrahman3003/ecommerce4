@@ -31,19 +31,22 @@ class PageViewOnboarding extends StatelessWidget {
                 ),
                 const SizedBox(height: 100),
                 SizedBox(
-                  height: 200,
-                  width: width * .9,
-                  child: Image.asset(onboardingmodeList[index].image),
+                  height: 250,
+                  width: width * .5,
+                  child: Image.asset(
+                    onboardingmodeList[index].image,
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Opacity(
-                    opacity: .5,
+                    opacity: .7,
                     child: Text(
                       textAlign: TextAlign.center,
                       onboardingmodeList[index].subtitle,
-                      style: Styles.textStyle18,
+                      style: Styles.textStyle20,
                     ),
                   ),
                 ),
