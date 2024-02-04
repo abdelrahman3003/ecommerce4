@@ -13,10 +13,14 @@ class PageViewOnboarding extends StatelessWidget {
     return GetBuilder<OnboardingControllerImp>(
       builder: (controller) {
         return PageView.builder(
+          controller: controller.pageController,
           onPageChanged: (val) {
+            val == onboardingmodeList.length - 1
+                ? controller.isfinish = true
+                : false;
             controller.pageInchanged(val);
           },
-          itemCount: 4,
+          itemCount: onboardingmodeList.length,
           itemBuilder: (context, index) {
             return Column(
               children: [
