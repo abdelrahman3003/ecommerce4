@@ -11,27 +11,23 @@ class Spotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<OnboardingControllerImp>(
       builder: (controller) {
-        return Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: SizedBox(
-              height: 7,
-              width: 90,
-              child: Row(
-                children: [
-                  ...List.generate(
-                      onboardingmodeList.length,
-                      (index) => AnimatedContainer(
-                          margin: const EdgeInsets.only(right: 7),
-                          duration: const Duration(milliseconds: 300),
-                          height: 15,
-                          width: controller.pagecount == index ? 25 : 12,
-                          decoration: const BoxDecoration(
-                              color: ColorsApp.kprimaryColor1,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20)))))
-                ],
-              )),
-        );
+        return SizedBox(
+            width: 89,
+            child: Row(
+              children: [
+                ...List.generate(
+                    onboardingmodeList.length,
+                    (index) => AnimatedContainer(
+                        margin: const EdgeInsets.only(right: 7),
+                        duration: const Duration(milliseconds: 300),
+                        height: 7,
+                        width: controller.pagecount == index ? 25 : 12,
+                        decoration: const BoxDecoration(
+                            color: ColorsApp.kprimaryColor1,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20)))))
+              ],
+            ));
       },
     );
   }
