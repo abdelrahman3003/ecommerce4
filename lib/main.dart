@@ -13,9 +13,10 @@ class Ecommerce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Onboarding(),
+      home: const Onboarding(),
       debugShowCheckedModeBanner: false,
       routes: routes,
+      theme: ThemeData(fontFamily: "Cairo"),
     );
   }
 }
