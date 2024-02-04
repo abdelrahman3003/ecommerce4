@@ -1,31 +1,56 @@
+import 'package:eccommerce4/controller/onboarding_controller.dart';
+import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 class Spotes extends StatelessWidget {
   const Spotes({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 7,
-      width: 80,
-      child: ListView.builder(
-        itemCount: onboardingmodeList.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(right: 5),
-            child: Container(
-              margin: const EdgeInsets.only(left: 5),
-              width: 10,
-              height: 10,
-              decoration: const BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-            ),
-          );
-        },
-      ),
+    return GetBuilder<OnboardingControllerImp>(
+      builder: (controller) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: SizedBox(
+              height: 7,
+              width: 90,
+              child: Row(
+                children: [
+                  ...List.generate(
+                      onboardingmodeList.length,
+                      (index) => AnimatedContainer(
+                          margin: const EdgeInsets.only(right: 7),
+                          duration: const Duration(milliseconds: 300),
+                          height: 15,
+                          width: controller.pagecount == index ? 25 : 12,
+                          decoration: const BoxDecoration(
+                              color: ColorsApp.kprimaryColor1,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)))))
+                ],
+              )),
+        );
+      },
     );
   }
 }
+// ListView.builder(
+            
+//             itemCount: onboardingmodeList.length,
+//             scrollDirection: Axis.horizontal,
+//             itemBuilder: (context, index) {
+//               return Padding(
+//                 padding: const EdgeInsets.only(right: 5),
+//                 child: Container(
+//                   margin: const EdgeInsets.only(left: 5),
+//                   width: controller.pagecount == index ? 20 : 8,
+//                   height: 7,
+//                   decoration: const BoxDecoration(
+//                       color: Colors.blue,
+//                       borderRadius: BorderRadius.all(Radius.circular(20))),
+//                 ),
+//               );
+//             },
+//           ),
