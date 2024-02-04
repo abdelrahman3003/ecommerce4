@@ -13,7 +13,12 @@ class PageViewOnboarding extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            const SizedBox(height: 150),
+            const SizedBox(height: 30),
+            Text(
+              onboardingmodeList[index].title,
+              style: Styles.textStyle25.copyWith(color: Colors.black),
+            ),
+            const SizedBox(height: 100),
             SizedBox(
               height: 200,
               width: width * .9,
@@ -27,11 +32,11 @@ class PageViewOnboarding extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Opacity(
-                opacity: .4,
+                opacity: .5,
                 child: Text(
                   textAlign: TextAlign.center,
                   onboardingmodeList[index].subtitle,
-                  style: Styles.textStyle16,
+                  style: Styles.textStyle18,
                 ),
               ),
             ),

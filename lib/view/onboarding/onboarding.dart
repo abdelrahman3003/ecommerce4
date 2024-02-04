@@ -6,8 +6,10 @@ class Onboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: OnboardingBody(),
+    return const SafeArea(
+      child: Scaffold(
+        body: OnboardingBody(),
+      ),
     );
   }
 }
