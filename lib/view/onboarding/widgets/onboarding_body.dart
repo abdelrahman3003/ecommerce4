@@ -1,4 +1,4 @@
-import 'package:eccommerce4/view/onboarding/widgets/onboarding_buttton.dart';
+import 'package:eccommerce4/view/onboarding/widgets/custom_onboarding_buttton.dart';
 import 'package:eccommerce4/view/onboarding/widgets/pageview_onboard.dart';
 import 'package:eccommerce4/view/onboarding/widgets/spotes.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +13,8 @@ class OnboardingBody extends StatelessWidget {
         Expanded(child: PageViewOnboarding()),
         Spotes(),
         Padding(
-          padding: EdgeInsets.only(top: 200),
-          child: OnboardingButton(),
+          padding: EdgeInsets.only(top: 150),
+          child: CustomOnboardingButton(),
         ),
         SizedBox(height: 50),
       ],

@@ -1,11 +1,13 @@
+import 'package:eccommerce4/view/auth/view/signin.dart';
+import 'package:eccommerce4/view/auth/view/signup.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
-import 'package:eccommerce4/view/signin/sginin.dart';
 import 'package:flutter/material.dart';
 
-const kSignin = "/Signin";
 const konboarding = "/onboarding";
-
+const kSignin = "/Signin";
+const kSignup = "/Signup";
 Map<String, Widget Function(BuildContext)> routes = {
-  kSignin: (context) => const Signin(),
   konboarding: (context) => const Onboarding(),
+  kSignin: (context) => const Signin(),
+  kSignup: (context) => const Signup(),
 };

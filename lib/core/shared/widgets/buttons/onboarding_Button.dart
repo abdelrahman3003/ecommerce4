@@ -3,8 +3,8 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class Button1 extends StatelessWidget {
-  const Button1({
+class OnboardingButton extends StatelessWidget {
+  const OnboardingButton({
     super.key,
     required this.text,
     required this.onPressed,
