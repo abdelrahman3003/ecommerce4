@@ -1,4 +1,5 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:eccommerce4/core/localization/translations.dart';
 import 'package:eccommerce4/core/services/services.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class Ecommerce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations: AppTrnaslations(),
       home: const Onboarding(),
       debugShowCheckedModeBanner: false,
       routes: routes,
