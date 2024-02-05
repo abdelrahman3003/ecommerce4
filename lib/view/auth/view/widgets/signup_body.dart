@@ -19,6 +19,7 @@ class SignupBody extends StatelessWidget {
           Logo(),
           SizedBox(height: 25),
           TextsSections(title: "Welcome!", subtitle: "Create your account"),
+          SizedBox(height: 25),
           SignupSectionFields(),
           SizedBox(height: 20),
           DividerText(),

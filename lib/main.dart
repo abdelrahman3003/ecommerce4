@@ -3,7 +3,7 @@ import 'package:eccommerce4/core/localization/local_controller.dart';
 import 'package:eccommerce4/core/localization/translations.dart';
 import 'package:eccommerce4/core/services/services.dart';
 import 'package:eccommerce4/view/auth/view/signin.dart';
-import 'package:eccommerce4/view/onboarding/onboarding.dart';
+import 'package:eccommerce4/view/auth/view/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -24,7 +24,7 @@ class Ecommerce extends StatelessWidget {
     return GetMaterialApp(
       locale: controller.language,
       translations: AppTrnaslations(),
-      home: const Signin(),
+      home: const Signup(),
       debugShowCheckedModeBanner: false,
       routes: routes,
       theme: ThemeData(fontFamily: "Cairo"),

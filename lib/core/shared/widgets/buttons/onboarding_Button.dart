@@ -26,7 +26,7 @@ class OnboardingButton extends StatelessWidget {
         color: ColorsApp.kprimaryColor1,
         child: Text(
           text,
-          style: Styles.textStyle16.copyWith(color: Colors.white),
+          style: Styles.textStyle18.copyWith(color: Colors.white),
         ),
       ),
     );

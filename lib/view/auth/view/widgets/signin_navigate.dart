@@ -12,7 +12,7 @@ class SigninNavigate extends StatelessWidget {
     return Row(
       children: [
         const Opacity(
-          opacity: .6,
+          opacity: .8,
           child: Text(
             "Do have an account? ",
             style: Styles.textStyle16,
@@ -22,7 +22,7 @@ class SigninNavigate extends StatelessWidget {
           onTap: () {},
           child: Text("SignIn",
               style:
-                  Styles.textStyle16.copyWith(color: ColorsApp.kprimaryColor1)),
+                  Styles.textStyle18.copyWith(color: ColorsApp.kprimaryColor1)),
         ),
       ],
     );

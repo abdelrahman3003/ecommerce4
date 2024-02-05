@@ -12,17 +12,17 @@ class SignupNavigate extends StatelessWidget {
     return Row(
       children: [
         const Opacity(
-          opacity: .6,
+          opacity: 1,
           child: Text(
             "Don't have an account ",
-            style: Styles.textStyle14,
+            style: Styles.textStyle16,
           ),
         ),
         GestureDetector(
           onTap: () {},
           child: Text("SignUp",
               style:
-                  Styles.textStyle16.copyWith(color: ColorsApp.kprimaryColor1)),
+                  Styles.textStyle18.copyWith(color: ColorsApp.kprimaryColor1)),
         ),
       ],
     );

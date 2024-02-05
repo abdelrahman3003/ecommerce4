@@ -14,7 +14,7 @@ class TextsSections extends StatelessWidget {
           style: Styles.textStyle26,
         ),
         Opacity(
-          opacity: .4,
+          opacity: .8,
           child: Text(
             subtitle,
             style: Styles.textStyle16,
