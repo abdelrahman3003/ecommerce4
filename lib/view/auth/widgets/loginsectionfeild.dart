@@ -1,6 +1,6 @@
 import 'package:eccommerce4/core/shared/widgets/buttons/onboarding_Button.dart';
-import 'package:eccommerce4/view/auth/view/widgets/authfield.dart';
-import 'package:eccommerce4/view/auth/view/widgets/forget_password.dart';
+import 'package:eccommerce4/view/auth/widgets/authfield.dart';
+import 'package:eccommerce4/view/auth/widgets/forget_password.dart';
 import 'package:flutter/material.dart';
 
 class LoginSectionFields extends StatefulWidget {

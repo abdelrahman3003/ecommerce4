@@ -1,9 +1,9 @@
-import 'package:eccommerce4/view/auth/view/widgets/dividertext.dart';
-import 'package:eccommerce4/view/auth/view/widgets/icons.dart';
-import 'package:eccommerce4/view/auth/view/widgets/loginsectionfeild.dart';
-import 'package:eccommerce4/view/auth/view/widgets/logo.dart';
-import 'package:eccommerce4/view/auth/view/widgets/signup_naviagte.dart';
-import 'package:eccommerce4/view/auth/view/widgets/textsection.dart';
+import 'package:eccommerce4/view/auth/widgets/dividertext.dart';
+import 'package:eccommerce4/view/auth/widgets/icons.dart';
+import 'package:eccommerce4/view/auth/widgets/loginsectionfeild.dart';
+import 'package:eccommerce4/view/auth/widgets/logo.dart';
+import 'package:eccommerce4/view/auth/widgets/signup_naviagte.dart';
+import 'package:eccommerce4/view/auth/widgets/textsection.dart';
 import 'package:flutter/material.dart';
 
 class SigninBody extends StatelessWidget {

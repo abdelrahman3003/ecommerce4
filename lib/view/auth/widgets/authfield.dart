@@ -1,5 +1,5 @@
-import 'package:eccommerce4/view/auth/view/widgets/iconauth.dart';
-import 'package:eccommerce4/view/auth/view/widgets/textfiledauth.dart';
+import 'package:eccommerce4/view/auth/widgets/iconauth.dart';
+import 'package:eccommerce4/view/auth/widgets/textfiledauth.dart';
 import 'package:flutter/material.dart';
 
 class AuthField extends StatelessWidget {

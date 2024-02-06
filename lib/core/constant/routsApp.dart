@@ -1,5 +1,5 @@
-import 'package:eccommerce4/view/auth/view/signin.dart';
-import 'package:eccommerce4/view/auth/view/signup.dart';
+import 'package:eccommerce4/view/auth/signin.dart';
+import 'package:eccommerce4/view/auth/signup.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 

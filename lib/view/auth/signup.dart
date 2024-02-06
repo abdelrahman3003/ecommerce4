@@ -1,4 +1,4 @@
-import 'package:eccommerce4/view/auth/view/widgets/signup_body.dart';
+import 'package:eccommerce4/view/auth/widgets/signup_body.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatelessWidget {
