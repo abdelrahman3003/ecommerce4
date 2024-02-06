@@ -1,7 +1,7 @@
-import 'package:eccommerce4/core/shared/widgets/buttons/onboarding_Button.dart';
-import 'package:eccommerce4/view/auth/widgets/authfield.dart';
-import 'package:eccommerce4/view/auth/widgets/forget_password.dart';
 import 'package:flutter/material.dart';
+import '../../../core/shared/widgets/buttons/onboarding_Button.dart';
+import 'authfield.dart';
+import 'forget_password.dart';
 
 class LoginSectionFields extends StatefulWidget {
   const LoginSectionFields({
@@ -37,7 +37,7 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
         const SizedBox(height: 30),
         const Align(
           alignment: Alignment.bottomLeft,
-          child: ForgetPassword(),
+          child: ForgetPasswordText(),
         ),
         const SizedBox(height: 10),
         OnboardingButton(

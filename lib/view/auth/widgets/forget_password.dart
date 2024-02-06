@@ -1,8 +1,9 @@
-import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/widgets.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({
+import '../../../core/shared/styles.dart';
+
+class ForgetPasswordText extends StatelessWidget {
+  const ForgetPasswordText({
     super.key,
   });
 

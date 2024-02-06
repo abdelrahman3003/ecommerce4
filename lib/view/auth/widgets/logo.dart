@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:eccommerce4/core/constant/images_asset.dart';
+
+import '../../../core/constant/images_asset.dart';
 
 class Logo extends StatelessWidget {
   const Logo({super.key});

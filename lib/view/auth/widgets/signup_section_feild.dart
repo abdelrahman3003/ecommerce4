@@ -1,6 +1,7 @@
-import 'package:eccommerce4/core/shared/widgets/buttons/onboarding_Button.dart';
-import 'package:eccommerce4/view/auth/widgets/authfield.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/shared/widgets/buttons/onboarding_Button.dart';
+import 'authfield.dart';
 
 class SignupSectionFields extends StatefulWidget {
   const SignupSectionFields({

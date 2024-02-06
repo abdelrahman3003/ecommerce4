@@ -1,6 +1,7 @@
-import 'package:eccommerce4/core/constant/colors.dart';
-import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/constant/colors.dart';
+import '../../../core/shared/styles.dart';
 
 class SignupNavigate extends StatelessWidget {
   const SignupNavigate({

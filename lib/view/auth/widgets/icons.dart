@@ -1,6 +1,7 @@
-import 'package:eccommerce4/view/auth/widgets/iconauth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'iconauth.dart';
 
 class IconsMeida extends StatelessWidget {
   const IconsMeida({super.key});

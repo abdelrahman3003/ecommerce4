@@ -1,6 +1,7 @@
-import 'package:eccommerce4/core/constant/colors.dart';
-import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../core/constant/colors.dart';
+import '../../../core/shared/styles.dart';
 
 class SigninNavigate extends StatelessWidget {
   const SigninNavigate({

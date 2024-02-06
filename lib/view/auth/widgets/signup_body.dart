@@ -1,10 +1,11 @@
-import 'package:eccommerce4/view/auth/widgets/dividertext.dart';
-import 'package:eccommerce4/view/auth/widgets/icons.dart';
-import 'package:eccommerce4/view/auth/widgets/logo.dart';
-import 'package:eccommerce4/view/auth/widgets/signin_navigate.dart';
-import 'package:eccommerce4/view/auth/widgets/signup_section_feild.dart';
-import 'package:eccommerce4/view/auth/widgets/textsection.dart';
 import 'package:flutter/material.dart';
+
+import 'dividertext.dart';
+import 'icons.dart';
+import 'logo.dart';
+import 'signin_navigate.dart';
+import 'signup_section_feild.dart';
+import 'textsection.dart';
 
 class SignupBody extends StatelessWidget {
   const SignupBody({super.key});
