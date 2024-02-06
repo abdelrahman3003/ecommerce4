@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/colors.dart';
-import '../../../core/constant/routsApp.dart';
-import '../../../core/shared/styles.dart';
+import '../../../../core/constant/colors.dart';
+import '../../../../core/constant/routsApp.dart';
+import '../../../../core/shared/styles.dart';
 
 class SigninNavigate extends StatelessWidget {
   const SigninNavigate({

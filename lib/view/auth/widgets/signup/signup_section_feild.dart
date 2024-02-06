@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/shared/widgets/buttons/onboarding_Button.dart';
-import 'authfield.dart';
+import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
+import '../authfield.dart';
 
 class SignupSectionFields extends StatefulWidget {
   const SignupSectionFields({

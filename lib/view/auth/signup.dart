@@ -1,5 +1,6 @@
-import 'package:eccommerce4/view/auth/widgets/signup_body.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/signup/signup_body.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});

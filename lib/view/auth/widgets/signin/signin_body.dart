@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'dividertext.dart';
-import 'icons.dart';
+import '../dividertext.dart';
+import '../icons.dart';
+import '../logo.dart';
+import '../signup_naviagte.dart';
+import '../textsection.dart';
 import 'loginsectionfeild.dart';
-import 'logo.dart';
-import 'signup_naviagte.dart';
-import 'textsection.dart';
 
 class SigninBody extends StatelessWidget {
   const SigninBody({super.key});
