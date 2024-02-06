@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../dividertext.dart';
-import '../icons.dart';
-import '../../../../core/shared/widgets/logo.dart';
-import '../textsection.dart';
-import 'signin_navigate.dart';
-import 'signup_section_feild.dart';
+import 'dividertext.dart';
+import 'icons.dart';
+import 'loginsectionfeild.dart';
+import '../../../core/shared/widgets/logo.dart';
+import 'signin/signup_naviagte.dart';
+import 'textsection.dart';
 
-class SignupBody extends StatelessWidget {
-  const SignupBody({super.key});
+class SigninBody extends StatelessWidget {
+  const SigninBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +18,15 @@ class SignupBody extends StatelessWidget {
         children: [
           SizedBox(height: 100),
           Logo(),
+          SizedBox(height: 20),
+          TextsSections(title: "Welcome back!", subtitle: "Login your account"),
           SizedBox(height: 25),
-          TextsSections(title: "Welcome!", subtitle: "Create your account"),
-          SizedBox(height: 25),
-          SignupSectionFields(),
+          LoginSectionFields(),
           SizedBox(height: 20),
           DividerText(),
           IconsMeida(),
           SizedBox(height: 30),
-          SigninNavigate(),
+          SignupNavigate(),
           SizedBox(height: 20),
         ],
       ),

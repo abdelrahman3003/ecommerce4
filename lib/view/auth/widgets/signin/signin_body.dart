@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../dividertext.dart';
 import '../icons.dart';
-import '../logo.dart';
-import '../signup_naviagte.dart';
+import '../../../../core/shared/widgets/logo.dart';
+import 'signup_naviagte.dart';
 import '../textsection.dart';
 import 'loginsectionfeild.dart';
 

@@ -19,7 +19,7 @@ class TextfieldAuth extends StatelessWidget {
                     color: Colors.blue.withOpacity(0.10),
                     spreadRadius: 2,
                     blurRadius: 1,
-                    offset: Offset(0, 1),
+                    offset: const Offset(0, 1),
                   ),
                 ],
               ),
