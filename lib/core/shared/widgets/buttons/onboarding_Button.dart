@@ -7,17 +7,17 @@ class OnboardingButton extends StatelessWidget {
   const OnboardingButton({
     super.key,
     required this.text,
+    this.width = 170,
     required this.onPressed,
   });
 
   final Function()? onPressed;
-
   final String text;
-
+  final double width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 170,
+      width: width,
       height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),

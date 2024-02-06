@@ -1,4 +1,7 @@
+import 'package:eccommerce4/view/auth/widgets/succes/success.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
 
@@ -36,7 +39,13 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
             text: "Re type password"),
         const SizedBox(height: 25),
         OnboardingButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.off(const Success(
+              successtext: "Success",
+              title: "congratulations",
+              subtitle: "Succesfully regiseterd",
+            ));
+          },
           text: "Confirm",
         ),
       ]),
