@@ -1,6 +1,6 @@
+import 'package:eccommerce4/view/auth/widgets/verify/otp_textfield.dart';
 import 'package:flutter/material.dart';
 import '../textsection.dart';
-import 'verify_form.dart';
 
 class VerfiyBody extends StatelessWidget {
   const VerfiyBody({super.key});
@@ -18,7 +18,7 @@ class VerfiyBody extends StatelessWidget {
               titlebold: "Check code ",
               subtitle:
                   "Please enter the right code sent to abdelrahman@gmail.com"),
-          VerifyForm(),
+          AppOtpTextField(),
         ],
       ),
     );
