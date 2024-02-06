@@ -17,11 +17,12 @@ class OnboardingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 170,
+      height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),
       child: MaterialButton(
-        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
         onPressed: onPressed,
         color: ColorsApp.kprimaryColor1,
         child: Text(

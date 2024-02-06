@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 import '../../../core/constant/colors.dart';
+import '../../../core/constant/routsApp.dart';
 import '../../../core/shared/styles.dart';
 
 class SigninNavigate extends StatelessWidget {
@@ -20,7 +22,9 @@ class SigninNavigate extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(kSignup);
+          },
           child: Text("SignIn",
               style:
                   Styles.textStyle18.copyWith(color: ColorsApp.kprimaryColor1)),

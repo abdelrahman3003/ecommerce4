@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import 'authfield.dart';
-import 'forget_password.dart';
+import 'forget_password_text.dart';
 
 class LoginSectionFields extends StatefulWidget {
   const LoginSectionFields({
