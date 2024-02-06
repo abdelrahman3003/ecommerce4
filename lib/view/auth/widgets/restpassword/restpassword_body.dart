@@ -12,7 +12,12 @@ class ResetpasswordBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 30),
-          TextsSections(title: "Reset password", subtitle: ""),
+          TextsSections(
+            title: "Reset password",
+          ),
+          TextsSections(
+              titlebold: "New password ",
+              subtitle: "Please enter new password"),
           RestpasswordForm(),
         ],
       ),

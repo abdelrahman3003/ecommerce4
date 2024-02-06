@@ -2,13 +2,19 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 class TextsSections extends StatelessWidget {
-  const TextsSections({super.key, required this.title, required this.subtitle});
+  const TextsSections(
+      {super.key, this.title = "", this.subtitle = "", this.titlebold = ""});
   final String title;
+  final String titlebold;
   final String subtitle;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Text(
+          titlebold,
+          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w800),
+        ),
         Text(
           title,
           style: Styles.textStyle26,
@@ -18,6 +24,7 @@ class TextsSections extends StatelessWidget {
           child: Text(
             subtitle,
             style: Styles.textStyle16,
+            textAlign: TextAlign.center,
           ),
         ),
       ],

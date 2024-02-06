@@ -23,7 +23,6 @@ abstract class Styles {
     fontSize: 30,
     fontWeight: FontWeight.w900,
     letterSpacing: 1.2,
-    color: CupertinoColors.white,
     fontFamily: "Pacifico",
   );
   static const textStyle14 = TextStyle(

@@ -12,8 +12,12 @@ class ForgetPasswordBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 30),
+          TextsSections(title: "Forget Password"),
           TextsSections(
-              title: "Check Email!", subtitle: " to verify  your account"),
+              titlebold: "Check Email!",
+              subtitle:
+                  " PLease enter your email to recieve a verification code"),
+          SizedBox(height: 30),
           ForgetpasswordForm(),
         ],
       ),

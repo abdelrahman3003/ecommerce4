@@ -12,7 +12,12 @@ class VerfiyBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 30),
-          TextsSections(title: "Enter Code", subtitle: ""),
+          TextsSections(title: "Verification Code"),
+          SizedBox(height: 20),
+          TextsSections(
+              titlebold: "Check code ",
+              subtitle:
+                  "Please enter the right code sent to abdelrahman@gmail.com"),
           VerifyForm(),
         ],
       ),

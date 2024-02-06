@@ -20,7 +20,7 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
     return Form(
       key: _formKey,
       child: Column(children: [
-        const SizedBox(height: 10),
+        const SizedBox(height: 30),
         AuthField(
             onsave: (value) {
               email = value!;

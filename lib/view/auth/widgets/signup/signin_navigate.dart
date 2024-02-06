@@ -23,7 +23,7 @@ class SigninNavigate extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Get.toNamed(kSignup);
+            Get.toNamed(kSignin);
           },
           child: Text("SignIn",
               style:
