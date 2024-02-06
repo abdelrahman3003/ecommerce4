@@ -6,7 +6,7 @@ import 'package:eccommerce4/view/auth/verify.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 
-import '../../view/auth/widgets/succes/success.dart';
+import '../../view/auth/widgets/succes/success_body.dart';
 
 const konboarding = "/Onboarding";
 const kSignin = "/Signin";
