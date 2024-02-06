@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
-
-import 'success_body.dart';
+import 'package:get/get.dart';
+import 'success_section.dart';
+import 'successbuttton.dart';
 
 class Success extends StatelessWidget {
-  const Success({super.key});
-
+  const Success(
+      {super.key, this.successtext = "", this.title = "", this.subtitle = ""});
+  final String successtext;
+  final String title;
+  final String subtitle;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SuccessBody(),
+    return Column(
+      children: [
+        SizedBox(height: Get.height * .06),
+        SuccessSection(
+            subtitle: subtitle, title: title, successtext: successtext),
+        const Spacer(),
+        const SuccessButton(),
+        SizedBox(height: Get.height * .04)
+      ],
     );
   }
 }

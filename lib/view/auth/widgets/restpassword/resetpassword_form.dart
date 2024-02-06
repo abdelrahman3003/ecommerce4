@@ -39,7 +39,7 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
         const SizedBox(height: 25),
         OnboardingButton(
           onPressed: () {
-            Get.offNamed(kSuccess);
+            Get.offNamed(kResetpasswordsucsess);
           },
           text: "Confirm",
         ),

@@ -3,10 +3,9 @@ import 'package:eccommerce4/view/auth/reset_password.dart';
 import 'package:eccommerce4/view/auth/signin.dart';
 import 'package:eccommerce4/view/auth/signup.dart';
 import 'package:eccommerce4/view/auth/verify.dart';
+import 'package:eccommerce4/view/auth/widgets/restpassword/reset_password_succes.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
-
-import '../../view/auth/widgets/succes/success_body.dart';
 
 const konboarding = "/Onboarding";
 const kSignin = "/Signin";
@@ -15,6 +14,7 @@ const kForgetPassword = "/ForgetPassword";
 const kVerify = "/Verify";
 const kRestPassword = "/RestPassword";
 const kSuccess = "/Success";
+const kResetpasswordsucsess = "/Resetpasswordsucsess";
 
 Map<String, Widget Function(BuildContext)> routes = {
   konboarding: (context) => const Onboarding(),
@@ -23,5 +23,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   kForgetPassword: (context) => const ForgetPassword(),
   kVerify: (context) => const Verify(),
   kRestPassword: (context) => const RestPassword(),
-  kSuccess: (context) => const Success(),
+  kResetpasswordsucsess: (context) => const RestSuccesPassword(),
 };
