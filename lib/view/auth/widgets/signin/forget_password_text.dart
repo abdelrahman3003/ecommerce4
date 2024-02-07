@@ -6,13 +6,14 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../core/shared/styles.dart';
 
-class ForgetPasswordText extends GetView<ForgetPasssowrdController> {
+class ForgetPasswordText extends StatelessWidget {
   const ForgetPasswordText({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ForgetPasssowrdController());
     return GestureDetector(
       onTap: () {
         Get.toNamed(kCheckEmail);

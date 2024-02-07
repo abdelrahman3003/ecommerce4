@@ -1,3 +1,4 @@
+import 'package:eccommerce4/controller/forget_password_controller.dart';
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,12 +38,15 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
             icon: Icons.password,
             text: "Re type password"),
         const SizedBox(height: 25),
-        OnboardingButton(
-          onPressed: () {
-            Get.offNamed(kResetpasswordsucsess);
-          },
-          text: "Confirm",
-        ),
+        GetBuilder<ForgetPasssowrdController>(
+          builder: (controller) => OnboardingButton(
+            onPressed: () {
+              controller.isforegetpassword = false;
+              Get.offNamed(kResetpasswordsucsess);
+            },
+            text: "Confirm",
+          ),
+        )
       ]),
     );
   }

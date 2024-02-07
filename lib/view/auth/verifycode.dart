@@ -14,9 +14,8 @@ class VerifyCode extends GetView<ForgetPasssowrdController> {
       body: VerfiyBody(
           titlebold: "Check code",
           title: "Verification code",
-          subtitle:
-              "please enter your email address to recieve a verification ",
-          toPage: controller.isforegetpassword ? kSignupSucess : kRestPassword),
+          subtitle: "please enter your code sent to your email ",
+          toPage: controller.isforegetpassword ? kRestPassword : kSignupSucess),
     );
   }
 }

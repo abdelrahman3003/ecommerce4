@@ -14,6 +14,7 @@ class TextsSections extends StatelessWidget {
         Text(
           titlebold,
           style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w800),
+          textAlign: TextAlign.center,
         ),
         Text(
           title,
