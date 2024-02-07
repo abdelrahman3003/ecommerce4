@@ -34,14 +34,16 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
             text: "Email"),
         const SizedBox(height: 20),
         AuthField(
-            onsave: (value) {
-              password = value!;
-            },
-            validator: (val) {
-              return validation(type: "Password", val: val!);
-            },
-            icon: Icons.password,
-            text: "Password"),
+          onsave: (value) {
+            password = value!;
+          },
+          validator: (val) {
+            return validation(type: "Password", val: val!);
+          },
+          icon: Icons.password,
+          text: "Password",
+          obscureText: true,
+        ),
         const SizedBox(height: 30),
         const Align(
           alignment: Alignment.bottomLeft,

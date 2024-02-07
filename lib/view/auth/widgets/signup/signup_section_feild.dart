@@ -57,6 +57,7 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             validator: (val) {
               return validation(type: "Password", val: val!);
             },
+            obscureText: true,
           ),
           const SizedBox(height: 20),
           OnboardingButton(
