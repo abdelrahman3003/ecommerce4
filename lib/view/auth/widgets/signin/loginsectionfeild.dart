@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../controller/showpassword.dart';
+import '../../../../core/constant/colors.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
@@ -33,16 +36,37 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
             icon: Icons.email,
             text: "Email"),
         const SizedBox(height: 20),
-        AuthField(
-          onsave: (value) {
-            password = value!;
-          },
-          validator: (val) {
-            return validation(type: "Password", val: val!);
-          },
-          icon: Icons.password,
-          text: "Password",
-          obscureText: true,
+        GetBuilder<Showpassordcontroller>(
+          builder: (controller) => Stack(
+            children: [
+              AuthField(
+                onsave: (value) {
+                  password = value!;
+                },
+                validator: (val) {
+                  return validation(type: "Password", val: val!);
+                },
+                icon: Icons.password,
+                text: "Password",
+                obscureText: controller.isShowpassword,
+              ),
+              Positioned(
+                  right: 5,
+                  bottom: 10,
+                  child: GetBuilder<Showpassordcontroller>(
+                    builder: (controller) => IconButton(
+                      onPressed: () {
+                        controller.showpassword();
+                      },
+                      icon: const Icon(
+                        Icons.remove_red_eye,
+                        color: ColorsApp.kprimaryColor1,
+                        size: 25,
+                      ),
+                    ),
+                  )),
+            ],
+          ),
         ),
         const SizedBox(height: 30),
         const Align(

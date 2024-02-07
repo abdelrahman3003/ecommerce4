@@ -1,3 +1,5 @@
+import 'package:eccommerce4/controller/showpassword.dart';
+import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -48,16 +50,34 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             },
           ),
           const SizedBox(height: 20),
-          AuthField(
-            icon: Icons.password,
-            text: "Password",
-            onsave: (value) {
-              password = value!;
-            },
-            validator: (val) {
-              return validation(type: "Password", val: val!);
-            },
-            obscureText: true,
+          GetBuilder<Showpassordcontroller>(
+            builder: (controller) => Stack(children: [
+              AuthField(
+                icon: Icons.password,
+                text: "Password",
+                onsave: (value) {
+                  password = value!;
+                },
+                validator: (val) {
+                  return validation(type: "Password", val: val!);
+                },
+                obscureText: controller.isShowpassword,
+              ),
+              Positioned(
+                right: 5,
+                bottom: 10,
+                child: IconButton(
+                  onPressed: () {
+                    controller.showpassword();
+                  },
+                  icon: const Icon(
+                    Icons.remove_red_eye,
+                    color: ColorsApp.kprimaryColor1,
+                    size: 25,
+                  ),
+                ),
+              ),
+            ]),
           ),
           const SizedBox(height: 20),
           OnboardingButton(

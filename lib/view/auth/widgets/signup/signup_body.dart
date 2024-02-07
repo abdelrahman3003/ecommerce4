@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../controller/showpassword.dart';
 import '../dividertext.dart';
 import '../icons.dart';
 import '../../../../core/shared/widgets/logo.dart';
@@ -12,6 +14,7 @@ class SignupBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(Showpassordcontroller());
     return const SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       child: Column(
