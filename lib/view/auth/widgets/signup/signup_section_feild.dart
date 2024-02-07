@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/constant/routsApp.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
-import '../../check_email.dart';
 import '../authfield.dart';
 
 class SignupSectionFields extends StatefulWidget {
@@ -63,10 +63,7 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  Get.to(const CheckEmail());
-                  print("success");
-                } else {
-                  print("not succes");
+                  Get.toNamed(kVerifyCode);
                 }
               },
               text: "Signup"),

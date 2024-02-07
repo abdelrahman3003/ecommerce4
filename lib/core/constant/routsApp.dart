@@ -14,7 +14,6 @@ const kSignin = "/Signin";
 const kSignup = "/Signup";
 const kCheckEmail = "/CheckEmail";
 const kVerifyCode = "/kVerifyCode";
-
 const kSignupSucess = "/SuccessSignup";
 const kResetpasswordsucsess = "/Resetpasswordsucsess";
 const kRestPassword = "/RestPassword";
