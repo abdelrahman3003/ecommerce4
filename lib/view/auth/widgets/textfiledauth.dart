@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TextfieldAuth extends StatelessWidget {
-  const TextfieldAuth({super.key, required this.text, required this.onsave});
+  const TextfieldAuth(
+      {super.key,
+      required this.text,
+      required this.onsave,
+      required this.validator});
   final String text;
   final void Function(String?) onsave;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,12 +29,7 @@ class TextfieldAuth extends StatelessWidget {
                 ],
               ),
               child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
+                validator: validator,
                 onSaved: onsave,
                 decoration: InputDecoration(
                   prefix: const SizedBox(width: 30),

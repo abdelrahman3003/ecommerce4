@@ -1,23 +1,33 @@
 import 'package:get/get.dart';
 
-validation(String val, int min, int max, String type) {
+validation({required String val, required String type}) {
   if (val.isEmpty) {
     return " Can't be empty ";
   }
-  if (val.length < min) {
-    return " Can't be less than $min";
-  }
-  if (val.length > max) {
-    return " Can't be larger than $max";
-  }
+
   if (type == "Username") {
     if (!GetUtils.isUsername(val)) {
       return "not valid username";
+    } else if (val.length < 2) {
+      return " Can't be less than 2";
+    } else if (val.length > 10) {
+      return " Can't be langer than 10";
     }
   }
   if (type == "Email") {
     if (!GetUtils.isEmail(val)) {
       return "not valid email";
+    } else if (val.length < 10) {
+      return " Can't be less than 10";
+    } else if (val.length > 30) {
+      return " Can't be langer than 30";
+    }
+  }
+  if (type == "Password") {
+    if (val.length < 5) {
+      return " Can't be less than 5";
+    } else if (val.length > 15) {
+      return " Can't be langer than 15";
     }
   }
 }

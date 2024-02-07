@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
 import 'forget_password_text.dart';
@@ -26,12 +27,18 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
             onsave: (value) {
               email = value!;
             },
+            validator: (val) {
+              return validation(type: "Email", val: val!);
+            },
             icon: Icons.email,
             text: "Email"),
         const SizedBox(height: 20),
         AuthField(
             onsave: (value) {
               password = value!;
+            },
+            validator: (val) {
+              return validation(type: "Password", val: val!);
             },
             icon: Icons.password,
             text: "Password"),
@@ -42,7 +49,14 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
         ),
         const SizedBox(height: 10),
         OnboardingButton(
-          onPressed: () {},
+          onPressed: () {
+            if (_formKey.currentState!.validate()) {
+              _formKey.currentState!.save();
+              print("success================");
+            } else {
+              print("not succes===============");
+            }
+          },
           text: "Login",
         ),
         const SizedBox(height: 20),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../../check_email.dart';
 import '../authfield.dart';
@@ -31,6 +32,9 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             onsave: (value) {
               username = value!;
             },
+            validator: (val) {
+              return validation(type: "Username", val: val!);
+            },
           ),
           const SizedBox(height: 20),
           AuthField(
@@ -38,6 +42,9 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             text: "Email",
             onsave: (value) {
               email = value!;
+            },
+            validator: (val) {
+              return validation(type: "Email", val: val!);
             },
           ),
           const SizedBox(height: 20),
@@ -47,11 +54,20 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             onsave: (value) {
               password = value!;
             },
+            validator: (val) {
+              return validation(type: "Password", val: val!);
+            },
           ),
           const SizedBox(height: 20),
           OnboardingButton(
               onPressed: () {
-                Get.to(const CheckEmail());
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  Get.to(const CheckEmail());
+                  print("success");
+                } else {
+                  print("not succes");
+                }
               },
               text: "Signup"),
           const SizedBox(height: 10),
