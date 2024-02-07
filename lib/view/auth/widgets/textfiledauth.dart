@@ -5,10 +5,12 @@ class TextfieldAuth extends StatelessWidget {
       {super.key,
       required this.text,
       required this.onsave,
-      required this.validator});
+      required this.validator,
+      required this.isnumber});
   final String text;
   final void Function(String?) onsave;
   final String? Function(String?)? validator;
+  final bool isnumber;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -29,6 +31,8 @@ class TextfieldAuth extends StatelessWidget {
                 ],
               ),
               child: TextFormField(
+                keyboardType:
+                    isnumber ? TextInputType.number : TextInputType.name,
                 validator: validator,
                 onSaved: onsave,
                 decoration: InputDecoration(
