@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/functions/alert_exit.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/signin/signin_body.dart';
@@ -8,10 +9,12 @@ class Signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Padding(
+        body: WillPopScope(
+      onWillPop: alertExitApp,
+      child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: SigninBody(),
       ),
-    );
+    ));
   }
 }
