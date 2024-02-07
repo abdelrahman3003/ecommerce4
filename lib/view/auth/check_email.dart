@@ -9,7 +9,8 @@ class CheckEmail extends StatelessWidget {
     return const Scaffold(
       body: CheckBody(
         title: "Check Email",
-        subtitle: "please enter your email address to recieve a verification ",
+        subtitle:
+            "please enter your email address to recieve a verification code",
         titlebold: "Account succefully created",
       ),
     );

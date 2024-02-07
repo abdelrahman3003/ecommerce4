@@ -1,12 +1,11 @@
-import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 class AppOtpTextField extends StatelessWidget {
-  const AppOtpTextField({super.key});
-
+  const AppOtpTextField({super.key, required this.toPage});
+  final String toPage;
   @override
   Widget build(BuildContext context) {
     return OtpTextField(
@@ -20,7 +19,7 @@ class AppOtpTextField extends StatelessWidget {
       },
       //runs when every textfield is filled
       onSubmit: (String verificationCode) {
-        Get.toNamed(kRestPassword);
+        Get.toNamed(toPage);
       }, // end onSubmit
     );
   }

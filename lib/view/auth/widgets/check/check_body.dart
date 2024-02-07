@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import '../textsection.dart';
 
 class CheckBody extends StatelessWidget {
-  const CheckBody(
-      {super.key, this.title = "", this.titlebold = "", this.subtitle = ""});
+  const CheckBody({
+    super.key,
+    required this.title,
+    required this.titlebold,
+    required this.subtitle,
+  });
   final String title;
   final String titlebold;
   final String subtitle;
