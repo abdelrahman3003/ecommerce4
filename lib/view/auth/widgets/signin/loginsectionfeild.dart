@@ -52,9 +52,6 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
           onPressed: () {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
-              print("success================");
-            } else {
-              print("not succes===============");
             }
           },
           text: "Login",
