@@ -1,4 +1,7 @@
+import 'package:eccommerce4/view/auth/widgets/signup/check_email.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
@@ -47,7 +50,11 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             },
           ),
           const SizedBox(height: 20),
-          OnboardingButton(onPressed: () async {}, text: "Signup"),
+          OnboardingButton(
+              onPressed: () {
+                Get.to(const CheckEmail());
+              },
+              text: "Signup"),
           const SizedBox(height: 10),
         ],
       ),

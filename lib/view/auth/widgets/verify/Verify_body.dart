@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import '../textsection.dart';
 
 class VerfiyBody extends StatelessWidget {
-  const VerfiyBody({super.key});
-
+  const VerfiyBody(
+      {super.key, this.titlebold = "", this.title = "", this.subtitle = ""});
+  final String titlebold;
+  final String title;
+  final String subtitle;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(20.0),
       child: Column(
         children: [
-          SizedBox(height: 30),
-          TextsSections(title: "Verification Code"),
-          SizedBox(height: 20),
-          TextsSections(
-              titlebold: "Check code ",
-              subtitle:
-                  "Please enter the right code sent to abdelrahman@gmail.com"),
-          AppOtpTextField(),
+          const SizedBox(height: 30),
+          TextsSections(title: title),
+          const SizedBox(height: 20),
+          TextsSections(titlebold: titlebold, subtitle: subtitle),
+          const AppOtpTextField(),
         ],
       ),
     );

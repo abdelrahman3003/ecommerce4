@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
 
-class ForgetpasswordForm extends StatefulWidget {
-  const ForgetpasswordForm({
+class CheckForm extends StatefulWidget {
+  const CheckForm({
     super.key,
   });
 
   @override
-  State<ForgetpasswordForm> createState() => _ForgetpasswordFormState();
+  State<CheckForm> createState() => _CheckFormState();
 }
 
-class _ForgetpasswordFormState extends State<ForgetpasswordForm> {
+class _CheckFormState extends State<CheckForm> {
   late String email;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();

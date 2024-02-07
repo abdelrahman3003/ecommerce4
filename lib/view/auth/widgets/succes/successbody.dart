@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'success_section.dart';
 import 'successbuttton.dart';
 
-class Success extends StatelessWidget {
-  const Success(
+class SuccessBody extends StatelessWidget {
+  const SuccessBody(
       {super.key, this.successtext = "", this.title = "", this.subtitle = ""});
   final String successtext;
   final String title;
