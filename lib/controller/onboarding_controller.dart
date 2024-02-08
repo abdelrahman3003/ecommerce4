@@ -20,6 +20,7 @@ class OnboardingControllerImp extends OnboardingController {
     appServices.sharedPreferences.setString(ConstanstValue.onboardingRef, "1");
     pageController.animateToPage(pagecount,
         duration: const Duration(milliseconds: 900), curve: Curves.ease);
+    update();
   }
 
   @override
