@@ -50,6 +50,18 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             },
           ),
           const SizedBox(height: 20),
+          AuthField(
+            icon: Icons.email,
+            text: "Phonr",
+            isnumber: true,
+            onsave: (value) {
+              email = value!;
+            },
+            validator: (val) {
+              return validation(type: "Phone", val: val!);
+            },
+          ),
+          const SizedBox(height: 20),
           GetBuilder<Showpassordcontroller>(
             builder: (controller) => Stack(children: [
               AuthField(

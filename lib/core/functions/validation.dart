@@ -23,6 +23,15 @@ validation({required String val, required String type}) {
       return " Can't be langer than 30";
     }
   }
+  if (type == "Phone") {
+    if (!GetUtils.isPhoneNumber(val)) {
+      return "not valid Phone";
+    } else if (val.length < 11) {
+      return " Can't be less than 11";
+    } else if (val.length > 11) {
+      return " Can't be langer than 11";
+    }
+  }
   if (type == "Password") {
     if (val.length < 5) {
       return " Can't be less than 5";

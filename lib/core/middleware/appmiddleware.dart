@@ -14,5 +14,6 @@ class AppMiddleWare extends GetMiddleware {
         "1") {
       return const RouteSettings(name: kSignin);
     }
+    return null;
   }
 }
