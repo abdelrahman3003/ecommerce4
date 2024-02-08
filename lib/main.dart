@@ -25,7 +25,8 @@ class Ecommerce extends StatelessWidget {
       translations: AppTrnaslations(),
       home: const Onboarding(),
       debugShowCheckedModeBanner: false,
-      routes: routes,
+      getPages: getPages,
+      //routes: routes,
       theme: ThemeData(fontFamily: "Cairo"),
     );
   }
