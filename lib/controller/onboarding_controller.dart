@@ -1,5 +1,8 @@
+import 'package:eccommerce4/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../core/constant/constatns_value.dart';
 
 abstract class OnboardingController extends GetxController {
   next();
@@ -10,9 +13,11 @@ class OnboardingControllerImp extends OnboardingController {
   int pagecount = 0;
   PageController pageController = PageController();
   bool isfinish = false;
+  AppServices appServices = Get.find();
   @override
   next() {
     pagecount++;
+    appServices.sharedPreferences.setString(ConstanstValue.onboardingRef, "1");
     pageController.animateToPage(pagecount,
         duration: const Duration(milliseconds: 900), curve: Curves.ease);
   }
