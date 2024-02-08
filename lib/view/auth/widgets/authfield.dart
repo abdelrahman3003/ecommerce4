@@ -1,10 +1,8 @@
-import 'package:eccommerce4/controller/showpassword.dart';
 import 'package:eccommerce4/view/auth/widgets/iconauth.dart';
 import 'package:eccommerce4/view/auth/widgets/textfiledauth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class AuthField extends GetView<Showpassordcontroller> {
+class AuthField extends StatelessWidget {
   const AuthField({
     super.key,
     required this.text,
@@ -26,7 +24,7 @@ class AuthField extends GetView<Showpassordcontroller> {
   Widget build(BuildContext context) {
     return Stack(clipBehavior: Clip.none, children: [
       TextfieldAuth(
-        obscureText: controller.isShowpassword,
+        obscureText: obscureText,
         isnumber: isnumber,
         onsave: onsave,
         text: text,
