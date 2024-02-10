@@ -5,8 +5,10 @@ class Crud {
   getRequset(String url) async {
     try {
       var response = await http.get(Uri.parse(url));
+      print("sucesss-----------");
       if (response.statusCode == 200) {
         var responsebody = jsonDecode(response.body);
+
         return responsebody;
       } else {
         print("status code error  ${response.statusCode}");

@@ -1,9 +1,9 @@
-import 'package:eccommerce4/controller/showpassword.dart';
-import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/constant/routsApp.dart';
+import '../../../../controller/showpassword.dart';
+import '../../../../controller/signup.dart';
+import '../../../../core/constant/colors.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
@@ -21,9 +21,12 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
   late String username;
   late String email;
   late String password;
+  late String phone;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(SignupController());
     return Form(
       key: _formKey,
       child: Column(
@@ -51,11 +54,11 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
           ),
           const SizedBox(height: 20),
           AuthField(
-            icon: Icons.email,
-            text: "Phonr",
+            icon: Icons.phone,
+            text: "Phone",
             isnumber: true,
             onsave: (value) {
-              email = value!;
+              phone = value!;
             },
             validator: (val) {
               return validation(type: "Phone", val: val!);
@@ -93,10 +96,10 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
           ),
           const SizedBox(height: 20),
           OnboardingButton(
-              onPressed: () {
+              onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  Get.toNamed(kVerifyCode);
+                  await controller.signup(username, email, phone, password);
                 }
               },
               text: "Signup"),
