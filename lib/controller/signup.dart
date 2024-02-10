@@ -1,12 +1,12 @@
-import 'package:eccommerce4/core/class/crud.dart';
-import 'package:eccommerce4/core/constant/backlinks.dart';
-import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:get/get.dart';
+
+import '../core/class/crud.dart';
+import '../core/constant/backlinks.dart';
+import '../core/constant/routsApp.dart';
 
 class SignupController extends GetxController {
   Crud crud = Crud();
   signup(String username, String email, String phone, String password) async {
-    print("success=======");
     var response = await crud.postRequset(signupNameLink, {
       "username": username,
       "email": email,

@@ -96,10 +96,10 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
           ),
           const SizedBox(height: 20),
           OnboardingButton(
-              onPressed: () async {
+              onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  await controller.signup(username, email, phone, password);
+                  controller.signup(username, email, phone, password);
                 }
               },
               text: "Signup"),
