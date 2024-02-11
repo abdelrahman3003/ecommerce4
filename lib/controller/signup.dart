@@ -10,20 +10,23 @@ class SignupController extends GetxController {
   Crud crud = Crud();
   signup(String username, String email, String phone, String password,
       File file) async {
-    var response = await crud.postRequsetWithFile(
-        signupNameLink,
-        {
-          "username": username,
-          "email": email,
-          "phone": phone,
-          "password": password,
-        },
-        file);
-
-    if (response['Status'] == 'Success') {
-      Get.toNamed(kCheckEmail);
-    } else {
-      print("signup fail");
+    try {
+      var response = await crud.postRequsetWithFile(
+          signupNameLink,
+          {
+            "username": username,
+            "email": email,
+            "phone": phone,
+            "password": password,
+          },
+          file);
+      if (response['Status'] == 'Success') {
+        Get.toNamed(kCheckEmail);
+      } else {
+        print("signup fail");
+      }
+    } catch (e) {
+      print(e);
     }
   }
 }
