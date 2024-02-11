@@ -3,6 +3,10 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 
+String _basicAuth = 'Basic ' + base64Encode(utf8.encode('wael:wael12345'));
+
+Map<String, String> myheaders = {'authorization': _basicAuth};
+
 class Crud {
   getRequset(String url) async {
     try {
@@ -20,7 +24,8 @@ class Crud {
 
   postRequset(String url, Map data) async {
     try {
-      var response = await http.post(Uri.parse(url), body: data);
+      var response =
+          await http.post(Uri.parse(url), body: data, headers: myheaders);
       if (response.statusCode == 200) {
         var responsebody = jsonDecode(response.body);
         return responsebody;
@@ -38,6 +43,7 @@ class Crud {
     var stream = http.ByteStream(file.openRead());
     var multypartfile = http.MultipartFile('file', stream, length,
         filename: basename(file.path));
+    request.headers.addAll(myheaders);
     request.files.add(multypartfile);
     data.forEach((key, value) {
       request.fields[key] = value;
