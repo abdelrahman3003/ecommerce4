@@ -11,9 +11,10 @@ class ButtonSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
+    File? myfile;
     return OnboardingButton(
         onPressed: () {
-          File myfile;
           showModalBottomSheet(
             context: context,
             builder: (context) => SizedBox(
