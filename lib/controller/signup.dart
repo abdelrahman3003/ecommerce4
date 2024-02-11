@@ -22,8 +22,6 @@ class SignupController extends GetxController {
 
     if (response['Status'] == 'Success') {
       Get.toNamed(kCheckEmail);
-
-      print("success=======");
     } else {
       print("signup fail");
     }

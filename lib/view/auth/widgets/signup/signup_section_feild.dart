@@ -1,8 +1,6 @@
 import 'dart:io';
 
-import 'package:eccommerce4/view/auth/widgets/signup/buttonsheet.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -12,6 +10,7 @@ import '../../../../core/constant/colors.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
+import 'buttonsheet.dart';
 
 class SignupSectionFields extends StatefulWidget {
   const SignupSectionFields({
@@ -108,9 +107,13 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
               file = File(xfile!.path);
             },
             onTapGallary: () async {
-              final xfile =
-                  await ImagePicker().getImage(source: ImageSource.gallery);
-              file = File(xfile!.path);
+              try {
+                final xfile =
+                    await ImagePicker().getImage(source: ImageSource.gallery);
+                file = File(xfile!.path);
+              } catch (e) {
+                print("please upload image just");
+              }
             },
           ),
           const SizedBox(height: 20),
@@ -120,8 +123,9 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                   if (file != null) {
                     _formKey.currentState!.save();
                     controller.signup(username, email, phone, password, file!);
+                    file = null;
                   } else {
-                    return FontAwesomeIcons();
+                    print("please upload an image");
                   }
                 }
               },
