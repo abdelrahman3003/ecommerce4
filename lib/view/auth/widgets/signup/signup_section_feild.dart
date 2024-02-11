@@ -105,16 +105,21 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
               final xfile =
                   await ImagePicker().getImage(source: ImageSource.camera);
               file = File(xfile!.path);
+
+              Get.back();
             },
             onTapGallary: () async {
               try {
                 final xfile =
                     await ImagePicker().getImage(source: ImageSource.gallery);
                 file = File(xfile!.path);
+                Get.back();
               } catch (e) {
                 print("please upload image just");
               }
+              setState(() {});
             },
+            color: file == null ? ColorsApp.kprimaryColor1 : Colors.green,
           ),
           const SizedBox(height: 20),
           OnboardingButton(

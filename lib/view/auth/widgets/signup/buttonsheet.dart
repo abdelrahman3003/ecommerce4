@@ -1,16 +1,22 @@
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/constant/colors.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 
 class ButtonSheet extends StatelessWidget {
-  const ButtonSheet({super.key, this.onTapGallary, this.onTapCamera});
+  const ButtonSheet(
+      {super.key,
+      this.onTapGallary,
+      this.onTapCamera,
+      this.color = ColorsApp.kprimaryColor1});
   final Function()? onTapGallary;
   final Function()? onTapCamera;
-
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return OnboardingButton(
+        color: color,
         onPressed: () {
           showModalBottomSheet(
             context: context,
