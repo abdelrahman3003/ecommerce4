@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:eccommerce4/view/auth/widgets/signup/buttonsheet.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../../controller/showpassword.dart';
 import '../../../../controller/signup.dart';
@@ -23,6 +27,7 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
   late String email;
   late String password;
   late String phone;
+  File? file;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -96,16 +101,31 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             ]),
           ),
           const SizedBox(height: 20),
+          ButtonSheet(
+            onTapCamera: () async {
+              final xfile =
+                  await ImagePicker().getImage(source: ImageSource.camera);
+              file = File(xfile!.path);
+            },
+            onTapGallary: () async {
+              final xfile =
+                  await ImagePicker().getImage(source: ImageSource.gallery);
+              file = File(xfile!.path);
+            },
+          ),
+          const SizedBox(height: 20),
           OnboardingButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-                  controller.signup(username, email, phone, password);
+                  if (file != null) {
+                    _formKey.currentState!.save();
+                    controller.signup(username, email, phone, password, file!);
+                  } else {
+                    return FontAwesomeIcons();
+                  }
                 }
               },
               text: "Signup"),
-          const SizedBox(height: 20),
-          const ButtonSheet(),
           const SizedBox(height: 20),
         ],
       ),
