@@ -15,7 +15,6 @@ void main() async {
 
 class Ecommerce extends StatelessWidget {
   const Ecommerce({super.key});
-
   @override
   Widget build(BuildContext context) {
     LocalController controller = Get.put(LocalController());

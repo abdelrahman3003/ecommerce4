@@ -1,3 +1,4 @@
+import 'package:eccommerce4/view/auth/widgets/signup/buttonsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -103,7 +104,9 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                 }
               },
               text: "Signup"),
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
+          const ButtonSheet(),
+          const SizedBox(height: 20),
         ],
       ),
     );
