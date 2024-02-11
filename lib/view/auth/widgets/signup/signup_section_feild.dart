@@ -130,7 +130,7 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                     controller.signup(username, email, phone, password, file!);
                     file = null;
                   } else {
-                    print("please upload an image");
+                    print("please upload");
                   }
                 }
               },
@@ -141,3 +141,5 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
     );
   }
 }
+
+class AwesomeDialog {}
