@@ -26,7 +26,7 @@ class SignupController extends GetxController {
         print("signup fail");
       }
     } catch (e) {
-      print(e);
+      print("================ $e");
     }
   }
 }

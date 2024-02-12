@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/localization/local_controller.dart';
 import 'package:eccommerce4/core/localization/translations.dart';
@@ -10,6 +12,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await inialServices();
+  HttpOverrides.global = MyHttpOverrides();
   runApp(const Ecommerce());
 }
 
@@ -27,5 +30,14 @@ class Ecommerce extends StatelessWidget {
       //routes: routes,
       theme: ThemeData(fontFamily: "Cairo"),
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
