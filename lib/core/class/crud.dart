@@ -1,39 +1,51 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
+
+import '../functions/checkinternet.dart';
+import 'statuscode.dart';
 
 String _basicAuth = 'Basic ' + base64Encode(utf8.encode('temsah13:16797346'));
 
 Map<String, String> myheaders = {'authorization': _basicAuth};
 
 class Crud {
-  getRequset(String url) async {
+  Future<Either<StatusRequest, Map>> pgetData(String url, Map data) async {
     try {
-      var response = await http.get(Uri.parse(url));
-      if (response.statusCode == 200) {
-        var responsebody = jsonDecode(response.body);
-        return responsebody;
+      if (await checkinternet()) {
+        var response = await http.get(Uri.parse(url), headers: myheaders);
+        if (response.statusCode == 200) {
+          Map responsebody = jsonDecode(response.body);
+          return right(responsebody);
+        } else {
+          return left(StatusRequest.serverFailure);
+        }
       } else {
-        print("status code error  ${response.statusCode}");
+        return left(StatusRequest.offlineFailure);
       }
     } catch (e) {
-      print("catch error $e");
+      return left(StatusRequest.serverFailure);
     }
   }
 
-  postRequset(String url, Map data) async {
+  Future<Either<StatusRequest, Map>> postData(String url, Map data) async {
     try {
-      var response =
-          await http.post(Uri.parse(url), body: data, headers: myheaders);
-      if (response.statusCode == 200) {
-        var responsebody = jsonDecode(response.body);
-        return responsebody;
+      if (await checkinternet()) {
+        var response =
+            await http.post(Uri.parse(url), body: data, headers: myheaders);
+        if (response.statusCode == 200) {
+          Map responsebody = jsonDecode(response.body);
+          return right(responsebody);
+        } else {
+          return left(StatusRequest.serverFailure);
+        }
       } else {
-        print("status code error  ${response.statusCode}");
+        return left(StatusRequest.offlineFailure);
       }
     } catch (e) {
-      print("catch error $e");
+      return left(StatusRequest.serverFailure);
     }
   }
 
