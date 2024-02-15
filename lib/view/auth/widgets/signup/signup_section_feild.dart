@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../../../controller/showpassword.dart';
 import '../../../../controller/signup.dart';
@@ -10,7 +9,6 @@ import '../../../../core/constant/colors.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
-import 'buttonsheet.dart';
 
 class SignupSectionFields extends StatefulWidget {
   const SignupSectionFields({
@@ -100,27 +98,6 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             ]),
           ),
           const SizedBox(height: 20),
-          ButtonSheet(
-            onTapCamera: () async {
-              final xfile =
-                  await ImagePicker().getImage(source: ImageSource.camera);
-              file = File(xfile!.path);
-
-              Get.back();
-            },
-            onTapGallary: () async {
-              try {
-                final xfile =
-                    await ImagePicker().getImage(source: ImageSource.gallery);
-                file = File(xfile!.path);
-                Get.back();
-              } catch (e) {
-                print("please upload image just");
-              }
-              setState(() {});
-            },
-            color: file == null ? ColorsApp.kprimaryColor1 : Colors.green,
-          ),
           const SizedBox(height: 20),
           OnboardingButton(
               onPressed: () {
