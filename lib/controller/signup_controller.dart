@@ -12,6 +12,7 @@ class SignupController extends GetxController {
 
   signup(String username, String email, String phone, String password) async {
     statusRequest = StatusRequest.loading;
+    Future.delayed(const Duration(seconds: 1));
     var response =
         await postDataSignup.postDataSignup(username, email, phone, password);
     statusRequest = handlingApiData(response);

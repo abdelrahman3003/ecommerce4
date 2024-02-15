@@ -19,7 +19,7 @@ class SignupBody extends StatelessWidget {
     Get.put(Showpassordcontroller());
     Get.put(SignupController());
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
           const SizedBox(height: 100),
@@ -28,12 +28,7 @@ class SignupBody extends StatelessWidget {
           const TextsSections(
               title: "Welcome!", subtitle: "Create your account"),
           const SizedBox(height: 25),
-          GetBuilder<SignupController>(
-            builder: (controller) =>
-                controller.statusRequest == StatusRequest.loading
-                    ? const Center(child: Text("loading"))
-                    : const SignupSectionFields(),
-          ),
+          SignupSectionFields(),
           const SizedBox(height: 20),
           const DividerText(),
           const IconsMeida(),

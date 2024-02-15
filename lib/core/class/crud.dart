@@ -35,13 +35,12 @@ class Crud {
       if (await checkInternetConnection()) {
         var response =
             await http.post(Uri.parse(url), body: data, headers: myheaders);
-        print("========= 25 ${response.statusCode} , ${response.body}");
+
         if (response.statusCode == 200) {
           Map responsebody = jsonDecode(response.body);
-          print("========= 22");
+
           return right(responsebody);
         } else {
-          print("========= 24");
           return left(StatusRequest.serverFailure);
         }
       } else {
