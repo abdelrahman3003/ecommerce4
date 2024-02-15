@@ -14,7 +14,7 @@ Map<String, String> myheaders = {'authorization': _basicAuth};
 class Crud {
   Future<Either<StatusRequest, Map>> getData(String url, Map data) async {
     try {
-      if (await checkinternet()) {
+      if (await checkInternetConnection()) {
         var response = await http.get(Uri.parse(url), headers: myheaders);
         if (response.statusCode == 200) {
           Map responsebody = jsonDecode(response.body);
@@ -32,16 +32,21 @@ class Crud {
 
   Future<Either<StatusRequest, Map>> postData(String url, Map data) async {
     try {
-      print("================== 1");
-      var response =
-          await http.post(Uri.parse(url), body: data, headers: myheaders);
-      if (response.statusCode == 200) {
-        print("================== 2");
-        Map responsebody = jsonDecode(response.body);
-        return right(responsebody);
+      if (await checkInternetConnection()) {
+        print("================== 1");
+        var response =
+            await http.post(Uri.parse(url), body: data, headers: myheaders);
+        if (response.statusCode == 200) {
+          print("================== 2");
+          Map responsebody = jsonDecode(response.body);
+          return right(responsebody);
+        } else {
+          print("================== 2");
+          return left(StatusRequest.serverFailure);
+        }
       } else {
-        print("================== 2");
-        return left(StatusRequest.serverFailure);
+        print("================== 3");
+        return left(StatusRequest.offlineFailure);
       }
     } catch (e) {
       print("================== 4");
