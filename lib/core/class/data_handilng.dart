@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import '../constant/lotties/OFFline_lottie.dart';
+import '../constant/lotties/Offine_lottie.dart';
 import '../constant/lotties/empty_lottie.dart';
 import '../constant/lotties/error404_lottie.dart';
 import '../constant/lotties/loading_lottie.dart';
@@ -15,7 +15,7 @@ class DataHandlingState extends StatelessWidget {
     return statusRequest == StatusRequest.loading
         ? const LoadingLottie()
         : statusRequest == StatusRequest.offlineFailure
-            ? const OFFline()
+            ? const Offline()
             : statusRequest == StatusRequest.serverFailure
                 ? const Error404()
                 : statusRequest == StatusRequest.failure
