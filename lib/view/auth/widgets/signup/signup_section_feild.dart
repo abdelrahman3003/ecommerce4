@@ -26,10 +26,9 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
   late String phone;
   File? file;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  SignupController controller = SignupController();
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(SignupController());
     return Form(
       key: _formKey,
       child: Column(
