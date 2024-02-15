@@ -1,11 +1,10 @@
 import 'dart:io';
 
-import 'package:eccommerce4/view/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/showpassword.dart';
-import '../../../../controller/signup.dart';
+import '../../../../controller/signup_controller.dart';
 import '../../../../core/constant/colors.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
@@ -101,20 +100,9 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
           const SizedBox(height: 20),
           OnboardingButton(
               onPressed: () {
-                Get.to(const TestView());
-              },
-              text: "test"),
-          const SizedBox(height: 20),
-          OnboardingButton(
-              onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  if (file != null) {
-                    _formKey.currentState!.save();
-                    controller.signup(username, email, phone, password, file!);
-                    file = null;
-                  } else {
-                    print("please upload");
-                  }
+                  _formKey.currentState!.save();
+                  controller.signup(username, email, phone, password);
                 }
               },
               text: "Signup"),
