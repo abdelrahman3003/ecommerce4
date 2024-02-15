@@ -57,7 +57,7 @@ dependencies:
   image_pickers: ^2.0.0+2
   intl: ^0.18.0
   jiffy: ^5.0.0
-  lottie: ^3.0.0
+  lottie: ^1.4.1
   path: ^1.8.0
   qr_flutter: ^4.0.0
   responsive_builder: ^0.4.2
