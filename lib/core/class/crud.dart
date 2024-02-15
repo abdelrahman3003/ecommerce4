@@ -12,7 +12,7 @@ String _basicAuth = 'Basic ' + base64Encode(utf8.encode('temsah13:16797346'));
 Map<String, String> myheaders = {'authorization': _basicAuth};
 
 class Crud {
-  Future<Either<StatusRequest, Map>> pgetData(String url, Map data) async {
+  Future<Either<StatusRequest, Map>> getData(String url, Map data) async {
     try {
       if (await checkinternet()) {
         var response = await http.get(Uri.parse(url), headers: myheaders);
