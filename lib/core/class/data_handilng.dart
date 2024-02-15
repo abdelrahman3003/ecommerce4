@@ -1,5 +1,9 @@
-import 'package:eccommerce4/core/class/statuscode.dart';
 import 'package:flutter/widgets.dart';
+import '../constant/lotties/OFFline_lottie.dart';
+import '../constant/lotties/empty_lottie.dart';
+import '../constant/lotties/error404_lottie.dart';
+import '../constant/lotties/loading_lottie.dart';
+import 'statuscode.dart';
 
 class DataHandlingState extends StatelessWidget {
   const DataHandlingState(
@@ -9,13 +13,13 @@ class DataHandlingState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ? const Text("loading")
+        ? const LoadingLottie()
         : statusRequest == StatusRequest.offlineFailure
-            ? const Text("no internet connenction")
+            ? const OFFline()
             : statusRequest == StatusRequest.serverFailure
-                ? const Text("Server Error")
+                ? const Error404()
                 : statusRequest == StatusRequest.failure
-                    ? const Text("no data is found")
+                    ? const EmptyLottie()
                     : widget;
   }
 }
