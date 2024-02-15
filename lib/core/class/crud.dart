@@ -32,19 +32,19 @@ class Crud {
 
   Future<Either<StatusRequest, Map>> postData(String url, Map data) async {
     try {
-      if (await checkinternet()) {
-        var response =
-            await http.post(Uri.parse(url), body: data, headers: myheaders);
-        if (response.statusCode == 200) {
-          Map responsebody = jsonDecode(response.body);
-          return right(responsebody);
-        } else {
-          return left(StatusRequest.serverFailure);
-        }
+      print("================== 1");
+      var response =
+          await http.post(Uri.parse(url), body: data, headers: myheaders);
+      if (response.statusCode == 200) {
+        print("================== 2");
+        Map responsebody = jsonDecode(response.body);
+        return right(responsebody);
       } else {
-        return left(StatusRequest.offlineFailure);
+        print("================== 2");
+        return left(StatusRequest.serverFailure);
       }
     } catch (e) {
+      print("================== 4");
       return left(StatusRequest.serverFailure);
     }
   }

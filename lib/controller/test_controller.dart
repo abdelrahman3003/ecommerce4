@@ -9,7 +9,7 @@ class TestController extends GetxController {
   List data = [];
   getData() async {
     statusRequest = StatusRequest.loading;
-    var response = testData.getData();
+    var response = await testData.getData();
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       data.addAll(response['data']);

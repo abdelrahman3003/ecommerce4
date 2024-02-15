@@ -1,3 +1,3 @@
-const String serverNameLink = "http://localhost/ecommerce/";
+const String serverNameLink = "http://192.168.1.26/ecommerce/";
 const String signupNameLink = "$serverNameLink/auth/signup.php";
-const String testNameLink = "$serverNameLink/test";
+const String testNameLink = "$serverNameLink/test.php";
