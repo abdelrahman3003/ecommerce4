@@ -1,4 +1,8 @@
+import 'package:eccommerce4/controller/signup_controller.dart';
+import 'package:eccommerce4/core/class/statuscode.dart';
+import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../core/functions/alert_exit.dart';
 import 'widgets/signup/signup_body.dart';
@@ -8,13 +12,22 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    Get.put(SignupController());
+    return Scaffold(
         body: WillPopScope(
       onWillPop: alertExitApp,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: SignupBody(),
-      ),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: GetBuilder<SignupController>(builder: (controller) {
+            return controller.statusRequest == StatusRequest.loading
+                ? Center(
+                    child: Text(
+                      "loading",
+                      style: Styles.textStyle16.copyWith(color: Colors.black),
+                    ),
+                  )
+                : const SignupBody();
+          })),
     ));
   }
 }

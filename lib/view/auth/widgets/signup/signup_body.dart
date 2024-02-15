@@ -1,5 +1,3 @@
-import 'package:eccommerce4/controller/signup_controller.dart';
-import 'package:eccommerce4/core/class/statuscode.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,24 +15,22 @@ class SignupBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(Showpassordcontroller());
-    Get.put(SignupController());
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          const SizedBox(height: 100),
-          const Logo(),
-          const SizedBox(height: 25),
-          const TextsSections(
-              title: "Welcome!", subtitle: "Create your account"),
-          const SizedBox(height: 25),
+          SizedBox(height: 100),
+          Logo(),
+          SizedBox(height: 25),
+          TextsSections(title: "Welcome!", subtitle: "Create your account"),
+          SizedBox(height: 25),
           SignupSectionFields(),
-          const SizedBox(height: 20),
-          const DividerText(),
-          const IconsMeida(),
-          const SizedBox(height: 30),
-          const SigninNavigate(),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
+          DividerText(),
+          IconsMeida(),
+          SizedBox(height: 30),
+          SigninNavigate(),
+          SizedBox(height: 20),
         ],
       ),
     );
