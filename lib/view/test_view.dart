@@ -24,7 +24,7 @@ class TestView extends StatelessWidget {
                 StatusRequest.serverFailure) {
               return const Text("Server Error");
             } else if (controller.statusRequest == StatusRequest.failure) {
-              return const Text("there was an error");
+              return const Text("no data is found");
             } else {
               return ListView.builder(
                 itemCount: controller.data.length,
