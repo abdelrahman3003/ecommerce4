@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:eccommerce4/view/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -98,6 +99,11 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             ]),
           ),
           const SizedBox(height: 20),
+          OnboardingButton(
+              onPressed: () {
+                Get.to(const TestView());
+              },
+              text: "test"),
           const SizedBox(height: 20),
           OnboardingButton(
               onPressed: () {
@@ -118,5 +124,3 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
     );
   }
 }
-
-class AwesomeDialog {}
