@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:eccommerce4/core/constant/binding.dart';
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/localization/local_controller.dart';
 import 'package:eccommerce4/core/localization/translations.dart';
@@ -26,6 +27,7 @@ class Ecommerce extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       getPages: getPages,
+      initialBinding: binding(),
       //routes: routes,
       theme: ThemeData(fontFamily: "Cairo"),
     );
