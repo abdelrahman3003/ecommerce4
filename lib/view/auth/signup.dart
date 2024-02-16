@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/signup_controller.dart';
+import 'package:eccommerce4/controller/auth/signup_controller.dart';
 import 'package:eccommerce4/core/class/statuscode.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';

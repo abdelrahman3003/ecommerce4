@@ -1,9 +1,9 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:get/get.dart';
 
-import '../core/class/statuscode.dart';
-import '../core/functions/handling _data.dart';
-import '../data/datasource/remote/postdata_signup.dart';
+import '../../core/class/statuscode.dart';
+import '../../core/functions/handling _data.dart';
+import '../../data/datasource/remote/postdata_signup.dart';
 
 class SignupController extends GetxController {
   PostDataSignup postDataSignup = PostDataSignup(Get.find());
@@ -12,7 +12,6 @@ class SignupController extends GetxController {
   signup(String username, String email, String password, String phone) async {
     statusRequest = StatusRequest.loading;
     update();
-    await Future.delayed(Duration(seconds: 2));
     var response =
         await postDataSignup.postDataSignup(username, email, phone, password);
     statusRequest = handlingApiData(response);
@@ -24,7 +23,7 @@ class SignupController extends GetxController {
           middleText: "Phone or Email is aleady found",
         );
       } else {
-        Get.toNamed(kCheckEmail);
+        Get.toNamed(kVerifyCode);
       }
       update();
     } else {}
