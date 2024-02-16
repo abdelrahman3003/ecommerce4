@@ -4,9 +4,9 @@ import 'package:eccommerce4/core/constant/backlinks.dart';
 class PostDataSignin {
   Crud crud;
   PostDataSignin(this.crud);
-  postDataSignup(String email, String password) async {
+  postDataSignin(String email, String password) async {
     var response = await crud.postData(
-      signupNameLink,
+      signinNameLink,
       {
         "email": email,
         "password": password,

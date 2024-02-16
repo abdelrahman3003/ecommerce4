@@ -12,6 +12,7 @@ class Signin extends GetView<SigninController> {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SigninController());
     return Scaffold(
         body: WillPopScope(
       onWillPop: alertExitApp,

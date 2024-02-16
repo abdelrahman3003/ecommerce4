@@ -12,7 +12,7 @@ class SigninController extends GetxController {
   signin(String email, String password) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await postDataSignup.postDataSignup(email, password);
+    var response = await postDataSignup.postDataSignin(email, password);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {

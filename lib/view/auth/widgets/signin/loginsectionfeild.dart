@@ -23,7 +23,7 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
   late String password;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  var signincontroller = Get.put(SigninController());
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -77,14 +77,16 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
           child: ForgetPasswordText(),
         ),
         const SizedBox(height: 10),
-        OnboardingButton(
-          onPressed: () {
-            if (_formKey.currentState!.validate()) {
-              _formKey.currentState!.save();
-              signincontroller.signin(email, password);
-            }
-          },
-          text: "Login",
+        GetBuilder<SigninController>(
+          builder: (controller) => OnboardingButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                controller.signin(email, password);
+              }
+            },
+            text: "Login",
+          ),
         ),
         const SizedBox(height: 20),
       ]),
