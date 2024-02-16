@@ -1,3 +1,4 @@
+import 'package:eccommerce4/controller/auth/signin_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,9 @@ class LoginSectionFields extends StatefulWidget {
 class _LoginSectionFieldsState extends State<LoginSectionFields> {
   late String email;
   late String password;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  var signincontroller = Get.put(SigninController());
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -78,6 +81,7 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
           onPressed: () {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
+              signincontroller.signin(email, password);
             }
           },
           text: "Login",
