@@ -1,0 +1,31 @@
+import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:get/get.dart';
+
+import '../../core/class/statuscode.dart';
+import '../../core/functions/handling _data.dart';
+import '../../data/datasource/remote/chechkemail_data.dart';
+import '../../data/datasource/remote/posdata_signin.dart';
+
+class CheckEmailController extends GetxController {
+  CheckEmailData checkEmailData = CheckEmailData(Get.find());
+  StatusRequest? statusRequest;
+
+  checkemail(String email, String password) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await checkEmailData.checkEmail(email);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+        Get.defaultDialog(
+          title: "error",
+          middleText: "invalid details",
+        );
+      } else {
+        Get.toNamed(kSignupSucess);
+      }
+      update();
+    } else {}
+  }
+}
