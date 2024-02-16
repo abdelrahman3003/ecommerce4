@@ -30,14 +30,15 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
       key: _formKey,
       child: Column(children: [
         AuthField(
-            onsave: (value) {
-              email = value!;
-            },
-            validator: (val) {
-              return validation(type: "Email", val: val!);
-            },
-            icon: Icons.email,
-            text: "Email"),
+          icon: Icons.email,
+          text: "Email",
+          onsave: (value) {
+            email = value!;
+          },
+          validator: (val) {
+            return validation(type: "Email", val: val!);
+          },
+        ),
         const SizedBox(height: 20),
         GetBuilder<Showpassordcontroller>(
           builder: (controller) => Stack(

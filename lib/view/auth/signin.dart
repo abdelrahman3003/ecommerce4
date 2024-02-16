@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import '../../core/shared/styles.dart';
 import 'widgets/signin/signin_body.dart';
 
-class Signin extends GetView<SigninController> {
+class Signin extends StatelessWidget {
   const Signin({super.key});
 
   @override
@@ -17,16 +17,18 @@ class Signin extends GetView<SigninController> {
         body: WillPopScope(
       onWillPop: alertExitApp,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: controller.statusRequest == StatusRequest.loading
-            ? Center(
-                child: Text(
-                  "loading",
-                  style: Styles.textStyle18.copyWith(color: Colors.black),
-                ),
-              )
-            : const SigninBody(),
-      ),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: GetBuilder<SigninController>(
+            builder: (controller) => controller.statusRequest ==
+                    StatusRequest.loading
+                ? Center(
+                    child: Text(
+                      "loading",
+                      style: Styles.textStyle18.copyWith(color: Colors.black),
+                    ),
+                  )
+                : const SigninBody(),
+          )),
     ));
   }
 }
