@@ -4,13 +4,11 @@ import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../data/datasource/remote/chechkemail_data.dart';
-import '../../data/datasource/remote/posdata_signin.dart';
 
 class CheckEmailController extends GetxController {
   CheckEmailData checkEmailData = CheckEmailData(Get.find());
   StatusRequest? statusRequest;
-
-  checkemail(String email, String password) async {
+  checkemail(String email) async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await checkEmailData.checkEmail(email);
@@ -20,10 +18,10 @@ class CheckEmailController extends GetxController {
         statusRequest = StatusRequest.failure;
         Get.defaultDialog(
           title: "error",
-          middleText: "invalid details",
+          middleText: "email not found ",
         );
       } else {
-        Get.toNamed(kSignupSucess);
+        Get.toNamed(kVerifyCode, arguments: {'email': email});
       }
       update();
     } else {}
