@@ -24,7 +24,6 @@ class Ecommerce extends StatelessWidget {
     return GetMaterialApp(
       locale: controller.language,
       translations: AppTrnaslations(),
-
       debugShowCheckedModeBanner: false,
       getPages: getPages,
       initialBinding: binding(),

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../../../controller/showpassword.dart';
 import '../../../../controller/signup_controller.dart';
 import '../../../../core/constant/colors.dart';
+import '../../../../core/constant/routsApp.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
@@ -26,7 +27,7 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
   late String phone;
   File? file;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  SignupController controller = SignupController();
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -97,14 +98,15 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
             ]),
           ),
           const SizedBox(height: 20),
-          OnboardingButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-                  controller.signup(username, email, phone, password);
-                }
-              },
-              text: "Signup"),
+          GetBuilder<SignupController>(
+              builder: (controller) => OnboardingButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+                      controller.signup(username, email, phone, password);
+                    }
+                  },
+                  text: "Signup")),
           const SizedBox(height: 20),
         ],
       ),

@@ -14,20 +14,22 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(SignupController());
     return Scaffold(
-        body: WillPopScope(
-      onWillPop: alertExitApp,
-      child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: GetBuilder<SignupController>(builder: (controller) {
-            return controller.statusRequest == StatusRequest.loading
-                ? Center(
-                    child: Text(
-                      "loading",
-                      style: Styles.textStyle16.copyWith(color: Colors.black),
-                    ),
-                  )
-                : const SignupBody();
-          })),
-    ));
+      body: WillPopScope(
+        onWillPop: alertExitApp,
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GetBuilder<SignupController>(
+              builder: (controller) => controller.statusRequest ==
+                      StatusRequest.loading
+                  ? Center(
+                      child: Text(
+                        "loading",
+                        style: Styles.textStyle18.copyWith(color: Colors.black),
+                      ),
+                    )
+                  : const SignupBody(),
+            )),
+      ),
+    );
   }
 }
