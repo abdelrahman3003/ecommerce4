@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-class AppOtpTextField extends StatelessWidget {
-  const AppOtpTextField({super.key, required this.toPage});
-  final String toPage;
+import '../../../../controller/auth/verify_code.dart';
+
+class AppOtpTextField extends GetView<VerifyCodeController> {
+  const AppOtpTextField({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return OtpTextField(
@@ -20,7 +23,7 @@ class AppOtpTextField extends StatelessWidget {
       },
       //runs when every textfield is filled
       onSubmit: (String verificationCode) {
-        Get.toNamed(toPage);
+        controller.verifycode(verificationCode);
       }, // end onSubmit
     );
   }

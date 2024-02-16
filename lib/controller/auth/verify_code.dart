@@ -8,11 +8,11 @@ import '../../data/datasource/remote/verify_Code.dart';
 class VerifyCodeController extends GetxController {
   GetVerifyCode getVerifyCode = GetVerifyCode(Get.find());
   StatusRequest? statusRequest;
-
-  verifycode(String email, String verifyCode) async {
+  String? email;
+  verifycode(String verifyCode) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await getVerifyCode.gettVerifyCode(email, verifyCode);
+    var response = await getVerifyCode.gettVerifyCode(email!, verifyCode);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
@@ -26,5 +26,12 @@ class VerifyCodeController extends GetxController {
       }
       update();
     } else {}
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    email = Get.arguments['email'];
   }
 }

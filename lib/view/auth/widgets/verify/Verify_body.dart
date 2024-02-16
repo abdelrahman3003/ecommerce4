@@ -8,12 +8,11 @@ class VerfiyBody extends StatelessWidget {
     required this.titlebold,
     required this.title,
     required this.subtitle,
-    required this.toPage,
   });
   final String titlebold;
   final String title;
   final String subtitle;
-  final String toPage;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +23,7 @@ class VerfiyBody extends StatelessWidget {
           TextsSections(title: title),
           const SizedBox(height: 20),
           TextsSections(titlebold: titlebold, subtitle: subtitle),
-          AppOtpTextField(toPage: toPage),
+          const AppOtpTextField(),
         ],
       ),
     );

@@ -23,7 +23,7 @@ class SignupController extends GetxController {
           middleText: "Phone or Email is aleady found",
         );
       } else {
-        Get.toNamed(kVerifyCode);
+        Get.toNamed(kVerifyCode, arguments: {'email': email});
       }
       update();
     } else {}
