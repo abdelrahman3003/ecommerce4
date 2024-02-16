@@ -1,6 +1,7 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
 
@@ -14,7 +15,7 @@ class CheckForm extends StatefulWidget {
 }
 
 class _CheckFormState extends State<CheckForm> {
-  late String email;
+  String? email;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
@@ -24,15 +25,22 @@ class _CheckFormState extends State<CheckForm> {
       child: Column(children: [
         const SizedBox(height: 10),
         AuthField(
-            onsave: (value) {
-              email = value!;
-            },
-            icon: Icons.email,
-            text: "Email"),
+          icon: Icons.email,
+          text: "Email",
+          onsave: (value) {
+            email = value!;
+          },
+          validator: (val) {
+            return validation(type: "Email", val: val!);
+          },
+        ),
         const SizedBox(height: 25),
         OnboardingButton(
           onPressed: () {
-            Get.toNamed(kVerifyCode);
+            if (_formKey.currentState!.validate()) {
+              _formKey.currentState!.save();
+              Get.toNamed(kVerifyCode, arguments: {'email': email});
+            }
           },
           text: "Check Email",
         ),
