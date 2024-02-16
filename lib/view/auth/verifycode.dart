@@ -17,9 +17,11 @@ class VerifyCode extends GetView<ForgetPasssowrdController> {
         body: GetBuilder<VerifyCodeController>(
       builder: (verifycodecontroller) =>
           verifycodecontroller.statusRequest == StatusRequest.loading
-              ? Text(
-                  "loading",
-                  style: Styles.textStyle18.copyWith(color: Colors.black),
+              ? Center(
+                  child: Text(
+                    "loading",
+                    style: Styles.textStyle18.copyWith(color: Colors.black),
+                  ),
                 )
               : const VerfiyBody(
                   titlebold: "Check code",
