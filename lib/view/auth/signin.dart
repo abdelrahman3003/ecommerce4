@@ -4,6 +4,7 @@ import 'package:eccommerce4/core/functions/alert_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../controller/forget_password_controller.dart';
 import '../../core/shared/styles.dart';
 import 'widgets/signin/signin_body.dart';
 
@@ -13,6 +14,7 @@ class Signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(SigninController());
+    Get.put(ForgetPasssowrdController());
     return Scaffold(
         body: WillPopScope(
       onWillPop: alertExitApp,

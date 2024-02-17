@@ -25,6 +25,8 @@ class VerifyCodeController extends GetxController {
           middleText: "Verify code failed",
         );
       } else {
+        print(
+            "===================== ${forgetPasssowrdController.isforegetpassword}");
         if (forgetPasssowrdController.isforegetpassword) {
           Get.offNamed(kRestPassword);
         } else {
@@ -38,8 +40,9 @@ class VerifyCodeController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
+    print(
+        "===================== ${forgetPasssowrdController.isforegetpassword}");
     super.onInit();
     email = Get.arguments['email'];
-    print("======== $email");
   }
 }
