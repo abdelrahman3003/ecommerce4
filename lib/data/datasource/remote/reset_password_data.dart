@@ -1,9 +1,9 @@
 import 'package:eccommerce4/core/class/crud.dart';
 import 'package:eccommerce4/core/constant/backlinks.dart';
 
-class Resetpassword {
+class ResetpasswordData {
   Crud crud;
-  Resetpassword(this.crud);
+  ResetpasswordData(this.crud);
   resetpassword(String email, String newPassword, String retypePassword) async {
     var response = await crud.postData(
       resetpasswordNameLink,
