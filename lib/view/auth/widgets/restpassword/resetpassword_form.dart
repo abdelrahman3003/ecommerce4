@@ -1,5 +1,4 @@
-import 'package:eccommerce4/controller/forget_password_controller.dart';
-import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:eccommerce4/controller/auth/reset_password_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
@@ -18,6 +17,8 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
   late String email;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late String newPassword;
+  late String retypePassword;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -26,23 +27,25 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
         const SizedBox(height: 30),
         AuthField(
             onsave: (value) {
-              email = value!;
+              newPassword = value!;
             },
             icon: Icons.password,
             text: "New password"),
         const SizedBox(height: 10),
         AuthField(
             onsave: (value) {
-              email = value!;
+              retypePassword = value!;
             },
             icon: Icons.password,
             text: "Re type password"),
         const SizedBox(height: 25),
-        GetBuilder<ForgetPasssowrdController>(
+        GetBuilder<ResetPasswordController>(
           builder: (controller) => OnboardingButton(
             onPressed: () {
-              controller.isforegetpassword = false;
-              Get.offNamed(kResetpasswordsucsess);
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                controller.resetpassword(newPassword, retypePassword);
+              }
             },
             text: "Confirm",
           ),

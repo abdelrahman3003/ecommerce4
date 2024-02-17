@@ -11,7 +11,7 @@ class ResetPasswordController extends GetxController {
   var controller = Get.put(ForgetPasssowrdController());
   StatusRequest? statusRequest;
   String? email;
-  verifycode(String newPaaword, String retypePassword) async {
+  resetpassword(String newPaaword, String retypePassword) async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await resetpasswordData.resetpassword(
