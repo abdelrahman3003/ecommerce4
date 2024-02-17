@@ -102,8 +102,6 @@ class _SignupSectionFieldsState extends State<SignupSectionFields> {
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      print(
-                          "========= $username == $email == $phone == $password");
                       await controller.signup(username, email, phone, password);
                     }
                   },

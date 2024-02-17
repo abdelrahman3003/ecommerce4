@@ -9,7 +9,7 @@ class SignupController extends GetxController {
   PostDataSignup postDataSignup = PostDataSignup(Get.find());
   StatusRequest? statusRequest;
 
-  signup(String username, String email, String password, String phone) async {
+  signup(String username, String email, String phone, String password) async {
     statusRequest = StatusRequest.loading;
     update();
     var response =
