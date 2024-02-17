@@ -32,7 +32,9 @@ validation({required String val, required String type}) {
       return " Can't be langer than 11";
     }
   }
-  if (type == "Password") {
+  if (type == "Password" ||
+      type == "New password" ||
+      type == "Retype password") {
     if (val.length < 5) {
       return " Can't be less than 5";
     } else if (val.length > 15) {
