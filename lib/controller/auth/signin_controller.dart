@@ -11,7 +11,9 @@ class SigninController extends GetxController {
 
   signin(String email, String password) async {
     statusRequest = StatusRequest.loading;
+
     update();
+    await Future.delayed(Duration(seconds: 2));
     var response = await postDataSignup.postDataSignin(email, password);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
