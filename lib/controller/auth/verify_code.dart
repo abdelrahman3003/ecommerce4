@@ -26,9 +26,9 @@ class VerifyCodeController extends GetxController {
         );
       } else {
         if (forgetPasssowrdController.isforegetpassword) {
-          Get.toNamed(kSignupSucess);
+          Get.toNamed(kVerifyCode);
         } else {
-          Get.toNamed(kRestPassword);
+          Get.toNamed(kSignupSucess);
         }
       }
       update();

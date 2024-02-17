@@ -1,6 +1,6 @@
-import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../controller/auth/check_email_controller.dart';
 import '../../../../core/functions/validation.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../authfield.dart';
@@ -16,7 +16,7 @@ class CheckForm extends StatefulWidget {
 
 class _CheckFormState extends State<CheckForm> {
   String? email;
-
+  var controller = Get.put(CheckEmailController());
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class _CheckFormState extends State<CheckForm> {
           onPressed: () {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
-              Get.toNamed(kVerifyCode, arguments: {'email': email});
+              controller.checkemail(email!);
             }
           },
           text: "Check Email",
