@@ -9,7 +9,7 @@ import '../forget_password_controller.dart';
 class VerifyCodeController extends GetxController {
   GetVerifyCode getVerifyCode = GetVerifyCode(Get.find());
   var controller = Get.put(ForgetPasssowrdController());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   String? email;
   verifycode(String verifyCode) async {
     statusRequest = StatusRequest.loading;
