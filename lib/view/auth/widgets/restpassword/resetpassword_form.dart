@@ -19,6 +19,7 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late String newPassword;
   late String retypePassword;
+  var controller = Get.put(ResetPasswordController());
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -39,17 +40,15 @@ class _ForgetpasswordFormState extends State<RestpasswordForm> {
             icon: Icons.password,
             text: "Re type password"),
         const SizedBox(height: 25),
-        GetBuilder<ResetPasswordController>(
-          builder: (controller) => OnboardingButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                controller.resetpassword(newPassword, retypePassword);
-              }
-            },
-            text: "Confirm",
-          ),
-        )
+        OnboardingButton(
+          onPressed: () {
+            if (_formKey.currentState!.validate()) {
+              _formKey.currentState!.save();
+              controller.resetpassword(newPassword, retypePassword);
+            }
+          },
+          text: "Confirm",
+        ),
       ]),
     );
   }

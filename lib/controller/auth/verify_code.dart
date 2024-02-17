@@ -25,7 +25,7 @@ class VerifyCodeController extends GetxController {
         );
       } else {
         if (controller.isforegetpassword) {
-          Get.offNamed(kRestPassword);
+          Get.toNamed(kRestPassword, arguments: {'email': email});
         } else {
           Get.offNamed(kSignupSucess);
         }
