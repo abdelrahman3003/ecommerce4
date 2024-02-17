@@ -7,7 +7,7 @@ import '../../data/datasource/remote/postdata_signup.dart';
 
 class SignupController extends GetxController {
   PostDataSignup postDataSignup = PostDataSignup(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   signup(String username, String email, String phone, String password) async {
     statusRequest = StatusRequest.loading;
