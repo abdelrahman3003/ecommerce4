@@ -11,7 +11,7 @@ class CheckEmailController extends GetxController {
   checkemail(String email) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await checkEmailData.checkEmail(email);
+    var response = await checkEmailData.checkemail(email);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {

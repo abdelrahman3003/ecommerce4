@@ -26,9 +26,9 @@ class VerifyCodeController extends GetxController {
         );
       } else {
         if (forgetPasssowrdController.isforegetpassword) {
-          Get.toNamed(kVerifyCode);
+          Get.offNamed(kRestPassword);
         } else {
-          Get.toNamed(kSignupSucess);
+          Get.offNamed(kSignupSucess);
         }
       }
       update();
@@ -40,5 +40,6 @@ class VerifyCodeController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     email = Get.arguments['email'];
+    print("======== $email");
   }
 }

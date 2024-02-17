@@ -4,7 +4,7 @@ import 'package:eccommerce4/core/constant/backlinks.dart';
 class CheckEmailData {
   Crud crud;
   CheckEmailData(this.crud);
-  checkEmail(String email) async {
+  checkemail(String email) async {
     var response = await crud.postData(
       checkemailNameLink,
       {
