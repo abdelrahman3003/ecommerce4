@@ -4,8 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 
-import '../../core/class/statuscode.dart';
-import '../../core/shared/styles.dart';
+import '../../core/class/data_handling_request.dart';
 import 'widgets/restpassword/restpassword_body.dart';
 
 class RestPassword extends StatelessWidget {
@@ -16,14 +15,9 @@ class RestPassword extends StatelessWidget {
     Get.put(ResetPasswordController());
     return Scaffold(
         body: GetBuilder<ResetPasswordController>(
-      builder: (controller) => controller.statusRequest == StatusRequest.loading
-          ? Center(
-              child: Text(
-                "loading",
-                style: Styles.textStyle18.copyWith(color: Colors.black),
-              ),
-            )
-          : const ResetpasswordBody(),
-    ));
+            builder: (controller) => DataHandlingRequsetState(
+                  statusRequest: controller.statusRequest,
+                  widget: const ResetpasswordBody(),
+                )));
   }
 }

@@ -9,7 +9,7 @@ import '../forget_password_controller.dart';
 class ResetPasswordController extends GetxController {
   ResetpasswordData resetpasswordData = ResetpasswordData(Get.find());
   var controller = Get.put(ForgetPasssowrdController());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   String? email;
   resetpassword(String newPaaword, String retypePassword) async {
     statusRequest = StatusRequest.loading;

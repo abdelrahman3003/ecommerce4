@@ -7,7 +7,7 @@ import '../../data/datasource/remote/chechkemail_data.dart';
 
 class CheckEmailController extends GetxController {
   CheckEmailData checkEmailData = CheckEmailData(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   checkemail(String email) async {
     statusRequest = StatusRequest.loading;
     update();
