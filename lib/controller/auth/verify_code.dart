@@ -36,8 +36,6 @@ class VerifyCodeController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
-
     super.onInit();
     email = Get.arguments['email'];
   }

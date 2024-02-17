@@ -16,7 +16,7 @@ class CheckForm extends StatefulWidget {
 
 class _CheckFormState extends State<CheckForm> {
   String? email;
-  var controller = Get.put(CheckEmailController());
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -35,15 +35,19 @@ class _CheckFormState extends State<CheckForm> {
           },
         ),
         const SizedBox(height: 25),
-        OnboardingButton(
-          onPressed: () {
-            if (_formKey.currentState!.validate()) {
-              _formKey.currentState!.save();
-              controller.checkemail(email!);
-            }
+        GetBuilder<CheckEmailController>(
+          builder: (controller) {
+            return OnboardingButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  controller.checkemail(email!);
+                }
+              },
+              text: "Check Email",
+            );
           },
-          text: "Check Email",
-        ),
+        )
       ]),
     );
   }
