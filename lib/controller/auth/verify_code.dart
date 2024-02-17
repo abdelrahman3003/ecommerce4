@@ -8,8 +8,7 @@ import '../forget_password_controller.dart';
 
 class VerifyCodeController extends GetxController {
   GetVerifyCode getVerifyCode = GetVerifyCode(Get.find());
-  ForgetPasssowrdController forgetPasssowrdController =
-      ForgetPasssowrdController();
+  var controller = Get.put(ForgetPasssowrdController());
   StatusRequest? statusRequest;
   String? email;
   verifycode(String verifyCode) async {
@@ -25,9 +24,7 @@ class VerifyCodeController extends GetxController {
           middleText: "Verify code failed",
         );
       } else {
-        print(
-            "===================== ${forgetPasssowrdController.isforegetpassword}");
-        if (forgetPasssowrdController.isforegetpassword) {
+        if (controller.isforegetpassword) {
           Get.offNamed(kRestPassword);
         } else {
           Get.offNamed(kSignupSucess);
@@ -40,8 +37,7 @@ class VerifyCodeController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
-    print(
-        "===================== ${forgetPasssowrdController.isforegetpassword}");
+
     super.onInit();
     email = Get.arguments['email'];
   }

@@ -12,7 +12,9 @@ class ForgetPasswordText extends GetView<ForgetPasssowrdController> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        controller.forgetpassword();
+      },
       child: const Opacity(
           opacity: .6,
           child: Text("Forget password", style: Styles.textStyle16)),

@@ -6,5 +6,6 @@ class ForgetPasssowrdController extends GetxController {
   forgetpassword() {
     isforegetpassword = true;
     Get.toNamed(kCheckEmail);
+    update();
   }
 }
