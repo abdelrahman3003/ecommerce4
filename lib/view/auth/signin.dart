@@ -1,11 +1,10 @@
 import 'package:eccommerce4/controller/auth/signin_controller.dart';
-import 'package:eccommerce4/core/class/statuscode.dart';
 import 'package:eccommerce4/core/functions/alert_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/forget_password_controller.dart';
-import '../../core/shared/styles.dart';
+import '../../core/class/data_handling_request.dart';
 import 'widgets/signin/signin_body.dart';
 
 class Signin extends StatelessWidget {
@@ -21,16 +20,9 @@ class Signin extends StatelessWidget {
       child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: GetBuilder<SigninController>(
-            builder: (controller) => controller.statusRequest ==
-                    StatusRequest.loading
-                ? Center(
-                    child: Text(
-                      "loading",
-                      style: Styles.textStyle18.copyWith(color: Colors.black),
-                    ),
-                  )
-                : const SigninBody(),
-          )),
+              builder: (controller) => DataHandlingRequsetState(
+                  statusRequest: controller.statusRequest,
+                  widget: const SigninBody()))),
     ));
   }
 }

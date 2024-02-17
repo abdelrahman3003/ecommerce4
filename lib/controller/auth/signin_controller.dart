@@ -7,7 +7,7 @@ import '../../data/datasource/remote/posdata_signin.dart';
 
 class SigninController extends GetxController {
   PostDataSignin postDataSignup = PostDataSignin(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   signin(String email, String password) async {
     statusRequest = StatusRequest.loading;
