@@ -5,7 +5,7 @@ import 'package:eccommerce4/view/auth/signin.dart';
 import 'package:eccommerce4/view/auth/signup.dart';
 import 'package:eccommerce4/view/auth/widgets/restpassword/reset_password_succes.dart';
 import 'package:eccommerce4/view/auth/widgets/signup/success_signup.dart';
-import 'package:eccommerce4/view/home/home.dart';
+import 'package:eccommerce4/view/home/home_view.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:get/route_manager.dart';
 
