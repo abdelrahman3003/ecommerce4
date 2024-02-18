@@ -10,19 +10,23 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(height: 8),
-        HomeAppbar(),
-        SizedBox(height: 20),
-        DiscountContainer(),
-        SizedBox(height: 20),
-        CategoriesListView(),
-        SizedBox(height: 20),
-        ProductListView(text: "Product For Your"),
-        SizedBox(height: 20),
-        ProductListView(text: "Offer")
-      ],
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        children: [
+          SizedBox(height: 8),
+          HomeAppbar(),
+          SizedBox(height: 20),
+          DiscountContainer(),
+          SizedBox(height: 20),
+          CategoriesListView(),
+          SizedBox(height: 20),
+          ProductListView(text: "Product For Your"),
+          SizedBox(height: 20),
+          ProductListView(text: "Offer"),
+          SizedBox(height: 50),
+        ],
+      ),
     );
   }
 }
