@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'discount_container.dart';
 import 'home_appbar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -7,6 +8,12 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeAppbar();
+    return const Column(
+      children: [
+        HomeAppbar(),
+        SizedBox(height: 20),
+        DiscountContainer(),
+      ],
+    );
   }
 }
