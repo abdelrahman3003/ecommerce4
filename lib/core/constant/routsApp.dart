@@ -5,6 +5,7 @@ import 'package:eccommerce4/view/auth/signin.dart';
 import 'package:eccommerce4/view/auth/signup.dart';
 import 'package:eccommerce4/view/auth/widgets/restpassword/reset_password_succes.dart';
 import 'package:eccommerce4/view/auth/widgets/signup/success_signup.dart';
+import 'package:eccommerce4/view/home/home.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:get/route_manager.dart';
 
@@ -18,6 +19,7 @@ const kVerifyCode = "/kVerifyCode";
 const kSignupSucess = "/SuccessSignup";
 const kResetpasswordsucsess = "/Resetpasswordsucsess";
 const kRestPassword = "/RestPassword";
+const kHomeView = "/HomeView";
 List<GetPage<dynamic>>? getPages = [
   GetPage(
       name: "/",
@@ -30,4 +32,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kRestPassword, page: () => const RestPassword()),
   GetPage(name: kSignupSucess, page: () => const SuccessSignup()),
   GetPage(name: kResetpasswordsucsess, page: () => const RestSuccesPassword()),
+  GetPage(name: kHomeView, page: () => const HomeView()),
 ];
