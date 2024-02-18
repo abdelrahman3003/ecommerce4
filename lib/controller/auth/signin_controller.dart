@@ -1,4 +1,5 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -21,7 +22,12 @@ class SigninController extends GetxController {
           middleText: "invalid details",
         );
       } else {
-        Get.toNamed(kSignupSucess);
+        FirebaseMessaging.instance.getToken().then((value) {
+          String? token = value;
+          print(token);
+        });
+        print("========== 1");
+        Get.toNamed(kSignup);
       }
       update();
     } else {}
