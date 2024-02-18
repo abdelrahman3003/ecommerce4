@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,7 +7,13 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: Container(
+        child: const Center(
+            child: Text(
+          "HomeView",
+          style: Styles.textStyle18,
+        )),
+      ),
     );
   }
 }

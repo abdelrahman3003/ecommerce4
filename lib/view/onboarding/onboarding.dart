@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/onboarding_controller.dart';
+import 'package:eccommerce4/controller/onboarding/onboarding_controller.dart';
 import 'package:eccommerce4/view/onboarding/widgets/onboarding_body.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';

@@ -2,7 +2,7 @@ import 'package:eccommerce4/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../core/constant/constatns_value.dart';
+import '../../core/constant/constatns_value.dart';
 
 abstract class OnboardingController extends GetxController {
   next();
