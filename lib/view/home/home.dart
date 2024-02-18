@@ -8,11 +8,15 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: const Center(
+        child: Center(
+          child: InkWell(
+            onTap: () {},
             child: Text(
-          "HomeView",
-          style: Styles.textStyle18,
-        )),
+              "HomeView",
+              style: Styles.textStyle18,
+            ),
+          ),
+        ),
       ),
     );
   }

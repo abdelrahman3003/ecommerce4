@@ -27,17 +27,19 @@ class SigninController extends GetxController {
         //   String? token = value;
         //   print("========$token");
         // });
-        Get.toNamed(kHomeView);
+        appServices.sharedPreferences
+            .setString("username", "${response['data'][0]['users_name']}");
+        appServices.sharedPreferences
+            .setString("username", response['data'][0]['users_name']);
+        appServices.sharedPreferences
+            .setString("email", response['data'][0]['users_email']);
+        appServices.sharedPreferences
+            .setString("phone", response['data'][0]['users_phone']);
+        appServices.sharedPreferences.setString("step", "2");
+
+        Get.offNamed(kHomeView);
       }
-      appServices.sharedPreferences
-          .setString("id", response['data']['users_id']);
-      appServices.sharedPreferences
-          .setString("username", response['data']['users_name']);
-      appServices.sharedPreferences
-          .setString("email", response['data']['users_name']);
-      appServices.sharedPreferences
-          .setString("phone", response['data']['users_phone']);
-      appServices.sharedPreferences.setString("step", "2");
+
       update();
     } else {}
   }
