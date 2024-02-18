@@ -1,8 +1,8 @@
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
+class CategoryCart extends StatelessWidget {
+  const CategoryCart({super.key});
 
   @override
   Widget build(BuildContext context) {
