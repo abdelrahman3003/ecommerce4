@@ -10,7 +10,7 @@ import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:get/route_manager.dart';
 
 import '../../view/auth/verifycode.dart';
-import '../../view/home/home_screen.dart';
+import '../../view/home/home_screen_view.dart';
 
 const konboarding = "/Onboarding";
 const kSignin = "/Signin";
@@ -24,7 +24,7 @@ const kHomePageView = "/HomePageView";
 const kHomeScreenView = "/HomeScreenView";
 List<GetPage<dynamic>>? getPages = [
   GetPage(
-      name: konboarding,
+      name: "/",
       page: () => const Onboarding(),
       middlewares: [AppMiddleWare()]),
   GetPage(name: kSignin, page: () => const Signin()),
@@ -35,5 +35,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kSignupSucess, page: () => const SuccessSignup()),
   GetPage(name: kResetpasswordsucsess, page: () => const RestSuccesPassword()),
   GetPage(name: kHomePageView, page: () => const HomePageView()),
-  GetPage(name: "/", page: () => const HomeScreenView()),
+  GetPage(name: kHomeScreenView, page: () => const HomeScreenView()),
 ];

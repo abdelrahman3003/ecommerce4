@@ -7,14 +7,18 @@ class AppBottomNavigatorBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        AppbarItem(),
-        AppbarItem(),
-        Spacer(),
-        AppbarItem(),
-        AppbarItem(),
-      ],
+    return const BottomAppBar(
+      shape: CircularNotchedRectangle(),
+      notchMargin: 10,
+      child: Row(
+        children: [
+          AppbarItem(),
+          AppbarItem(),
+          Spacer(),
+          AppbarItem(),
+          AppbarItem(),
+        ],
+      ),
     );
   }
 }
