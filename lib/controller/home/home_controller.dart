@@ -19,6 +19,7 @@ class HomePageControllerImp extends HomeController {
   int pageCount = 0;
   bool isactive = false;
   List categories = [];
+
   List<Widget> pageList = [
     const HomePageView(),
     const FavouriteView(),
@@ -42,10 +43,18 @@ class HomePageControllerImp extends HomeController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
+        print("=========== 2");
       } else {
         categories.addAll(response['categories']);
+        update();
       }
-      update();
     }
+    update();
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    getAllDataHome();
   }
 }

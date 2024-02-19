@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class CategoryCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.only(right: 12),
       child: Column(
         children: [
           GestureDetector(
@@ -24,6 +25,7 @@ class CategoryCart extends StatelessWidget {
                 height: 110,
                 width: 100,
                 decoration: BoxDecoration(
+                  color: ColorsApp.kprimaryColor2,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: SvgPicture.network(imgUrlCategory)),
