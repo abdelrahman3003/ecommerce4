@@ -38,9 +38,9 @@ class CategoryText extends GetView<ItemsControllerImp> {
             const SizedBox(height: 4),
             Container(
               width: 100,
-              height: 4,
+              height: isactive ? 4 : 0,
               decoration: BoxDecoration(
-                color: isactive ? Colors.blue : Colors.white,
+                color: Colors.blue,
                 borderRadius: BorderRadius.circular(5),
               ),
             )
