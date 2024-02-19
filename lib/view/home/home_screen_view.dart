@@ -18,7 +18,7 @@ class HomeScreenView extends StatelessWidget {
             onPressed: () {}, child: const Icon(Icons.home)),
         body: GetBuilder<HomePageControllerImp>(
           builder: (controller) {
-            return controller.pageList[controller.pageCount];
+            return SafeArea(child: controller.pageList[controller.pageCount]);
           },
         ));
   }

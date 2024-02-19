@@ -9,16 +9,22 @@ class ItemsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            SizedBox(height: 30),
-            HomeAppbar(),
-            SizedBox(height: 30),
-            CategoriesTextList(),
-            ItemListView()
-          ],
-        ));
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              SizedBox(height: 30),
+              HomeAppbar(),
+              SizedBox(height: 30),
+              CategoriesTextList(),
+            ],
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: ItemListView(),
+        )
+      ],
+    );
   }
 }
