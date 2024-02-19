@@ -4,4 +4,4 @@ const String signinNameLink = "$serverNameLink/auth/signin.php";
 const String verifycodeNameLink = "$serverNameLink/auth/verifycode.php";
 const String checkemailNameLink = "$serverNameLink/auth/checkemail.php";
 const String resetpasswordNameLink = "$serverNameLink/auth/resetpassword.php";
-const String testNameLink = "$serverNameLink/testt.php";
+const String homeNameLink = "$serverNameLink/home/getalldata.php";

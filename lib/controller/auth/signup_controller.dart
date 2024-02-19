@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
-import '../../data/datasource/remote/postdata_signup.dart';
+import '../../data/datasource/remote/auth/postdata_signup.dart';
 
 class SignupController extends GetxController {
   PostDataSignup postDataSignup = PostDataSignup(Get.find());

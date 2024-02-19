@@ -7,6 +7,7 @@ import '../../view/home/setting_view.dart';
 
 abstract class HomeController extends GetxController {
   changepage(int i);
+  getCategories();
 }
 
 class HomePageControllerImp extends HomeController {
@@ -24,4 +25,7 @@ class HomePageControllerImp extends HomeController {
 
     update();
   }
+
+  @override
+  getCategories() {}
 }

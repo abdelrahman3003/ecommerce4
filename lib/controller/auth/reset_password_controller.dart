@@ -1,9 +1,9 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
-import 'package:eccommerce4/data/datasource/remote/reset_password_data.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
+import '../../data/datasource/remote/auth/reset_password_data.dart';
 import '../forget_password_controller.dart';
 
 class ResetPasswordController extends GetxController {

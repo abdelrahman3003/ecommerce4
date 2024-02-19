@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
-import '../../data/datasource/remote/chechkemail_data.dart';
+import '../../data/datasource/remote/auth/chechkemail_data.dart';
 
 class CheckEmailController extends GetxController {
   CheckEmailData checkEmailData = CheckEmailData(Get.find());

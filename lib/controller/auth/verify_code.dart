@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
-import '../../data/datasource/remote/verify_Code.dart';
+import '../../data/datasource/remote/auth/verify_Code.dart';
 import '../forget_password_controller.dart';
 
 class VerifyCodeController extends GetxController {
