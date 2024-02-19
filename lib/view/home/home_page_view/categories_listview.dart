@@ -1,9 +1,11 @@
+import 'package:eccommerce4/controller/home/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../core/shared/styles.dart';
 import 'category_cart.dart';
 
-class CategoriesListView extends StatelessWidget {
+class CategoriesListView extends GetView<HomePageControllerImp> {
   const CategoriesListView({super.key});
 
   @override
@@ -19,9 +21,12 @@ class CategoriesListView extends StatelessWidget {
         SizedBox(
           height: 150,
           child: ListView.builder(
-            itemCount: 10,
+            itemCount: controller.categories.length,
             itemBuilder: (context, index) {
-              return const CategoryCart();
+              return CategoryCart(
+                imgUrlCategory: controller.categories[index]['categories_name'],
+                nameCategory: controller.categories[index]['categories_image'],
+              );
             },
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
