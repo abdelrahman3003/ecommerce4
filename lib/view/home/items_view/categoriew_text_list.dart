@@ -1,4 +1,7 @@
+import 'package:eccommerce4/controller/home/items_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
 
 import 'category_text.dart';
 
@@ -7,14 +10,20 @@ class CategoriesTextList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      child: ListView.builder(
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const CategoryText();
-        },
+    Get.put(ItemsControllerImp());
+    return GetBuilder<ItemsControllerImp>(
+      builder: (controller) => SizedBox(
+        height: 50,
+        child: ListView.builder(
+          itemCount: controller.itemsList.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return CategoryText(
+              text: controller.itemsList[index],
+              isactive: controller.categoryNumer == index ? true : false,
+            );
+          },
+        ),
       ),
     );
   }
