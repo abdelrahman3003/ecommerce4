@@ -37,7 +37,7 @@ class SigninController extends GetxController {
             .setString("phone", response['data'][0]['users_phone']);
         appServices.sharedPreferences.setString("step", "2");
 
-        Get.offNamed(kHomeView);
+        Get.offNamed(kHomePageView);
       }
 
       update();

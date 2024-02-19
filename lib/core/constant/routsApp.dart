@@ -5,11 +5,12 @@ import 'package:eccommerce4/view/auth/signin.dart';
 import 'package:eccommerce4/view/auth/signup.dart';
 import 'package:eccommerce4/view/auth/widgets/restpassword/reset_password_succes.dart';
 import 'package:eccommerce4/view/auth/widgets/signup/success_signup.dart';
-import 'package:eccommerce4/view/home/home_view.dart';
+import 'package:eccommerce4/view/home/home_page_view.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:get/route_manager.dart';
 
 import '../../view/auth/verifycode.dart';
+import '../../view/home/home_screen.dart';
 
 const konboarding = "/Onboarding";
 const kSignin = "/Signin";
@@ -19,10 +20,11 @@ const kVerifyCode = "/kVerifyCode";
 const kSignupSucess = "/SuccessSignup";
 const kResetpasswordsucsess = "/Resetpasswordsucsess";
 const kRestPassword = "/RestPassword";
-const kHomeView = "/HomeView";
+const kHomePageView = "/HomePageView";
+const kHomeScreenView = "/HomeScreenView";
 List<GetPage<dynamic>>? getPages = [
   GetPage(
-      name: "/",
+      name: konboarding,
       page: () => const Onboarding(),
       middlewares: [AppMiddleWare()]),
   GetPage(name: kSignin, page: () => const Signin()),
@@ -32,5 +34,6 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kRestPassword, page: () => const RestPassword()),
   GetPage(name: kSignupSucess, page: () => const SuccessSignup()),
   GetPage(name: kResetpasswordsucsess, page: () => const RestSuccesPassword()),
-  GetPage(name: kHomeView, page: () => const HomeView()),
+  GetPage(name: kHomePageView, page: () => const HomePageView()),
+  GetPage(name: "/", page: () => const HomeScreenView()),
 ];
