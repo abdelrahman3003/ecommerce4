@@ -10,7 +10,7 @@ class AppMiddleWare extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
     if (appServices.sharedPreferences.getString("step") == "2") {
-      return const RouteSettings(name: kHomePageView);
+      return const RouteSettings(name: kHomeScreenView);
     }
     if (appServices.sharedPreferences.getString("step") == "1") {
       return const RouteSettings(name: kSignin);

@@ -9,7 +9,7 @@ abstract class HomeController extends GetxController {
   changepage(int i);
 }
 
-class HomePageController extends HomeController {
+class HomePageControllerImp extends HomeController {
   int pageCount = 0;
   List<Widget> pageList = [
     const HomePageView(),
