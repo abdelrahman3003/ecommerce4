@@ -10,11 +10,12 @@ class ItemListView extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: 1,
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+      scrollDirection: Axis.vertical,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 2 / 3),
+      itemCount: 10,
       itemBuilder: (context, index) {
-        return ItemCard();
+        return const ItemCard();
       },
     );
   }
