@@ -11,6 +11,7 @@ abstract class HomeController extends GetxController {
 
 class HomePageControllerImp extends HomeController {
   int pageCount = 0;
+  bool isactive = false;
   List<Widget> pageList = [
     const HomePageView(),
     const FavouriteView(),
@@ -20,6 +21,7 @@ class HomePageControllerImp extends HomeController {
   @override
   changepage(i) {
     pageCount = i;
+
     update();
   }
 }

@@ -10,10 +10,11 @@ class AppbarItem extends GetView<HomePageControllerImp> {
     super.key,
     required this.iconName,
     required this.icon,
+    required this.isactive,
   });
   final String iconName;
   final IconData icon;
-
+  final bool isactive;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,17 +26,16 @@ class AppbarItem extends GetView<HomePageControllerImp> {
             onPressed: () {
               if (iconName == ConstanstValue.favourite) {
                 controller.changepage(1);
-              }
-              if (iconName == ConstanstValue.cart) {
+              } else if (iconName == ConstanstValue.cart) {
                 controller.changepage(2);
-              }
-              if (iconName == ConstanstValue.setting) {
+              } else if (iconName == ConstanstValue.setting) {
                 controller.changepage(3);
               } else {
                 controller.changepage(0);
               }
             },
-            icon: Icon(icon, size: 28, color: Colors.black),
+            icon: Icon(icon,
+                size: 28, color: isactive ? Colors.green : Colors.black),
           ),
           Text(
             iconName,
