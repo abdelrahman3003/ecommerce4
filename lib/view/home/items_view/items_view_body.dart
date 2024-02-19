@@ -2,7 +2,7 @@ import 'package:eccommerce4/view/home/home_page_view/home_appbar.dart';
 import 'package:flutter/material.dart';
 
 import 'categoriew_text_list.dart';
-import 'item_card.dart';
+import 'items_list_view.dart';
 
 class ItemsViewBody extends StatelessWidget {
   const ItemsViewBody({super.key});
@@ -16,7 +16,7 @@ class ItemsViewBody extends StatelessWidget {
         HomeAppbar(),
         SizedBox(height: 30),
         CategoriesTextList(),
-        ItemCard()
+        ItemListView()
       ],
     ));
   }
