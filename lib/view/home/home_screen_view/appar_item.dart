@@ -1,4 +1,5 @@
 import 'package:eccommerce4/controller/home/home_controller.dart';
+import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +36,8 @@ class AppbarItem extends GetView<HomePageControllerImp> {
               }
             },
             icon: Icon(icon,
-                size: 28, color: isactive ? Colors.green : Colors.black),
+                size: 28,
+                color: isactive ? ColorsApp.kprimaryColor1 : Colors.black),
           ),
           Text(
             iconName,
