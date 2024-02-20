@@ -3,6 +3,7 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/class/data_handling_request.dart';
 import '../../../core/constant/backlinks.dart';
 import 'product_cart.dart';
 
@@ -20,15 +21,18 @@ class ProductListView extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         GetBuilder<HomePageControllerImp>(
-          builder: (controller) => SizedBox(
-            height: 160,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              itemCount: controller.items.length,
-              itemBuilder: (context, index) => ProductCart(
-                  itemImage:
-                      "$itemsImageNameLink/${controller.items[index]['items_image']}"),
+          builder: (controller) => DataHandlingRequsetState(
+            statusRequest: controller.statusRequest,
+            widget: SizedBox(
+              height: 160,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: controller.items.length,
+                itemBuilder: (context, index) => ProductCart(
+                    itemImage:
+                        "$itemsImageNameLink/${controller.items[index]['items_image']}"),
+              ),
             ),
           ),
         )
