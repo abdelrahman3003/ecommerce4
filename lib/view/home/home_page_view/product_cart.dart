@@ -13,7 +13,7 @@ class ProductCart extends StatelessWidget {
             height: 160,
             width: 250,
             decoration: BoxDecoration(
-              color: Colors.amberAccent,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(30),
             ),
             child: Image.network(itemImage),
