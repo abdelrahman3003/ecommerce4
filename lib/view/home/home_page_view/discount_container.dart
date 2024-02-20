@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,8 @@ class DiscountContainer extends StatelessWidget {
       width: double.infinity,
       height: 165,
       decoration: BoxDecoration(
-          color: Colors.red, borderRadius: BorderRadius.circular(20)),
+          color: ColorsApp.kprimaryColor1,
+          borderRadius: BorderRadius.circular(20)),
       child: Stack(children: [
         Positioned(
           right: -20,
@@ -19,7 +21,7 @@ class DiscountContainer extends StatelessWidget {
             width: 170,
             height: 170,
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 179, 52, 43),
+                color: ColorsApp.kprimaryColor2,
                 borderRadius: BorderRadius.circular(150)),
           ),
         ),
