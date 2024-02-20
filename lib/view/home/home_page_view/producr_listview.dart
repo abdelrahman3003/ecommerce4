@@ -3,6 +3,7 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constant/backlinks.dart';
 import 'product_cart.dart';
 
 class ProductListView extends StatelessWidget {
@@ -26,7 +27,8 @@ class ProductListView extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               itemCount: controller.items.length,
               itemBuilder: (context, index) => ProductCart(
-                  itemImage: controller.items[index]['items_image']),
+                  itemImage:
+                      "$categoriesImageNameLink/${controller.categories[index]['categories_image']}"),
             ),
           ),
         )
