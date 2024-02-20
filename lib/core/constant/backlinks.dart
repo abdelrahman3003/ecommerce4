@@ -7,3 +7,4 @@ const String resetpasswordNameLink = "$serverNameLink/auth/resetpassword.php";
 const String homeNameLink = "$serverNameLink/home/getalldata.php";
 const String categoriesImageNameLink = "$serverNameLink/upload/categories";
 const String itemsImageNameLink = "$serverNameLink/upload/items";
+const String itemsNameLink = "$serverNameLink/items/item.php";

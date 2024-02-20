@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/home/items_controller.dart';
+import 'package:eccommerce4/controller/items/items_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
