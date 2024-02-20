@@ -48,6 +48,7 @@ class HomePageControllerImp extends HomeController {
       } else {
         categories.addAll(response['categories']);
         items.addAll(response['items']);
+        print(items[0]['items_image']);
         update();
       }
     }

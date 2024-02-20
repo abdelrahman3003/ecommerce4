@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ProductCart extends StatelessWidget {
   const ProductCart({super.key, required this.itemImage});
@@ -17,7 +16,7 @@ class ProductCart extends StatelessWidget {
               color: Colors.amberAccent,
               borderRadius: BorderRadius.circular(30),
             ),
-            child: SvgPicture.network(itemImage),
+            child: Image.network(itemImage),
           ),
         ],
       ),
