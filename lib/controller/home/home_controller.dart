@@ -19,6 +19,7 @@ class HomePageControllerImp extends HomeController {
   int pageCount = 0;
   bool isactive = false;
   List categories = [];
+  List items = [];
 
   List<Widget> pageList = [
     const HomePageView(),
@@ -46,6 +47,7 @@ class HomePageControllerImp extends HomeController {
         print("=========== 2");
       } else {
         categories.addAll(response['categories']);
+        items.addAll(response['items']);
         update();
       }
     }
