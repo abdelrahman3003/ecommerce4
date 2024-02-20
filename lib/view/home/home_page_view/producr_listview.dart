@@ -28,7 +28,7 @@ class ProductListView extends StatelessWidget {
               itemCount: controller.items.length,
               itemBuilder: (context, index) => ProductCart(
                   itemImage:
-                      "$categoriesImageNameLink/${controller.categories[index]['categories_image']}"),
+                      "$itemsImageNameLink/${controller.items[index]['items_image']}"),
             ),
           ),
         )
