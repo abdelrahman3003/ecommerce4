@@ -7,7 +7,6 @@ class GetItemData {
   getItemData(int id) async {
     var response =
         await crud.postData(itemsNameLink, {"categoryId": id.toString()});
-
     return response.fold((l) => l, (r) => r);
   }
 }

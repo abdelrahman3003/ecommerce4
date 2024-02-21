@@ -33,6 +33,7 @@ class ItemsControllerImp extends ItemsController {
 
   @override
   getItems(index) async {
+    items = [];
     statusRequest = StatusRequest.loading;
     update();
     var response = await getItemData.getItemData(index);
@@ -42,7 +43,6 @@ class ItemsControllerImp extends ItemsController {
         statusRequest = StatusRequest.failure;
       } else {
         items.addAll(response['data']);
-        print("=========$items");
         Get.toNamed(kItemsView);
       }
       update();
