@@ -1,10 +1,13 @@
+import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../data/datasource/remote/items/items_data.dart';
+import '../../core/functions/handling _data.dart';
 
 abstract class ItemsController extends GetxController {
   changeCategory(int i);
+  getItems(int index);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -29,8 +32,20 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  void onInit() {
-    super.onInit();
-    items = Get.arguments['items'];
+  getItems(index) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await getItemData.getItemData(index);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        items.addAll(response['data']);
+        print("=========$items");
+        Get.toNamed(kItemsView);
+      }
+      update();
+    }
   }
 }

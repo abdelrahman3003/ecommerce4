@@ -4,26 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/home/home_controller.dart';
+import '../../../controller/items/items_controller.dart';
 
-class CategoryCart extends GetView<HomePageControllerImp> {
+class CategoryCart extends StatelessWidget {
   const CategoryCart(
       {super.key,
-      required this.onTap,
+      required this.categoryid,
       required this.imgUrlCategory,
       required this.nameCategory});
   final String imgUrlCategory;
   final String nameCategory;
-
-  final Function()? onTap;
+  final int categoryid;
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ItemsControllerImp());
     return Padding(
       padding: const EdgeInsets.only(right: 12),
       child: Column(
         children: [
           GestureDetector(
-            onTap: onTap,
+            onTap: () {
+              controller.getItems(categoryid);
+            },
             child: Container(
                 height: 110,
                 width: 100,
