@@ -1,16 +1,19 @@
+import 'package:eccommerce4/controller/items/items_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
-import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
-class CategoryCart extends StatelessWidget {
+class CategoryCart extends GetView<ItemsControllerImp> {
   const CategoryCart(
-      {super.key, required this.imgUrlCategory, required this.nameCategory});
+      {super.key,
+      required this.categoryId,
+      required this.imgUrlCategory,
+      required this.nameCategory});
   final String imgUrlCategory;
   final String nameCategory;
-
+  final int categoryId;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +22,7 @@ class CategoryCart extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Get.toNamed(kItemsView);
+              controller.getItems(categoryId);
             },
             child: Container(
                 height: 110,

@@ -18,9 +18,11 @@ class CategoriesList extends GetView<HomePageControllerImp> {
         itemCount: controller.categories.length,
         itemBuilder: (context, index) {
           return CategoryCart(
-              nameCategory: controller.categories[index]['categories_name'],
-              imgUrlCategory:
-                  "$categoriesImageNameLink/${controller.categories[index]['categories_image']}");
+            categoryId: index,
+            nameCategory: controller.categories[index]['categories_name'],
+            imgUrlCategory:
+                "$categoriesImageNameLink/${controller.categories[index]['categories_image']}",
+          );
         },
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),

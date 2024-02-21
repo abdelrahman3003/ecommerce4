@@ -2,8 +2,16 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
-  const ItemCard({super.key});
-
+  const ItemCard(
+      {super.key,
+      required this.itemImage,
+      required this.itemTitle,
+      required this.itemDes,
+      required this.itemPrice});
+  final String itemImage;
+  final String itemTitle;
+  final String itemDes;
+  final String itemPrice;
   @override
   Widget build(BuildContext context) {
     return Card(

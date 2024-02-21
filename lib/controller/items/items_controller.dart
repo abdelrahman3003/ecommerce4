@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -14,6 +15,7 @@ class ItemsControllerImp extends ItemsController {
   StatusRequest statusRequest = StatusRequest.none;
   int pageCount = 0;
   int categoryNumer = 0;
+  List items = [];
   List<String> itemsList = [
     'Laptops',
     'Cameras',
@@ -39,7 +41,8 @@ class ItemsControllerImp extends ItemsController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
-        update();
+        items.addAll(response['data']);
+        Get.toNamed(kItemsView, arguments: {'items': items});
       }
     }
     update();
