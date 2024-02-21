@@ -2,7 +2,6 @@ import 'package:eccommerce4/controller/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/class/data_handling_request.dart';
 import '../../../core/shared/styles.dart';
 import 'categorie_list.dart';
 
@@ -20,10 +19,7 @@ class CategoriesListView extends StatelessWidget {
             style: Styles.textStyle20.copyWith(color: Colors.black),
           ),
           const SizedBox(height: 10),
-          DataHandlingRequsetState(
-            statusRequest: controller.statusRequest,
-            widget: const CategoriesList(),
-          )
+          const CategoriesList(),
         ],
       ),
     );

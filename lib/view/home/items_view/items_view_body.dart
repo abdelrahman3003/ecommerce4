@@ -1,6 +1,9 @@
+import 'package:eccommerce4/controller/items/items_controller.dart';
 import 'package:eccommerce4/view/home/home_page_view/home_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../core/class/data_handilng.dart';
 import 'categoriew_text_list.dart';
 import 'items_list_view.dart';
 
@@ -9,23 +12,27 @@ class ItemsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      physics: BouncingScrollPhysics(),
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              SizedBox(height: 30),
-              HomeAppbar(),
-              SizedBox(height: 30),
-              CategoriesTextList(),
-            ],
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: ItemListView(),
-        )
-      ],
-    );
+    Get.put(ItemsControllerImp());
+    return GetBuilder<ItemsControllerImp>(
+        builder: (controller) => CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                const SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 30),
+                      HomeAppbar(),
+                      SizedBox(height: 30),
+                      CategoriesTextList(),
+                    ],
+                  ),
+                ),
+                SliverToBoxAdapter(
+                    child: DataHandlingState(
+                  statusRequest: controller.statusRequest,
+                  widget: const ItemListView(),
+                ))
+              ],
+            ));
   }
 }

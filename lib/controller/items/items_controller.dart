@@ -38,13 +38,17 @@ class ItemsControllerImp extends ItemsController {
     update();
     var response = await getItemData.getItemData(index);
     statusRequest = handlingApiData(response);
+
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
+
+        Get.toNamed(kItemsView);
       } else {
         items.addAll(response['data']);
         Get.toNamed(kItemsView);
       }
+      categoryNumer = index;
       update();
     }
   }
