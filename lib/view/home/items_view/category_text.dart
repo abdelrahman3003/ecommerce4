@@ -14,20 +14,24 @@ class CategoryText extends GetView<ItemsControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: GestureDetector(
         onTap: () {
-          if (text == "Laptops") {
+          if (text == "Phone") {
             controller.changeCategory(0);
-          } else if (text == "Cameras") {
+            controller.getItems(1);
+          } else if (text == "Laptop") {
             controller.changeCategory(1);
-          } else if (text == "Phones") {
-            controller.changeCategory(2);
+            controller.getItems(2);
           } else if (text == "Shoses") {
-            controller.changeCategory(3);
+            controller.changeCategory(2);
+            controller.getItems(3);
           } else if (text == "HeadPhones") {
-            controller.changeCategory(4);
+            controller.changeCategory(3);
+            controller.getItems(4);
           } else if (text == "Tee_Shirts") {
-            controller.changeCategory(5);
+            controller.changeCategory(4);
+            controller.getItems(5);
           } else if (text == "Suits") {
-            controller.changeCategory(6);
+            controller.changeCategory(5);
+            controller.getItems(6);
           }
         },
         child: Column(

@@ -17,9 +17,8 @@ class ItemsControllerImp extends ItemsController {
   int categoryNumer = 0;
   List items = [];
   List<String> itemsList = [
-    'Laptops',
-    'Cameras',
-    'Phones',
+    'Phone',
+    'Laptop',
     'Shoses',
     'HeadPhones',
     'Tee_Shirts',
@@ -48,7 +47,7 @@ class ItemsControllerImp extends ItemsController {
         items.addAll(response['data']);
         Get.toNamed(kItemsView);
       }
-      categoryNumer = index;
+      categoryNumer = index - 1;
       update();
     }
   }
