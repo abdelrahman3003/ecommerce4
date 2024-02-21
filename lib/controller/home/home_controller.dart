@@ -67,12 +67,11 @@ class HomePageControllerImp extends HomeController {
         statusRequest = StatusRequest.failure;
       } else {
         items.addAll(response['data']);
-
         Get.toNamed(kItemsView, arguments: {'items': items});
-        items.length = 0;
+        print("=====##### ${items.length}");
       }
+      update();
     }
-    update();
   }
 
   @override
