@@ -31,7 +31,6 @@ class HomePageControllerImp extends HomeController {
   @override
   changepage(i) {
     pageCount = i;
-
     update();
   }
 
@@ -44,11 +43,9 @@ class HomePageControllerImp extends HomeController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-        print("=========== 2");
       } else {
         categories.addAll(response['categories']);
         items.addAll(response['items']);
-        print(items[0]['items_image']);
         update();
       }
     }

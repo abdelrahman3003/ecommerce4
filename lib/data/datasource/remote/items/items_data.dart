@@ -1,9 +1,9 @@
 import 'package:eccommerce4/core/class/crud.dart';
 import 'package:eccommerce4/core/constant/backlinks.dart';
 
-class getItemData {
+class GetItemData {
   Crud crud;
-  getItemData(this.crud);
+  GetItemData(this.crud);
   getitemData(int id) async {
     var response =
         await crud.getData(itemsNameLink, {"categoryId": id.toString()});
