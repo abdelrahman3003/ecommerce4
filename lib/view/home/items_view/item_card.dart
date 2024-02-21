@@ -11,7 +11,7 @@ class ItemCard extends StatelessWidget {
   final String itemImage;
   final String itemTitle;
   final String itemDes;
-  final String itemPrice;
+  final int itemPrice;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -21,22 +21,22 @@ class ItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              child: Image.asset(
-                "assets/images/1.PNG",
+              child: Image.network(
+                itemImage,
                 fit: BoxFit.fill,
               ),
             ),
-            Text("Mobile surface go",
+            Text(itemTitle,
                 style: Styles.textStyle20.copyWith(color: Colors.black)),
-            const Text(
-              "this moble have alot of features and strong power and bior camera 150 mb , 16 ram ,254 gb ",
+            Text(
+              itemDes,
               style: Styles.textStyle14,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
             ),
             Row(
               children: [
-                Text("2000 \$",
+                Text("$itemPrice",
                     style: Styles.textStyle20.copyWith(color: Colors.red)),
                 const Spacer(),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.favorite))

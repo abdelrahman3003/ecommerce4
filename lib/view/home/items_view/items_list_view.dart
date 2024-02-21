@@ -14,10 +14,10 @@ class ItemListView extends StatelessWidget {
     return GetBuilder<ItemsControllerImp>(
       builder: (controller) => GridView.builder(
         shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.vertical,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 2 / 3),
+            crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
         itemCount: controller.items.length,
         itemBuilder: (context, index) {
           return ItemCard(
