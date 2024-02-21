@@ -17,6 +17,7 @@ class Crud {
       if (await checkInternetConnection()) {
         var response = await http.get(Uri.parse(url), headers: myheaders);
         if (response.statusCode == 200) {
+          print("============= 555 ${response.body}");
           Map responsebody = jsonDecode(response.body);
           return right(responsebody);
         } else {
@@ -38,7 +39,6 @@ class Crud {
 
         if (response.statusCode == 200) {
           Map responsebody = jsonDecode(response.body);
-
           return right(responsebody);
         } else {
           return left(StatusRequest.serverFailure);
@@ -47,7 +47,6 @@ class Crud {
         return left(StatusRequest.offlineFailure);
       }
     } catch (e) {
-      print("========= 23");
       return left(StatusRequest.exceptionFailure);
     }
   }

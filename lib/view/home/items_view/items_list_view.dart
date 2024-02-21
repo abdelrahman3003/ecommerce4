@@ -10,6 +10,7 @@ class ItemListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(ItemsControllerImp());
     return GetBuilder<ItemsControllerImp>(
       builder: (controller) => GridView.builder(
         shrinkWrap: true,
