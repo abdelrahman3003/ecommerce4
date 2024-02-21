@@ -18,7 +18,9 @@ class CategoriesList extends GetView<HomePageControllerImp> {
         itemCount: controller.categories.length,
         itemBuilder: (context, index) {
           return CategoryCart(
-            categoryId: index,
+            onTap: () {
+              controller.getItems(index);
+            },
             nameCategory: controller.categories[index]['categories_name'],
             imgUrlCategory:
                 "$categoriesImageNameLink/${controller.categories[index]['categories_image']}",

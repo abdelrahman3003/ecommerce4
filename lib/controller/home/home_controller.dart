@@ -13,7 +13,7 @@ import '../../view/home/setting_view.dart';
 abstract class HomeController extends GetxController {
   changepage(int i);
   getAllDataHome();
-  getItems(int i);
+  getItems(int index);
 }
 
 class HomePageControllerImp extends HomeController {
@@ -57,18 +57,19 @@ class HomePageControllerImp extends HomeController {
   }
 
   @override
-  getItems(int i) async {
+  getItems(index) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await getItemData.getitemData(i);
+    var response = await getItemData.getItemData(index);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
-      print("=========== reponse ${response["status"]}");
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
         items.addAll(response['data']);
+
         Get.toNamed(kItemsView, arguments: {'items': items});
+        items.length = 0;
       }
     }
     update();

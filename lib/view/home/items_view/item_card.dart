@@ -34,9 +34,10 @@ class ItemCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
             ),
+            const Spacer(),
             Row(
               children: [
-                Text("$itemPrice",
+                Text("\$ $itemPrice",
                     style: Styles.textStyle20.copyWith(color: Colors.red)),
                 const Spacer(),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.favorite))

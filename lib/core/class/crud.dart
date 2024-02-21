@@ -39,6 +39,7 @@ class Crud {
 
         if (response.statusCode == 200) {
           Map responsebody = jsonDecode(response.body);
+          print("090000000${responsebody['data']}");
           return right(responsebody);
         } else {
           return left(StatusRequest.serverFailure);

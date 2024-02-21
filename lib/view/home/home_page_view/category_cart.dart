@@ -9,12 +9,13 @@ import '../../../controller/home/home_controller.dart';
 class CategoryCart extends GetView<HomePageControllerImp> {
   const CategoryCart(
       {super.key,
-      required this.categoryId,
+      required this.onTap,
       required this.imgUrlCategory,
       required this.nameCategory});
   final String imgUrlCategory;
   final String nameCategory;
-  final int categoryId;
+
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,9 +23,7 @@ class CategoryCart extends GetView<HomePageControllerImp> {
       child: Column(
         children: [
           GestureDetector(
-            onTap: () {
-              controller.getItems(categoryId);
-            },
+            onTap: onTap,
             child: Container(
                 height: 110,
                 width: 100,
