@@ -55,7 +55,7 @@ class ItemsControllerImp extends ItemsController {
 
   @override
   goToItemDetails() {
-    Get.toNamed(kItemDetailsView, arguments: ["itemModel"]);
+    Get.toNamed(kItemDetailsView, arguments: {"itemModel"});
     update();
   }
 }

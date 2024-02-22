@@ -1,9 +1,8 @@
 import 'package:eccommerce4/controller/items/items_view_controller.dart';
+import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:eccommerce4/view/items/widget/items/item_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../core/constant/backlinks.dart';
 
 class ItemListView extends StatelessWidget {
   const ItemListView({super.key});
@@ -20,11 +19,7 @@ class ItemListView extends StatelessWidget {
         itemCount: controller.items.length,
         itemBuilder: (context, index) {
           return ItemCard(
-            itemTitle: controller.items[index]['items_name'],
-            itemDes: controller.items[index]['items_des'],
-            itemImage:
-                "$itemsImageNameLink/${controller.items[index]['items_image']}",
-            itemPrice: controller.items[index]['items_price'],
+            itemModel: ItemModel.fromJson(controller.items[index]),
           );
         },
       ),

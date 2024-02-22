@@ -1,21 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
+import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/items_view_controller.dart';
+import '../../../../core/constant/backlinks.dart';
 
 class ItemCard extends GetView<ItemsControllerImp> {
-  const ItemCard(
-      {super.key,
-      required this.itemImage,
-      required this.itemTitle,
-      required this.itemDes,
-      required this.itemPrice});
-  final String itemImage;
-  final String itemTitle;
-  final String itemDes;
-  final int itemPrice;
+  const ItemCard({super.key, required this.itemModel});
+  final ItemModel itemModel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -30,17 +24,17 @@ class ItemCard extends GetView<ItemsControllerImp> {
             children: [
               SizedBox(
                 child: Hero(
-                  tag: itemImage,
+                  tag: itemModel.itemsImage!,
                   child: CachedNetworkImage(
-                    imageUrl: itemImage,
+                    imageUrl: "$itemsImageNameLink/${itemModel.itemsImage!}",
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
-              Text(itemTitle,
+              Text(itemModel.itemsName!,
                   style: Styles.textStyle20.copyWith(color: Colors.black)),
               Text(
-                itemDes,
+                itemModel.itemsDes!,
                 style: Styles.textStyle14,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
@@ -48,7 +42,7 @@ class ItemCard extends GetView<ItemsControllerImp> {
               const Spacer(),
               Row(
                 children: [
-                  Text("\$ $itemPrice",
+                  Text("\$ ${itemModel.itemsPrice}",
                       style: Styles.textStyle20.copyWith(color: Colors.red)),
                   const Spacer(),
                   IconButton(onPressed: () {}, icon: const Icon(Icons.favorite))
