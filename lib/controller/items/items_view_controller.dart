@@ -17,12 +17,12 @@ class ItemsControllerImp extends ItemsController {
   GetItemData getItemData = GetItemData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
   late int selectedCat;
-  int categoryNumer = 0;
+
   List items = [];
   List categories = [];
   @override
   changeCategory(i) {
-    categoryNumer = i;
+    selectedCat = i;
     update();
   }
 
@@ -42,7 +42,6 @@ class ItemsControllerImp extends ItemsController {
         items.addAll(response['data']);
         Get.toNamed(kItemsView);
       }
-      categoryNumer = index - 1;
       update();
     }
   }
