@@ -19,6 +19,7 @@ class CategoryText extends GetView<ItemsControllerImp> {
       child: GestureDetector(
         onTap: () {
           controller.changeCategory(id);
+          controller.getItems(id + 1);
         },
         child: Column(
           children: [
