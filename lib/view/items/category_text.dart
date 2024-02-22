@@ -2,7 +2,7 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controller/items/items_view_controller.dart';
+import '../../controller/items/items_view_controller.dart';
 
 class CategoryText extends GetView<ItemsControllerImp> {
   const CategoryText({super.key, required this.text, required this.isactive});

@@ -2,7 +2,7 @@ import 'package:eccommerce4/controller/items/items_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/constant/backlinks.dart';
+import '../../../core/constant/backlinks.dart';
 import 'item_card.dart';
 
 class ItemListView extends StatelessWidget {

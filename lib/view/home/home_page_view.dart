@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../controller/items/items_controller.dart';
+import '../../controller/items/items_view_controller.dart';
 import '../../core/class/data_handling_request.dart';
 import 'widget/home_page_view/home_view_body.dart';
 

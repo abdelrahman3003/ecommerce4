@@ -1,8 +1,9 @@
 import 'package:eccommerce4/controller/items/items_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
 
-import 'category_text.dart';
+import '../items/category_text.dart';
 
 class CategoriesTextList extends StatelessWidget {
   const CategoriesTextList({super.key});

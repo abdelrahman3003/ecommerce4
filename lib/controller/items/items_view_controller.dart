@@ -8,6 +8,7 @@ import '../../core/functions/handling _data.dart';
 abstract class ItemsController extends GetxController {
   changeCategory(int i);
   getItems(int index);
+  goToItemDetails();
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -51,4 +52,7 @@ class ItemsControllerImp extends ItemsController {
       update();
     }
   }
+
+  @override
+  goToItemDetails() {}
 }
