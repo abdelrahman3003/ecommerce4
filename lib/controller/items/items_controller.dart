@@ -34,10 +34,10 @@ class ItemsControllerImp extends ItemsController {
   getItems(index) async {
     items = [];
     statusRequest = StatusRequest.loading;
+    await Future.delayed(Duration(seconds: 4));
     update();
     var response = await getItemData.getItemData(index);
     statusRequest = handlingApiData(response);
-
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
@@ -45,7 +45,6 @@ class ItemsControllerImp extends ItemsController {
         Get.toNamed(kItemsView);
       } else {
         items.addAll(response['data']);
-        await Future.delayed(Duration(seconds: 3));
         Get.toNamed(kItemsView);
       }
       categoryNumer = index - 1;

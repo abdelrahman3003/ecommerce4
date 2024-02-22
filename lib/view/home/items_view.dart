@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'items_view/items_view_body.dart';
 
 class ItemsView extends StatelessWidget {
