@@ -45,6 +45,7 @@ class ItemsControllerImp extends ItemsController {
         Get.toNamed(kItemsView);
       } else {
         items.addAll(response['data']);
+        await Future.delayed(Duration(seconds: 3));
         Get.toNamed(kItemsView);
       }
       categoryNumer = index - 1;

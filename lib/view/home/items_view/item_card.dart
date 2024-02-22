@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -21,8 +22,8 @@ class ItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              child: Image.network(
-                itemImage,
+              child: CachedNetworkImage(
+                imageUrl: itemImage,
                 fit: BoxFit.fill,
               ),
             ),

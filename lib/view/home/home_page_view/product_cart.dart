@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ProductCart extends StatelessWidget {
@@ -16,7 +17,9 @@ class ProductCart extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
             ),
-            child: Image.network(itemImage),
+            child: CachedNetworkImage(
+              imageUrl: itemImage,
+            ),
           ),
         ],
       ),
