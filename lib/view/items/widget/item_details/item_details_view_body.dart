@@ -1,3 +1,4 @@
+import 'package:eccommerce4/view/items/widget/item_details/image_Background.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetailsViewBody extends StatelessWidget {
@@ -5,16 +6,8 @@ class ItemDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 250,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(40))),
-        ),
-      ],
+    return const Column(
+      children: [ImageBackground()],
     );
   }
 }

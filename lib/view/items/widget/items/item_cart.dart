@@ -1,10 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemCard extends StatelessWidget {
+import '../../../../controller/items/items_view_controller.dart';
+
+class ItemCard extends GetView<ItemsControllerImp> {
   const ItemCard(
       {super.key,
       required this.itemImage,
@@ -19,7 +20,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed(kItemDetailsView);
+        controller.goToItemDetails();
       },
       child: Card(
         child: Padding(
@@ -28,9 +29,12 @@ class ItemCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                child: CachedNetworkImage(
-                  imageUrl: itemImage,
-                  fit: BoxFit.fill,
+                child: Hero(
+                  tag: itemImage,
+                  child: CachedNetworkImage(
+                    imageUrl: itemImage,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               Text(itemTitle,
