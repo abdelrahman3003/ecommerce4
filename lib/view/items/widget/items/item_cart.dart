@@ -14,7 +14,7 @@ class ItemCard extends GetView<ItemsControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToItemDetails();
+        controller.goToItemDetails(itemModel);
       },
       child: Card(
         child: Padding(
@@ -24,9 +24,9 @@ class ItemCard extends GetView<ItemsControllerImp> {
             children: [
               SizedBox(
                 child: Hero(
-                  tag: itemModel.itemsImage!,
+                  tag: itemModel.itemsId!,
                   child: CachedNetworkImage(
-                    imageUrl: "$itemsImageNameLink/${itemModel.itemsImage!}",
+                    imageUrl: "$itemsImageNameLink/${itemModel.itemsImage}",
                     fit: BoxFit.fill,
                   ),
                 ),

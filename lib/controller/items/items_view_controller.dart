@@ -1,4 +1,5 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -8,7 +9,7 @@ import '../../core/functions/handling _data.dart';
 abstract class ItemsController extends GetxController {
   changeCategory(int i);
   getItems(int index);
-  goToItemDetails();
+  goToItemDetails(ItemModel itemModel);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -54,8 +55,8 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  goToItemDetails() {
-    Get.toNamed(kItemDetailsView, arguments: {"itemModel"});
+  goToItemDetails(itemModel) {
+    Get.toNamed(kItemDetailsView, arguments: {"itemModel": itemModel});
     update();
   }
 }

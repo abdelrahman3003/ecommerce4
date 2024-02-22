@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eccommerce4/core/constant/backlinks.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ImageBackground extends StatelessWidget {
+import '../../../../controller/items/item_details_controller.dart';
+
+class ImageBackground extends GetView<ItemDetailsControllerImp> {
   const ImageBackground({super.key});
 
   @override
@@ -23,10 +24,10 @@ class ImageBackground extends StatelessWidget {
           right: Get.width / 8,
           left: Get.width / 8,
           child: Hero(
-            tag: "laptop.png",
-            child:
-                CachedNetworkImage(imageUrl: "$itemsImageNameLink/laptop.png"),
-          ),
+              tag: "${controller.itemModel.itemsId}",
+              child: CachedNetworkImage(
+                imageUrl: controller.itemModel.itemsImage!,
+              )),
         )
       ],
     );
