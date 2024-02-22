@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
+import '../../../../core/constant/backlinks.dart';
 
 class ImageBackground extends StatelessWidget {
   const ImageBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ItemsDetailsControllerImp());
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -19,16 +21,17 @@ class ImageBackground extends StatelessWidget {
               color: Colors.red,
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(40))),
         ),
-        // Positioned(
-        //   top: 50,
-        //   right: Get.width / 8,
-        //   left: Get.width / 8,
-        //   child: Hero(
-        //       //tag: "${controller.itemModel.itemsId}",
-        //       child: CachedNetworkImage(
-        //         imageUrl: controller.itemModel.itemsImage!,
-        //       )),
-        // )
+        Positioned(
+          top: 50,
+          right: Get.width / 8,
+          left: Get.width / 8,
+          child: Hero(
+              tag: "${controller.itemModel.itemsId}",
+              child: CachedNetworkImage(
+                imageUrl:
+                    "$itemsImageNameLink/${controller.itemModel.itemsImage!}",
+              )),
+        )
       ],
     );
   }

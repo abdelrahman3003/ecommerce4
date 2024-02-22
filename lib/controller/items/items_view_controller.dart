@@ -17,7 +17,6 @@ class ItemsControllerImp extends ItemsController {
   GetItemData getItemData = GetItemData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
   late int selectedCat;
-
   List items = [];
   List categories = [];
   @override
