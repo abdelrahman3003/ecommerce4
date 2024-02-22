@@ -35,7 +35,7 @@ class ItemsControllerImp extends ItemsController {
   getItems(index) async {
     items = [];
     statusRequest = StatusRequest.loading;
-    await Future.delayed(Duration(seconds: 4));
+
     update();
     var response = await getItemData.getItemData(index);
     statusRequest = handlingApiData(response);
@@ -54,5 +54,8 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  goToItemDetails() {}
+  goToItemDetails() {
+    Get.toNamed(kItemDetailsView, arguments: ["itemModel"]);
+    update();
+  }
 }

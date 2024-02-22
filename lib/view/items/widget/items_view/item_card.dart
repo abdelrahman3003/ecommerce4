@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ItemCard extends StatelessWidget {
+import '../../../../controller/items/items_view_controller.dart';
+
+class ItemCard extends GetView<ItemsControllerImp> {
   const ItemCard(
       {super.key,
       required this.itemImage,
@@ -16,7 +19,9 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        controller.goToItemDetails();
+      },
       child: Card(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
