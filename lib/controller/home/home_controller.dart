@@ -15,7 +15,6 @@ class HomePageControllerImp extends HomeController {
   GetItemData getItemData = GetItemData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
   int pageCount = 0;
-  bool isactive = false;
   List categories = [];
   List items = [];
 
@@ -43,10 +42,11 @@ class HomePageControllerImp extends HomeController {
   }
 
   @override
-  goToItems(List categoreis, int selectedCat) {
+  goToItems(categoreis, selectedCa) {
     Get.toNamed(
-      kItemDetailsView,
-      arguments: {"categories": categories, "selectedCat": selectedCat},
+      kItemsView,
+      arguments: {"categories": categories, "selectedCat": selectedCa},
     );
+    update();
   }
 }

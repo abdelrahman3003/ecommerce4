@@ -57,11 +57,13 @@ class ItemsControllerImp extends ItemsController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
+    inialData();
   }
 
   @override
   inialData() {
     categories = Get.arguments['categories'];
     selectedCat = Get.arguments['selectedCat'];
+    update();
   }
 }

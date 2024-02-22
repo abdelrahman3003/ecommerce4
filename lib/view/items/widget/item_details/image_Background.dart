@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
 
-class ImageBackground extends GetView<ItemDetailsControllerImp> {
+class ImageBackground extends StatelessWidget {
   const ImageBackground({super.key});
 
   @override
@@ -19,16 +19,16 @@ class ImageBackground extends GetView<ItemDetailsControllerImp> {
               color: Colors.red,
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(40))),
         ),
-        Positioned(
-          top: 50,
-          right: Get.width / 8,
-          left: Get.width / 8,
-          child: Hero(
-              tag: "${controller.itemModel.itemsId}",
-              child: CachedNetworkImage(
-                imageUrl: controller.itemModel.itemsImage!,
-              )),
-        )
+        // Positioned(
+        //   top: 50,
+        //   right: Get.width / 8,
+        //   left: Get.width / 8,
+        //   child: Hero(
+        //       //tag: "${controller.itemModel.itemsId}",
+        //       child: CachedNetworkImage(
+        //         imageUrl: controller.itemModel.itemsImage!,
+        //       )),
+        // )
       ],
     );
   }

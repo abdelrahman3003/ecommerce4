@@ -17,7 +17,9 @@ class CategoryText extends GetView<ItemsControllerImp> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          controller.changeCategory(id);
+        },
         child: Column(
           children: [
             SizedBox(

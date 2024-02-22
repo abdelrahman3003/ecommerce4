@@ -23,7 +23,7 @@ class CategoriesTextList extends StatelessWidget {
             return CategoryText(
               text:
                   "${CategoriesModel.fromJson(controller.categories[index]).categoriesName}",
-              id: controller.selectedCat,
+              id: index,
             );
           },
         ),

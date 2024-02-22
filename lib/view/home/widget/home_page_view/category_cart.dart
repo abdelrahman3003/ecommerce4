@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/constant/backlinks.dart';
+
 class CategoryCart extends GetView<HomePageControllerImp> {
   const CategoryCart({
     super.key,
@@ -32,7 +34,8 @@ class CategoryCart extends GetView<HomePageControllerImp> {
                   color: ColorsApp.kprimaryColor2,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: SvgPicture.network(categoriesModel.categoriesImage!)),
+                child: SvgPicture.network(
+                    "$categoriesImageNameLink/${categoriesModel.categoriesImage!}")),
           ),
           Text(categoriesModel.categoriesName!, style: Styles.textStyle18)
         ],

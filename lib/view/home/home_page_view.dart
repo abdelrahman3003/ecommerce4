@@ -1,5 +1,4 @@
 import 'package:eccommerce4/controller/home/home_controller.dart';
-import 'package:eccommerce4/controller/home/home_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +10,7 @@ class HomePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeScreenControllerImp());
+    Get.put(HomePageControllerImp());
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: GetBuilder<HomePageControllerImp>(
