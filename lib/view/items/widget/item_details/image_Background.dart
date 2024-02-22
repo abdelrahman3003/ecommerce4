@@ -27,9 +27,14 @@ class ImageBackground extends StatelessWidget {
           left: Get.width / 8,
           child: Hero(
               tag: "${controller.itemModel.itemsId}",
-              child: CachedNetworkImage(
-                imageUrl:
-                    "$itemsImageNameLink/${controller.itemModel.itemsImage!}",
+              child: SizedBox(
+                width: 200,
+                height: 200,
+                child: CachedNetworkImage(
+                  imageUrl:
+                      "$itemsImageNameLink/${controller.itemModel.itemsImage!}",
+                  fit: BoxFit.fill,
+                ),
               )),
         )
       ],

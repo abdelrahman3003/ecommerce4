@@ -24,7 +24,7 @@ class ItemCard extends GetView<ItemsControllerImp> {
             children: [
               SizedBox(
                 child: Hero(
-                  tag: itemModel.itemsId!,
+                  tag: "${itemModel.itemsId!}",
                   child: CachedNetworkImage(
                     imageUrl: "$itemsImageNameLink/${itemModel.itemsImage}",
                     fit: BoxFit.fill,
