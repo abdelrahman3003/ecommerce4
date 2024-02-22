@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../items/items_view_body.dart';
+import 'widget/items_view/items_view_body.dart';
 
 class ItemsView extends StatelessWidget {
   const ItemsView({super.key});

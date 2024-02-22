@@ -14,7 +14,7 @@ import 'package:get/route_manager.dart';
 
 import '../../view/auth/verifycode.dart';
 import '../../view/home/home_screen_view.dart';
-import '../../view/home/items_view.dart';
+import '../../view/items/items_view.dart';
 
 const konboarding = "/Onboarding";
 const kSignin = "/Signin";
