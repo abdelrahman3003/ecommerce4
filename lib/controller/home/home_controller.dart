@@ -1,17 +1,11 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/data/datasource/remote/home/home_data.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../data/datasource/remote/items/items_data.dart';
-import '../../view/home/cart_view.dart';
-import '../../view/home/favotite_view.dart';
-import '../../view/home/home_page_view.dart';
-import '../../view/home/setting_view.dart';
 
 abstract class HomeController extends GetxController {
-  changepage(int i);
   getAllDataHome();
   goToItems(List categoreis, int selectedCa);
 }
@@ -24,19 +18,6 @@ class HomePageControllerImp extends HomeController {
   bool isactive = false;
   List categories = [];
   List items = [];
-
-  List<Widget> pageList = [
-    const HomePageView(),
-    const FavouriteView(),
-    const CartView(),
-    const SettingView()
-  ];
-
-  @override
-  changepage(i) {
-    pageCount = i;
-    update();
-  }
 
   @override
   getAllDataHome() async {

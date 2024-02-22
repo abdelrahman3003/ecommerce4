@@ -1,7 +1,7 @@
-import 'package:eccommerce4/controller/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../controller/home/home_screen_controller.dart';
 import '../../../../core/constant/constatns_value.dart';
 import 'appar_item.dart';
 
@@ -10,7 +10,7 @@ class AppBottomNavigatorBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomePageControllerImp>(
+    return GetBuilder<HomeScreenControllerImp>(
       builder: (controller) => BottomAppBar(
         shape: const CircularNotchedRectangle(),
         notchMargin: 10,

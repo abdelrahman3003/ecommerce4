@@ -1,9 +1,8 @@
-import 'package:eccommerce4/controller/home/home_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
 
+import '../../controller/home/home_screen_controller.dart';
 import 'widget/home_screen_view/custom_botttom_navigatorbar.dart';
 
 class HomeScreenView extends StatelessWidget {
@@ -11,7 +10,7 @@ class HomeScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomePageControllerImp());
+    Get.put(HomeScreenControllerImp());
     return Scaffold(
         bottomNavigationBar: const AppBottomNavigatorBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -19,7 +18,7 @@ class HomeScreenView extends StatelessWidget {
             backgroundColor: ColorsApp.kprimaryColor1,
             onPressed: () {},
             child: const Icon(Icons.home)),
-        body: GetBuilder<HomePageControllerImp>(
+        body: GetBuilder<HomeScreenControllerImp>(
           builder: (controller) {
             return SafeArea(child: controller.pageList[controller.pageCount]);
           },
