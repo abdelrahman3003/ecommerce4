@@ -3,8 +3,8 @@ import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/constatns_value.dart';
-import '../../../core/shared/styles.dart';
+import '../../../../core/constant/constatns_value.dart';
+import '../../../../core/shared/styles.dart';
 
 class AppbarItem extends GetView<HomePageControllerImp> {
   const AppbarItem({

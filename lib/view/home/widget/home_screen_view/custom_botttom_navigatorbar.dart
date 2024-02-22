@@ -2,7 +2,7 @@ import 'package:eccommerce4/controller/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/constatns_value.dart';
+import '../../../../core/constant/constatns_value.dart';
 import 'appar_item.dart';
 
 class AppBottomNavigatorBar extends StatelessWidget {

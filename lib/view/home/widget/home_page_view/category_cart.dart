@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/items/items_controller.dart';
+import '../../../../controller/items/items_controller.dart';
 
 class CategoryCart extends StatelessWidget {
   const CategoryCart(

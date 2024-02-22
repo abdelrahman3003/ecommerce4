@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/state_manager.dart';
 
-import '../../../controller/home/home_controller.dart';
-import '../../../core/constant/backlinks.dart';
+import '../../../../controller/home/home_controller.dart';
+import '../../../../core/constant/backlinks.dart';
 import 'category_cart.dart';
 
 class CategoriesList extends GetView<HomePageControllerImp> {

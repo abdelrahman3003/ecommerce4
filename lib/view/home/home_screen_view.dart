@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
-import 'home_screen_view/custom_botttom_navigatorbar.dart';
+import 'widget/home_screen_view/custom_botttom_navigatorbar.dart';
 
 class HomeScreenView extends StatelessWidget {
   const HomeScreenView({super.key});
