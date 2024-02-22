@@ -12,6 +12,7 @@ class ItemsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(ItemsControllerImp);
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [

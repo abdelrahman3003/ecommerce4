@@ -4,25 +4,23 @@ import 'package:eccommerce4/view/items/widget/items_view/item_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemListView extends StatelessWidget {
+class ItemListView extends GetView<ItemsControllerImp> {
   const ItemListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ItemsControllerImp>(
-      builder: (controller) => GridView.builder(
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.vertical,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
-        itemCount: controller.items.length,
-        itemBuilder: (context, index) {
-          return ItemCard(
-            itemModel: ItemModel.fromJson(controller.items[index]),
-          );
-        },
-      ),
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      scrollDirection: Axis.vertical,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
+      itemCount: controller.items.length,
+      itemBuilder: (context, index) {
+        return ItemCard(
+          itemModel: ItemModel.fromJson(controller.items[index]),
+        );
+      },
     );
   }
 }
