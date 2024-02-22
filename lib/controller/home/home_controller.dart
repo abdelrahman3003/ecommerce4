@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/data/datasource/remote/home/home_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ import '../../view/home/setting_view.dart';
 abstract class HomeController extends GetxController {
   changepage(int i);
   getAllDataHome();
+  goToItems(List categoreis, int selectedCa);
 }
 
 class HomePageControllerImp extends HomeController {
@@ -57,5 +59,13 @@ class HomePageControllerImp extends HomeController {
   void onInit() {
     super.onInit();
     getAllDataHome();
+  }
+
+  @override
+  goToItems(List categoreis, int selectedCat) {
+    Get.toNamed(
+      kItemDetailsView,
+      arguments: {"categories": categories, "selectedCat": selectedCat},
+    );
   }
 }

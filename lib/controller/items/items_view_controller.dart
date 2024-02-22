@@ -10,22 +10,16 @@ abstract class ItemsController extends GetxController {
   changeCategory(int i);
   getItems(int index);
   goToItemDetails(ItemModel itemModel);
+  inialData();
 }
 
 class ItemsControllerImp extends ItemsController {
   GetItemData getItemData = GetItemData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
-  int pageCount = 0;
+  late int selectedCat;
   int categoryNumer = 0;
   List items = [];
-  List<String> itemsList = [
-    'Phone',
-    'Laptop',
-    'Shoses',
-    'HeadPhones',
-    'Tee_Shirts',
-    'Suits'
-  ];
+  List categories = [];
   @override
   changeCategory(i) {
     categoryNumer = i;
@@ -36,7 +30,6 @@ class ItemsControllerImp extends ItemsController {
   getItems(index) async {
     items = [];
     statusRequest = StatusRequest.loading;
-
     update();
     var response = await getItemData.getItemData(index);
     statusRequest = handlingApiData(response);
@@ -58,5 +51,17 @@ class ItemsControllerImp extends ItemsController {
   goToItemDetails(itemModel) {
     Get.toNamed(kItemDetailsView, arguments: {"itemModel": itemModel});
     update();
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
+
+  @override
+  inialData() {
+    categories = Get.arguments['categories'];
+    selectedCat = Get.arguments['selectedCat'];
   }
 }

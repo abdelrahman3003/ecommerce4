@@ -1,8 +1,8 @@
+import 'package:eccommerce4/data/model/categories_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/state_manager.dart';
 
 import '../../../../controller/home/home_controller.dart';
-import '../../../../core/constant/backlinks.dart';
 import 'category_cart.dart';
 
 class CategoriesList extends GetView<HomePageControllerImp> {
@@ -18,10 +18,9 @@ class CategoriesList extends GetView<HomePageControllerImp> {
         itemCount: controller.categories.length,
         itemBuilder: (context, index) {
           return CategoryCart(
-            categoryid: index + 1,
-            nameCategory: controller.categories[index]['categories_name'],
-            imgUrlCategory:
-                "$categoriesImageNameLink/${controller.categories[index]['categories_image']}",
+            categoryid: index,
+            categoriesModel:
+                CategoriesModel.fromJson(controller.categories[index]),
           );
         },
         scrollDirection: Axis.horizontal,

@@ -1,6 +1,6 @@
 import 'package:eccommerce4/controller/items/items_view_controller.dart';
 import 'package:eccommerce4/data/model/items_model.dart';
-import 'package:eccommerce4/view/items/widget/items/item_cart.dart';
+import 'package:eccommerce4/view/items/widget/items_view/item_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
