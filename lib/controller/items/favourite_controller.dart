@@ -29,7 +29,7 @@ class FavouriteControllerImp extends FavouriteController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await addToFavourite.addFavourite(
-        itemid, appServices.sharedPreferences.getString("id")!);
+        "$itemid", appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
@@ -37,9 +37,9 @@ class FavouriteControllerImp extends FavouriteController {
       } else {
         Get.rawSnackbar(
             title: "alarm",
-            messageText: const Text(
+            messageText: Text(
               "this product is removed to favourites",
-              style: Styles.textStyle16,
+              style: Styles.textStyle16.copyWith(color: Colors.white),
             ));
       }
     }
@@ -50,7 +50,7 @@ class FavouriteControllerImp extends FavouriteController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await addToFavourite.removeFavourite(
-        itemid, appServices.sharedPreferences.getString("id")!);
+        "$itemid", appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {

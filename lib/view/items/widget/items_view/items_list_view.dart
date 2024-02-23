@@ -22,6 +22,7 @@ class ItemListView extends GetView<ItemsControllerImp> {
       itemBuilder: (context, index) {
         favouriteController.favourite[controller.items[index]['items_id']] =
             controller.items[index]['favourite'];
+        print("itemid= ${controller.items[index]['favourite']}");
         return ItemCard(
           itemModel: ItemModel.fromJson(controller.items[index]),
         );
