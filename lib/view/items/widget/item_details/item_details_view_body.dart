@@ -1,4 +1,5 @@
 import 'package:eccommerce4/view/items/widget/item_details/image_Background.dart';
+import 'package:eccommerce4/view/items/widget/item_details/item_price.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,7 @@ class ItemDetailsViewBody extends StatelessWidget {
         children: [
           ImageBackground(itemImage: controller.itemModel.itemsImage!),
           ItemTitle(text: controller.itemModel.itemsName!),
+          ItemPrice()
         ],
       ),
     );
