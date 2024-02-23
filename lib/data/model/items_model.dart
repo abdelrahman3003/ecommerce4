@@ -78,6 +78,7 @@ class ItemModel {
     data['categories_name_ar'] = this.categoriesNameAr;
     data['categories_image'] = this.categoriesImage;
     data['categories_datetime'] = this.categoriesDatetime;
+    data['favourite'] = this.favourite;
 
     return data;
   }

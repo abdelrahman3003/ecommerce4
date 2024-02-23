@@ -8,8 +8,10 @@ import '../../../../controller/items/items_view_controller.dart';
 import '../../../../core/constant/backlinks.dart';
 
 class ItemCard extends GetView<ItemsControllerImp> {
-  const ItemCard({super.key, required this.itemModel});
+  const ItemCard(
+      {super.key, required this.itemModel, required this.isfavourite});
   final ItemModel itemModel;
+  final bool isfavourite;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -45,7 +47,12 @@ class ItemCard extends GetView<ItemsControllerImp> {
                   Text("\$ ${itemModel.itemsPrice}",
                       style: Styles.textStyle20.copyWith(color: Colors.red)),
                   const Spacer(),
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.favorite))
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        isfavourite ? Icons.favorite : Icons.favorite_outline,
+                        color: Colors.red,
+                      ))
                 ],
               )
             ],
