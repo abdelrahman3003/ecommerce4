@@ -1,4 +1,5 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:eccommerce4/core/services/services.dart';
 import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,7 @@ abstract class ItemsController extends GetxController {
 
 class ItemsControllerImp extends ItemsController {
   GetItemData getItemData = GetItemData(Get.find());
+  AppServices appServices = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
   late int selectedCat;
   List items = [];
@@ -30,7 +32,8 @@ class ItemsControllerImp extends ItemsController {
     items = [];
     statusRequest = StatusRequest.loading;
     update();
-    var response = await getItemData.getItemData(categoryId);
+    var response = await getItemData.getItemData(
+        categoryId, appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {

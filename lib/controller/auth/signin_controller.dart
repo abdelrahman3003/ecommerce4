@@ -30,7 +30,7 @@ class SigninController extends GetxController {
         appServices.sharedPreferences
             .setString("username", "${response['data'][0]['users_name']}");
         appServices.sharedPreferences
-            .setString("username", response['data'][0]['users_name']);
+            .setString("id", "${response['data'][0]['users_id']}");
         appServices.sharedPreferences
             .setString("email", response['data'][0]['users_email']);
         appServices.sharedPreferences
