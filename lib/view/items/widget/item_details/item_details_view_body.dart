@@ -15,8 +15,15 @@ class ItemDetailsViewBody extends StatelessWidget {
       builder: (controller) => Column(
         children: [
           ImageBackground(itemImage: controller.itemModel.itemsImage!),
-          ItemTitle(text: controller.itemModel.itemsName!),
-          ItemPrice()
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Column(
+              children: [
+                ItemTitle(text: controller.itemModel.itemsName!),
+                ItemPrice(price: "${controller.itemModel.itemsPrice!}"),
+              ],
+            ),
+          )
         ],
       ),
     );
