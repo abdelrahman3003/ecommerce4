@@ -19,9 +19,9 @@ class ItemColors extends StatelessWidget {
         const SizedBox(height: 8),
         const Row(
           children: [
-            ColorContainer(colorName: "Red", isActive: true),
-            ColorContainer(colorName: "Grey", isActive: true),
-            ColorContainer(colorName: "Black", isActive: false)
+            ColorContainer(colorName: "White"),
+            ColorContainer(colorName: "Grey"),
+            ColorContainer(colorName: "Black")
           ],
         )
       ],
