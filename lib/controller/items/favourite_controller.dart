@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 abstract class FavouriteController extends GetxController {
-  setFavourite(String id, String val);
+  setFavourite(id, val);
 }
 
 class FavouriteControllerImp extends FavouriteController {
@@ -9,5 +9,6 @@ class FavouriteControllerImp extends FavouriteController {
   @override
   setFavourite(id, val) {
     favourite[id] = val;
+    update();
   }
 }

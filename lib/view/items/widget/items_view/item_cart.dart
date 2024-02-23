@@ -51,16 +51,14 @@ class ItemCard extends GetView<ItemsControllerImp> {
                   GetBuilder<FavouriteControllerImp>(
                     builder: (controller) => IconButton(
                         onPressed: () {
-                          if (controller.favourite[itemModel.itemsId] == "1") {
-                            controller.setFavourite(
-                                "${itemModel.itemsId}", "0");
+                          if (controller.favourite[itemModel.itemsId] == 1) {
+                            controller.setFavourite(itemModel.itemsId, 0);
                           } else {
-                            controller.setFavourite(
-                                "${itemModel.itemsId}", "1");
+                            controller.setFavourite(itemModel.itemsId, 1);
                           }
                         },
                         icon: Icon(
-                          controller.favourite[itemModel.favourite] == "1"
+                          controller.favourite[itemModel.itemsId] == 1
                               ? Icons.favorite
                               : Icons.favorite_outline,
                           color: Colors.red,
