@@ -10,7 +10,8 @@ class ItemTitle extends StatelessWidget {
       alignment: Alignment.bottomLeft,
       child: Text(
         text,
-        style: Styles.textStyle25.copyWith(color: Colors.black),
+        style: Styles.textStyle25
+            .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
       ),
     );
   }

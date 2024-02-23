@@ -45,7 +45,7 @@ class ItemPrice extends StatelessWidget {
         ),
         Text(
           "\$ $price",
-          style: Styles.textStyle20.copyWith(color: Colors.red),
+          style: Styles.textStyle25.copyWith(color: Colors.red),
         )
       ],
     );
