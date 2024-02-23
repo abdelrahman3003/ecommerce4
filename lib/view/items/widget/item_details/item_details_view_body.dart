@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
+import 'item_des.dart';
 import 'title.dart';
 
 class ItemDetailsViewBody extends StatelessWidget {
@@ -19,8 +20,14 @@ class ItemDetailsViewBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Column(
               children: [
+                const SizedBox(height: 40),
                 ItemTitle(text: controller.itemModel.itemsName!),
+                const SizedBox(height: 12),
                 ItemPrice(price: "${controller.itemModel.itemsPrice!}"),
+                const SizedBox(height: 30),
+                ItemDes(
+                  des: "${controller.itemModel.itemsDes}",
+                )
               ],
             ),
           )
