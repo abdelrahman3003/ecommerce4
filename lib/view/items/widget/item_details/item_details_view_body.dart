@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
+import 'item_colors.dart';
 import 'item_des.dart';
 import 'title.dart';
 
@@ -27,7 +28,9 @@ class ItemDetailsViewBody extends StatelessWidget {
                 const SizedBox(height: 30),
                 ItemDes(
                   des: "${controller.itemModel.itemsDes}",
-                )
+                ),
+                const SizedBox(height: 10),
+                const ItemColors()
               ],
             ),
           )
