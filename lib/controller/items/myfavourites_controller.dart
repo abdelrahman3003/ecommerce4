@@ -1,3 +1,4 @@
+import 'package:eccommerce4/data/model/myfavourites_model.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -13,7 +14,7 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
   StatusRequest statusRequest = StatusRequest.none;
   AppServices appServices = Get.find();
   MyFavourites myFavourites = MyFavourites(Get.find());
-  List myfavouritesList = [];
+  List<MyfavouritesModel> myfavouritesList = [];
   @override
   viewMyfavourite() async {
     statusRequest = StatusRequest.loading;
@@ -25,9 +26,19 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
-        myfavouritesList = response['data'];
+        List reponseData = response['data'];
+        myfavouritesList
+            .addAll(reponseData.map((e) => MyfavouritesModel.fromJson(e)));
       }
+      update();
     }
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    viewMyfavourite();
     update();
   }
 }
