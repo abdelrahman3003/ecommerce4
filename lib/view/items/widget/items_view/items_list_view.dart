@@ -18,7 +18,6 @@ class ItemListView extends GetView<ItemsControllerImp> {
       itemCount: controller.items.length,
       itemBuilder: (context, index) {
         return ItemCard(
-          isfavourite: false,
           itemModel: ItemModel.fromJson(controller.items[index]),
         );
       },

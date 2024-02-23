@@ -8,10 +8,9 @@ import '../../../../controller/items/items_view_controller.dart';
 import '../../../../core/constant/backlinks.dart';
 
 class ItemCard extends GetView<ItemsControllerImp> {
-  const ItemCard(
-      {super.key, required this.itemModel, required this.isfavourite});
+  const ItemCard({super.key, required this.itemModel});
   final ItemModel itemModel;
-  final bool isfavourite;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -24,6 +23,7 @@ class ItemCard extends GetView<ItemsControllerImp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
               SizedBox(
                 child: Hero(
                   tag: "${itemModel.itemsId!}",
@@ -50,7 +50,9 @@ class ItemCard extends GetView<ItemsControllerImp> {
                   IconButton(
                       onPressed: () {},
                       icon: Icon(
-                        isfavourite ? Icons.favorite : Icons.favorite_outline,
+                        itemModel.favourite == "1"
+                            ? Icons.favorite
+                            : Icons.favorite_outline,
                         color: Colors.red,
                       ))
                 ],
