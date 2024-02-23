@@ -20,23 +20,28 @@ class ItemDetailsViewBody extends StatelessWidget {
           ImageBackground(itemImage: controller.itemModel.itemsImage!),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Column(
-              children: [
-                const SizedBox(height: 40),
-                ItemTitle(text: controller.itemModel.itemsName!),
-                const SizedBox(height: 12),
-                ItemPrice(price: "${controller.itemModel.itemsPrice!}"),
-                const SizedBox(height: 30),
-                ItemDes(
-                  des: "${controller.itemModel.itemsDes}",
-                ),
-                const SizedBox(height: 10),
-                const ItemColors(),
-                const SizedBox(height: 10),
-                const AddCartButton()
-              ],
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  const SizedBox(height: 40),
+                  ItemTitle(text: controller.itemModel.itemsName!),
+                  const SizedBox(height: 12),
+                  ItemPrice(price: "${controller.itemModel.itemsPrice!}"),
+                  const SizedBox(height: 30),
+                  ItemDes(
+                    des: "${controller.itemModel.itemsDes}",
+                  ),
+                  const SizedBox(height: 10),
+                  const ItemColors(),
+                  const SizedBox(height: 10),
+                ],
+              ),
             ),
-          )
+          ),
+          const Spacer(),
+          const AddCartButton(),
+          const SizedBox(height: 10),
         ],
       ),
     );

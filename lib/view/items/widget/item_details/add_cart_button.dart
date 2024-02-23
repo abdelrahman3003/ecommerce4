@@ -6,11 +6,14 @@ class AddCartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnboardingButton(
-      text: "Add To Cart",
-      onPressed: () {},
-      width: double.infinity,
-      borderRadius: 10,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: OnboardingButton(
+        text: "Add To Cart",
+        onPressed: () {},
+        width: double.infinity,
+        borderRadius: 10,
+      ),
     );
   }
 }
