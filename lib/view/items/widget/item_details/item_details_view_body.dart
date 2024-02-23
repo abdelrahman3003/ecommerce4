@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
+import 'add_cart_button.dart';
 import 'item_colors.dart';
 import 'item_des.dart';
 import 'title.dart';
@@ -30,7 +31,9 @@ class ItemDetailsViewBody extends StatelessWidget {
                   des: "${controller.itemModel.itemsDes}",
                 ),
                 const SizedBox(height: 10),
-                const ItemColors()
+                const ItemColors(),
+                const SizedBox(height: 10),
+                const AddCartButton()
               ],
             ),
           )

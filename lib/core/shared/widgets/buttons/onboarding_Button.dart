@@ -10,23 +10,23 @@ class OnboardingButton extends StatelessWidget {
     this.width = 170,
     required this.onPressed,
     this.color = ColorsApp.kprimaryColor1,
+    this.borderRadius = 20,
   });
 
   final Function()? onPressed;
   final String text;
   final double width;
   final Color color;
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
       height: 50,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
+          borderRadius: BorderRadius.circular(borderRadius), color: color),
       child: MaterialButton(
         onPressed: onPressed,
-        color: color,
         child: Text(
           text,
           style: Styles.textStyle18.copyWith(color: Colors.white),

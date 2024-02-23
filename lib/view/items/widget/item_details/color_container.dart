@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/colors.dart';
 import '../../../../core/shared/styles.dart';
 
 class ColorContainer extends StatelessWidget {
@@ -16,9 +15,9 @@ class ColorContainer extends StatelessWidget {
         width: 90,
         height: 60,
         decoration: BoxDecoration(
-            color: isActive ? ColorsApp.kprimaryColor1 : Colors.white,
+            color: isActive ? Colors.black : Colors.white,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: ColorsApp.kprimaryColor1, width: 2)),
+            border: Border.all(color: Colors.black, width: 2)),
         child: Center(
           child: Text(
             colorName,
