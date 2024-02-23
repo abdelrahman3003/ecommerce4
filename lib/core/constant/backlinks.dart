@@ -12,3 +12,4 @@ const String addtofavouriteNameLink =
     "$serverNameLink/favourite/addToFavourite.php";
 const String removefromfavouriteNameLink =
     "$serverNameLink/favourite/removeFroomFavourite.php";
+const String viewmyfavourites = "$serverNameLink/favourite/view.php";

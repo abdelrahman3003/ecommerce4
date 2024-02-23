@@ -11,11 +11,13 @@ abstract class FavouriteController extends GetxController {
   setFavourite(id, val);
   addFavourite(itemid);
   removeFavourite(itemid);
+  viewmyfavourites();
 }
 
 class FavouriteControllerImp extends FavouriteController {
   StatusRequest statusRequest = StatusRequest.none;
   AddToFavourite addToFavourite = AddToFavourite(Get.find());
+  List myfavouritesList = [];
   AppServices appServices = Get.find();
   Map favourite = {};
   @override
@@ -64,5 +66,22 @@ class FavouriteControllerImp extends FavouriteController {
             ));
       }
     }
+  }
+
+  @override
+  viewmyfavourites() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await addToFavourite
+        .viewmyvafourite(appServices.sharedPreferences.getString("id")!);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        myfavouritesList = response['data'];
+      }
+    }
+    update();
   }
 }
