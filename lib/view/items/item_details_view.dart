@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../controller/items/item_details_controller.dart';
 import 'widget/item_details/item_details_view_body.dart';
 
 class ItemDetailsView extends StatelessWidget {
@@ -7,6 +9,7 @@ class ItemDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(ItemsDetailsControllerImp());
     return const Scaffold(
       body: SafeArea(child: ItemDetailsViewBody()),
     );

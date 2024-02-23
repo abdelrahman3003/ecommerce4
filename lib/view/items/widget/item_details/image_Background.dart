@@ -6,8 +6,8 @@ import '../../../../controller/items/item_details_controller.dart';
 import '../../../../core/constant/backlinks.dart';
 
 class ImageBackground extends StatelessWidget {
-  const ImageBackground({super.key});
-
+  const ImageBackground({super.key, required this.itemImage});
+  final String itemImage;
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(ItemsDetailsControllerImp());
@@ -31,8 +31,7 @@ class ImageBackground extends StatelessWidget {
                 width: 200,
                 height: 200,
                 child: CachedNetworkImage(
-                  imageUrl:
-                      "$itemsImageNameLink/${controller.itemModel.itemsImage!}",
+                  imageUrl: "$itemsImageNameLink/$itemImage",
                   fit: BoxFit.fill,
                 ),
               )),
