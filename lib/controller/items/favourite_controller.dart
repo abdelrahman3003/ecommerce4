@@ -1,3 +1,5 @@
+import 'package:eccommerce4/core/shared/styles.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -7,7 +9,8 @@ import '../../data/datasource/remote/items/favourite.dart';
 
 abstract class FavouriteController extends GetxController {
   setFavourite(id, val);
-  setFavouriteback(itemid);
+  addFavourite(itemid);
+  removeFavourite(itemid);
 }
 
 class FavouriteControllerImp extends FavouriteController {
@@ -22,7 +25,7 @@ class FavouriteControllerImp extends FavouriteController {
   }
 
   @override
-  setFavouriteback(itemid) async {
+  addFavourite(itemid) async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await addToFavourite.addFavourite(
@@ -31,8 +34,35 @@ class FavouriteControllerImp extends FavouriteController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-      } else {}
-      update();
+      } else {
+        Get.rawSnackbar(
+            title: "alarm",
+            messageText: const Text(
+              "this product is removed to favourites",
+              style: Styles.textStyle16,
+            ));
+      }
+    }
+  }
+
+  @override
+  removeFavourite(itemid) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await addToFavourite.removeFavourite(
+        itemid, appServices.sharedPreferences.getString("id")!);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        Get.rawSnackbar(
+            title: "alarm",
+            messageText: const Text(
+              "this product is added to favourites",
+              style: Styles.textStyle16,
+            ));
+      }
     }
   }
 }
