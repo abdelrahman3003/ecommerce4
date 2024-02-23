@@ -5,19 +5,18 @@ import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
-import '../../data/datasource/remote/items/favourite.dart';
+import '../../data/datasource/remote/items/add_remove_favourite.dart';
 
 abstract class FavouriteController extends GetxController {
   setFavourite(id, val);
   addFavourite(itemid);
   removeFavourite(itemid);
-  viewmyfavourites();
 }
 
 class FavouriteControllerImp extends FavouriteController {
   StatusRequest statusRequest = StatusRequest.none;
-  AddToFavourite addToFavourite = AddToFavourite(Get.find());
-  List myfavouritesList = [];
+  AddRemoveFavourite addRemoveFavourite = AddRemoveFavourite(Get.find());
+
   AppServices appServices = Get.find();
   Map favourite = {};
   @override
@@ -30,7 +29,7 @@ class FavouriteControllerImp extends FavouriteController {
   addFavourite(itemid) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await addToFavourite.addFavourite(
+    var response = await addRemoveFavourite.addFavourite(
         "$itemid", appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
@@ -51,7 +50,7 @@ class FavouriteControllerImp extends FavouriteController {
   removeFavourite(itemid) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await addToFavourite.removeFavourite(
+    var response = await addRemoveFavourite.removeFavourite(
         "$itemid", appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
@@ -66,22 +65,5 @@ class FavouriteControllerImp extends FavouriteController {
             ));
       }
     }
-  }
-
-  @override
-  viewmyfavourites() async {
-    statusRequest = StatusRequest.loading;
-    update();
-    var response = await addToFavourite
-        .viewmyvafourite(appServices.sharedPreferences.getString("id")!);
-    statusRequest = handlingApiData(response);
-    if (statusRequest == StatusRequest.success) {
-      if (response["status"] == "failure") {
-        statusRequest = StatusRequest.failure;
-      } else {
-        myfavouritesList = response['data'];
-      }
-    }
-    update();
   }
 }
