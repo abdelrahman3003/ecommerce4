@@ -4,6 +4,7 @@ import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../controller/items/favourite_controller.dart';
 import '../../../../controller/items/items_view_controller.dart';
 import '../../../../core/constant/backlinks.dart';
 
@@ -47,14 +48,24 @@ class ItemCard extends GetView<ItemsControllerImp> {
                   Text("\$ ${itemModel.itemsPrice}",
                       style: Styles.textStyle20.copyWith(color: Colors.red)),
                   const Spacer(),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        itemModel.favourite == "1"
-                            ? Icons.favorite
-                            : Icons.favorite_outline,
-                        color: Colors.red,
-                      ))
+                  GetBuilder<FavouriteControllerImp>(
+                    builder: (controller) => IconButton(
+                        onPressed: () {
+                          if (controller.favourite[itemModel.itemsId] == "1") {
+                            controller.setFavourite(
+                                "${itemModel.itemsId}", "0");
+                          } else {
+                            controller.setFavourite(
+                                "${itemModel.itemsId}", "1");
+                          }
+                        },
+                        icon: Icon(
+                          controller.favourite[itemModel.favourite] == "1"
+                              ? Icons.favorite
+                              : Icons.favorite_outline,
+                          color: Colors.red,
+                        )),
+                  )
                 ],
               )
             ],

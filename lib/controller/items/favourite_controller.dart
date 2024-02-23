@@ -6,7 +6,6 @@ abstract class FavouriteController extends GetxController {
 
 class FavouriteControllerImp extends FavouriteController {
   Map favourite = {};
-
   @override
   setFavourite(id, val) {
     favourite[id] = val;

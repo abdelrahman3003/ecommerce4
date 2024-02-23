@@ -10,6 +10,7 @@ class ItemDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ItemsDetailsControllerImp());
+
     return const Scaffold(
       body: SafeArea(child: ItemDetailsViewBody()),
     );

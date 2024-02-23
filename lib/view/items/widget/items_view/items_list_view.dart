@@ -4,11 +4,14 @@ import 'package:eccommerce4/view/items/widget/items_view/item_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../controller/items/favourite_controller.dart';
+
 class ItemListView extends GetView<ItemsControllerImp> {
   const ItemListView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var favouriteController = Get.put(FavouriteControllerImp());
     return GridView.builder(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
@@ -17,6 +20,8 @@ class ItemListView extends GetView<ItemsControllerImp> {
           crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
       itemCount: controller.items.length,
       itemBuilder: (context, index) {
+        favouriteController.favourite[controller.items[index]['items_id']] =
+            controller.items[index]['favourite'];
         return ItemCard(
           itemModel: ItemModel.fromJson(controller.items[index]),
         );
