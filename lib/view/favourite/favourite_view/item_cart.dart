@@ -4,7 +4,7 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:eccommerce4/data/model/myfavourites_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/constant/backlinks.dart';
+import '../../../core/constant/backlinks.dart';
 
 class ItemCard extends GetView<MyFavouritesCOntrollerImp> {
   const ItemCard({super.key, required this.myfavouritesModel});
