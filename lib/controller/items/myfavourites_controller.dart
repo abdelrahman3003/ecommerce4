@@ -38,11 +38,9 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
 
   @override
   deleteMyfavourite(favouriteid) {
-    statusRequest = StatusRequest.loading;
     myFavourites.deleteFavourite(favouriteid);
     myfavouritesList
         .removeWhere((element) => element.favouritesId == favouriteid);
-    update();
   }
 
   @override

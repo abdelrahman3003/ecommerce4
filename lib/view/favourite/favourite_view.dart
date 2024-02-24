@@ -10,6 +10,8 @@ class FavouriteView2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(MyFavouritesCOntrollerImp());
-    return const FavouriteViewBody();
+    return const Scaffold(
+      body: FavouriteViewBody(),
+    );
   }
 }
