@@ -7,7 +7,6 @@ import 'package:eccommerce4/view/auth/widgets/restpassword/reset_password_succes
 import 'package:eccommerce4/view/auth/widgets/signup/success_signup.dart';
 import 'package:eccommerce4/view/favourite/favourite_view.dart';
 import 'package:eccommerce4/view/home/cart_view.dart';
-import 'package:eccommerce4/view/home/favotite_view.dart';
 import 'package:eccommerce4/view/home/home_page_view.dart';
 import 'package:eccommerce4/view/home/setting_view.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
@@ -28,12 +27,11 @@ const kResetpasswordsucsess = "/Resetpasswordsucsess";
 const kRestPassword = "/RestPassword";
 const kHomePageView = "/HomePageView";
 const kHomeScreenView = "/HomeScreenView";
-const kFavouriteView = "/FavouriteView";
 const kCartView = "/CartView";
 const kSettingView = "/SettingView";
 const kItemsView = "/ItemsView";
 const kItemDetailsView = "/ItemsDetailsView";
-const kfavouroteview2 = "/favouroteview2";
+const kfavouroteview = "/favouroteview2";
 List<GetPage<dynamic>>? getPages = [
   GetPage(
       name: "/",
@@ -48,10 +46,9 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kResetpasswordsucsess, page: () => const RestSuccesPassword()),
   GetPage(name: kHomePageView, page: () => const HomePageView()),
   GetPage(name: kHomeScreenView, page: () => const HomeScreenView()),
-  GetPage(name: kFavouriteView, page: () => const FavouriteView()),
   GetPage(name: kCartView, page: () => const CartView()),
   GetPage(name: kSettingView, page: () => const SettingView()),
   GetPage(name: kItemsView, page: () => const ItemsView()),
   GetPage(name: kItemDetailsView, page: () => const ItemDetailsView()),
-  GetPage(name: kfavouroteview2, page: () => const FavouriteView2()),
+  GetPage(name: kfavouroteview, page: () => const FavouriteView()),
 ];

@@ -2,8 +2,9 @@ import 'package:eccommerce4/view/home/home_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
+import '../../view/favourite/favourite_view.dart';
 import '../../view/home/cart_view.dart';
-import '../../view/home/favotite_view.dart';
+
 import '../../view/home/setting_view.dart';
 
 abstract class HomeScreenController extends GetxController {
