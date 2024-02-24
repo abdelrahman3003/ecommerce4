@@ -8,7 +8,7 @@ import '../../data/datasource/remote/items/myfavourites_data.dart';
 
 abstract class MyFavouritesCOntroller extends GetxController {
   viewMyfavourite();
-  deleteMyfavourite(favouriteid);
+  deleteMyfavourite(String favouriteid);
 }
 
 class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
@@ -33,19 +33,14 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
       }
       update();
     }
+    update();
   }
 
   @override
   deleteMyfavourite(favouriteid) {
-    var response = myFavourites.deleteFavourite(
-        appServices.sharedPreferences.getString("favouriteid")!);
-
-    if (response["status"] == "failure") {
-      statusRequest = StatusRequest.failure;
-    } else {
-      myfavouritesList
-          .removeWhere((element) => element.favouritesId = favouriteid);
-    }
+    myFavourites.deleteFavourite(favouriteid);
+    myfavouritesList
+        .removeWhere((element) => element.favouritesId == favouriteid);
     update();
   }
 

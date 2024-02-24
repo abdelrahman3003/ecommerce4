@@ -47,8 +47,8 @@ class ItemCard extends GetView<MyFavouritesCOntrollerImp> {
                   const Spacer(),
                   IconButton(
                       onPressed: () {
-                        controller
-                            .deleteMyfavourite(myfavouritesModel.favouritesId);
+                        controller.deleteMyfavourite(
+                            "${myfavouritesModel.favouritesId}");
                       },
                       icon: const Icon(
                         Icons.delete_rounded,
