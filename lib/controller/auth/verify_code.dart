@@ -40,7 +40,7 @@ class VerifyCodeController extends GetxController {
     email = Get.arguments['email'];
   }
 
-  resendVerfyCode(email) {
-    getVerifyCode.resendVerifyCode(email);
+  resendVerfyCode() {
+    getVerifyCode.resendVerifyCode(email!);
   }
 }
