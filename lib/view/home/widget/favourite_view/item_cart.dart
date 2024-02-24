@@ -46,7 +46,10 @@ class ItemCard extends GetView<MyFavouritesCOntrollerImp> {
                       style: Styles.textStyle20.copyWith(color: Colors.red)),
                   const Spacer(),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller
+                            .deleteMyfavourite(myfavouritesModel.favouritesId);
+                      },
                       icon: const Icon(
                         Icons.delete_rounded,
                         color: Colors.red,
