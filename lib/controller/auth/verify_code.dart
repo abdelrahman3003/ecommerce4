@@ -39,4 +39,8 @@ class VerifyCodeController extends GetxController {
     super.onInit();
     email = Get.arguments['email'];
   }
+
+  resendVerfyCode(email) {
+    getVerifyCode.resendVerifyCode(email);
+  }
 }
