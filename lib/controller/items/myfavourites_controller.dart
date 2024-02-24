@@ -41,6 +41,7 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
         appServices.sharedPreferences.getString("favouriteid")!);
 
     if (response["status"] == "failure") {
+      statusRequest = StatusRequest.failure;
     } else {
       myfavouritesList
           .removeWhere((element) => element.favouritesId = favouriteid);

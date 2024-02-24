@@ -12,11 +12,9 @@ class FavouriteView extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(MyFavouritesCOntrollerImp());
     return GetBuilder<MyFavouritesCOntrollerImp>(
-      builder: (controller) => Center(
-        child: DataHandlingState(
-            statusRequest: controller.statusRequest,
-            widget: const FavouriteViewBody()),
-      ),
+      builder: (controller) => DataHandlingState(
+          statusRequest: controller.statusRequest,
+          widget: const FavouriteViewBody()),
     );
   }
 }

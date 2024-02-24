@@ -45,6 +45,12 @@ class ItemCard extends GetView<MyFavouritesCOntrollerImp> {
                   Text("\$ ${myfavouritesModel.itemsPrice}",
                       style: Styles.textStyle20.copyWith(color: Colors.red)),
                   const Spacer(),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.delete_rounded,
+                        color: Colors.red,
+                      )),
                 ],
               )
             ],
