@@ -15,9 +15,4 @@ class AddRemoveFavourite {
         removefromfavouriteNameLink, {"itemid": itemid, "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
-
-  viewmyvafourite(String userid) async {
-    var response = await crud.postData(viewmyfavourites, {"userid": userid});
-    return response.fold((l) => l, (r) => r);
-  }
 }

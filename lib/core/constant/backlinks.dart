@@ -10,6 +10,9 @@ const String itemsImageNameLink = "$serverNameLink/upload/items";
 const String itemsNameLink = "$serverNameLink/items/item.php";
 const String addtofavouriteNameLink =
     "$serverNameLink/favourite/addToFavourite.php";
+
 const String removefromfavouriteNameLink =
     "$serverNameLink/favourite/removeFroomFavourite.php";
+
 const String viewmyfavourites = "$serverNameLink/favourite/view.php";
+const String deletefavourite = "$serverNameLink/favourite/deleteFavourite.php";

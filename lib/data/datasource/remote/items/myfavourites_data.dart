@@ -8,4 +8,10 @@ class MyFavourites {
     var response = await crud.postData(viewmyfavourites, {"userid": userid});
     return response.fold((l) => l, (r) => r);
   }
+
+  deleteFavourite(String favouriteid) async {
+    var response =
+        await crud.postData(viewmyfavourites, {"favouriteId": favouriteid});
+    return response.fold((l) => l, (r) => r);
+  }
 }

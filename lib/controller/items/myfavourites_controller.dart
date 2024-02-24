@@ -4,10 +4,11 @@ import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
-import '../../data/datasource/remote/items/myfavourites.dart';
+import '../../data/datasource/remote/items/myfavourites_data.dart';
 
 abstract class MyFavouritesCOntroller extends GetxController {
   viewMyfavourite();
+  deleteMyfavourite(favouriteid);
 }
 
 class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
@@ -32,6 +33,19 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
       }
       update();
     }
+  }
+
+  @override
+  deleteMyfavourite(favouriteid) {
+    var response = myFavourites.deleteFavourite(
+        appServices.sharedPreferences.getString("favouriteid")!);
+
+    if (response["status"] == "failure") {
+    } else {
+      myfavouritesList
+          .removeWhere((element) => element.favouritesId = favouriteid);
+    }
+    update();
   }
 
   @override
