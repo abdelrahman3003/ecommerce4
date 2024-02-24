@@ -8,18 +8,20 @@ class FavouriteListView extends GetView<MyFavouritesCOntrollerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
-      scrollDirection: Axis.vertical,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
-      itemCount: controller.myfavouritesList.length,
-      itemBuilder: (context, index) {
-        return ItemCard(
-          myfavouritesModel: controller.myfavouritesList[index],
-        );
-      },
+    return GetBuilder<MyFavouritesCOntrollerImp>(
+      builder: (controller) => GridView.builder(
+        shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
+        itemCount: controller.myfavouritesList.length,
+        itemBuilder: (context, index) {
+          return ItemCard(
+            myfavouritesModel: controller.myfavouritesList[index],
+          );
+        },
+      ),
     );
   }
 }

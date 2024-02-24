@@ -2,6 +2,8 @@ const String serverNameLink = "http://192.168.1.26/ecommerce/";
 const String signupNameLink = "$serverNameLink/auth/signup.php";
 const String signinNameLink = "$serverNameLink/auth/signin.php";
 const String verifycodeNameLink = "$serverNameLink/auth/verifycode.php";
+const String resendverifycodeNameLink =
+    "$serverNameLink/auth/resend_verivycode.php";
 const String checkemailNameLink = "$serverNameLink/auth/checkemail.php";
 const String resetpasswordNameLink = "$serverNameLink/auth/resetpassword.php";
 const String homeNameLink = "$serverNameLink/home/getalldata.php";
