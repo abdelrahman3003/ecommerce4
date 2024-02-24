@@ -14,4 +14,14 @@ class GetVerifyCode {
     );
     return response.fold((l) => l, (r) => r);
   }
+
+  resendVerifyCode(String email) async {
+    var response = await crud.postData(
+      resendverifycodeNameLink,
+      {
+        "email": email,
+      },
+    );
+    return response.fold((l) => l, (r) => r);
+  }
 }
