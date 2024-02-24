@@ -17,7 +17,7 @@ class VerifyCode extends GetView<ForgetPasssowrdController> {
             builder: (verifycodecontroller) => DataHandlingRequsetState(
                   statusRequest: verifycodecontroller.statusRequest,
                   widget: const VerfiyBody(
-                    titlebold: "Check code",
+                    titlebold: "Check your email",
                     title: "Verification code",
                     subtitle: "please enter your code sent to your email ",
                   ),

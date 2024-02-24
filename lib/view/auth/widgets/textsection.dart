@@ -13,7 +13,10 @@ class TextsSections extends StatelessWidget {
       children: [
         Text(
           titlebold,
-          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w800),
+          style: Styles.textStyle30.copyWith(
+            color: Colors.black,
+            fontWeight: FontWeight.w800,
+          ),
           textAlign: TextAlign.center,
         ),
         Text(

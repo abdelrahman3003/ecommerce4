@@ -1,6 +1,7 @@
 import 'package:eccommerce4/view/auth/widgets/verify/otp_textfield.dart';
 import 'package:flutter/material.dart';
 import '../textsection.dart';
+import 'rensed_verifycode.dart';
 
 class VerfiyBody extends StatelessWidget {
   const VerfiyBody({
@@ -24,6 +25,8 @@ class VerfiyBody extends StatelessWidget {
           const SizedBox(height: 20),
           TextsSections(titlebold: titlebold, subtitle: subtitle),
           const AppOtpTextField(),
+          const SizedBox(height: 20),
+          const ResnedVerifyCode(),
         ],
       ),
     );
