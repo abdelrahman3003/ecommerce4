@@ -9,9 +9,9 @@ class MyFavourites {
     return response.fold((l) => l, (r) => r);
   }
 
-  deleteFavourite(String favouriteid) async {
-    var response =
-        await crud.postData(deletefavourite, {"favouriteId": favouriteid});
+  deleteFavourite(favouriteid) async {
+    var response = await crud
+        .postData(deletefavourite, {"favouriteId": favouriteid.toString()});
     return response.fold((l) => l, (r) => r);
   }
 }

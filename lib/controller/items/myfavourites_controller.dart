@@ -1,14 +1,16 @@
 import 'package:eccommerce4/data/model/myfavourites_model.dart';
+
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
+
 import '../../data/datasource/remote/items/myfavourites_data.dart';
 
 abstract class MyFavouritesCOntroller extends GetxController {
   viewMyfavourite();
-  deleteMyfavourite(String favouriteid);
+  deleteMyfavourite(favouriteid);
 }
 
 class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
@@ -31,7 +33,6 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
         myfavouritesList
             .addAll(reponseData.map((e) => MyfavouritesModel.fromJson(e)));
       }
-      update();
     }
     update();
   }
@@ -41,6 +42,7 @@ class MyFavouritesCOntrollerImp extends MyFavouritesCOntroller {
     myFavourites.deleteFavourite(favouriteid);
     myfavouritesList
         .removeWhere((element) => element.favouritesId == favouriteid);
+    update();
   }
 
   @override
