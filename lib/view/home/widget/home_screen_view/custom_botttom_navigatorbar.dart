@@ -14,6 +14,7 @@ class AppBottomNavigatorBar extends StatelessWidget {
         shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             AppbarItem(
               icon: Icons.home,
@@ -25,7 +26,6 @@ class AppBottomNavigatorBar extends StatelessWidget {
               // iconName: ConstanstValue.favourite,
               isactive: controller.pageCount == 1 ? true : false,
             ),
-            const Spacer(),
             AppbarItem(
               icon: Icons.settings,
               //iconName: ConstanstValue.cart,
