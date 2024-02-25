@@ -26,7 +26,7 @@ class Ecommerce extends StatelessWidget {
       translations: AppTrnaslations(),
       debugShowCheckedModeBanner: false,
       getPages: getPages,
-      initialBinding: binding(),
+      initialBinding: AppBinding(),
       //routes: routes,
       theme: ThemeData(fontFamily: "Cairo"),
     );

@@ -11,7 +11,6 @@ class HomeScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeScreenControllerImp());
-
     return Scaffold(
         bottomNavigationBar: const AppBottomNavigatorBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
