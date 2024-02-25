@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'appbar_cart.dart';
+import 'cart_button.dart';
 import 'cart_items_list.dart';
 import 'count_items.dart';
 import 'subitems_list.dart';
@@ -19,6 +20,7 @@ class CartViewBody extends StatelessWidget {
           SizedBox(height: 20),
           Expanded(child: CartItemsList()),
           SubitemsList(),
+          CartButton()
         ],
       ),
     );
