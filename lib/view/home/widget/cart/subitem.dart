@@ -9,8 +9,17 @@ class Subitem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: Text(title, style: Styles.textStyle25black)),
-        Text(subTilte, style: Styles.textStyle20black),
+        Expanded(
+            child: Text(title,
+                style: Styles.textStyle25black.copyWith(
+                    fontWeight: title == "Total Price"
+                        ? FontWeight.bold
+                        : FontWeight.normal))),
+        Text(subTilte,
+            style: Styles.textStyle20black.copyWith(
+              fontWeight:
+                  title == "Total Price" ? FontWeight.bold : FontWeight.normal,
+            )),
       ],
     );
   }
