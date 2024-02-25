@@ -18,3 +18,6 @@ const String removefromfavouriteNameLink =
 
 const String viewmyfavourites = "$serverNameLink/favourite/view.php";
 const String deletefavourite = "$serverNameLink/favourite/deleteFavourite.php";
+const String addcartNameLink = "$serverNameLink/cart/add.php";
+const String removecartNameLink = "$serverNameLink/cart/remove.php";
+const String viewcartNameLink = "$serverNameLink/cart/view.php";
