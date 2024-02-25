@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          SizedBox(height: 8),
+          SizedBox(height: 5),
           HomeAppbar(),
           SizedBox(height: 20),
           DiscountContainer(),

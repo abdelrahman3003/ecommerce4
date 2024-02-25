@@ -14,7 +14,7 @@ class FavouriteViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           const HomeAppbar(),
           const SizedBox(height: 30),
           GetBuilder<MyFavouritesCOntrollerImp>(

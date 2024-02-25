@@ -14,6 +14,7 @@ import 'package:get/route_manager.dart';
 
 import '../../view/auth/verifycode.dart';
 import '../../view/home/home_screen_view.dart';
+import '../../view/home/profile_view.dart';
 import '../../view/items/item_details_view.dart';
 import '../../view/items/items_view.dart';
 
@@ -29,9 +30,11 @@ const kHomePageView = "/HomePageView";
 const kHomeScreenView = "/HomeScreenView";
 const kCartView = "/CartView";
 const kSettingView = "/SettingView";
+const kProfileView = "/ProfileView";
+const kfavouroteview = "/favouroteview";
 const kItemsView = "/ItemsView";
 const kItemDetailsView = "/ItemsDetailsView";
-const kfavouroteview = "/favouroteview2";
+
 List<GetPage<dynamic>>? getPages = [
   GetPage(
       name: "/",
@@ -51,4 +54,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kItemsView, page: () => const ItemsView()),
   GetPage(name: kItemDetailsView, page: () => const ItemDetailsView()),
   GetPage(name: kfavouroteview, page: () => const FavouriteView()),
+  GetPage(name: kProfileView, page: () => const ProfileView()),
 ];
