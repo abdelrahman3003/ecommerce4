@@ -1,7 +1,10 @@
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SeetingListTile extends StatelessWidget {
+import '../../../../controller/home/setting_controller.dart';
+
+class SeetingListTile extends GetView<SettingControllerImp> {
   const SeetingListTile({super.key});
 
   @override
@@ -9,13 +12,12 @@ class SeetingListTile extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          child: ListTile(
-              onTap: () {},
-              title: Text("Notification",
-                  style: Styles.textStyle25.copyWith(color: Colors.black)),
-              trailing: const Icon(Icons.notifications, size: 32)),
-        ),
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: ListTile(
+                onTap: () {},
+                title: Text("Notification",
+                    style: Styles.textStyle25.copyWith(color: Colors.black)),
+                trailing: Switch(value: true, onChanged: (value) {}))),
         ListTile(
             onTap: () {},
             title: Text("Address",
@@ -37,9 +39,11 @@ class SeetingListTile extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: ListTile(
-              onTap: () {},
+              onTap: () {
+                controller.logout();
+              },
               title: Text("Logout",
-                  style: Styles.textStyle25.copyWith(color: Colors.black)),
+                  style: Styles.textStyle25.copyWith(color: Colors.red)),
               trailing: const Icon(Icons.logout, size: 32)),
         ),
       ],
