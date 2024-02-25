@@ -11,10 +11,20 @@ abstract class Styles {
     fontWeight: FontWeight.normal,
     color: Colors.white,
   );
+  static const textStyle20black = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
+    color: Colors.black,
+  );
   static const textStyle25 = TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.normal,
     color: CupertinoColors.white,
+  );
+  static const textStyle25black = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.normal,
+    color: CupertinoColors.black,
   );
   static const textStyle26 = TextStyle(
     fontSize: 25,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'appbar_cart.dart';
 import 'cart_items_list.dart';
 import 'count_items.dart';
+import 'subitem.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -17,6 +18,7 @@ class CartViewBody extends StatelessWidget {
           CountItems(count: 2),
           SizedBox(height: 20),
           Expanded(child: CartItemsList()),
+          Subitem(title: "Price", subTilte: "\$2000"),
         ],
       ),
     );
