@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/home/home_screen_controller.dart';
-import '../../../../core/constant/constatns_value.dart';
 import 'appar_item.dart';
 
 class AppBottomNavigatorBar extends StatelessWidget {
@@ -18,23 +17,23 @@ class AppBottomNavigatorBar extends StatelessWidget {
           children: [
             AppbarItem(
               icon: Icons.home,
-              iconName: ConstanstValue.home,
+              //iconName: ConstanstValue.home,
               isactive: controller.pageCount == 0 ? true : false,
             ),
             AppbarItem(
-              icon: Icons.favorite_outline,
-              iconName: ConstanstValue.favourite,
+              icon: Icons.card_travel,
+              // iconName: ConstanstValue.favourite,
               isactive: controller.pageCount == 1 ? true : false,
             ),
             const Spacer(),
             AppbarItem(
-              icon: Icons.card_travel,
-              iconName: ConstanstValue.cart,
+              icon: Icons.settings,
+              //iconName: ConstanstValue.cart,
               isactive: controller.pageCount == 2 ? true : false,
             ),
             AppbarItem(
-              icon: Icons.settings,
-              iconName: ConstanstValue.setting,
+              icon: Icons.person,
+              // iconName: ConstanstValue.setting,
               isactive: controller.pageCount == 3 ? true : false,
             ),
           ],

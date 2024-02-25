@@ -10,10 +10,8 @@ class FavouriteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(MyFavouritesCOntrollerImp());
-    return const SafeArea(
-      child: Scaffold(
-        body: FavouriteViewBody(),
-      ),
+    return const Scaffold(
+      body: SafeArea(child: FavouriteViewBody()),
     );
   }
 }

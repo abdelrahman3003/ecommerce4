@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/home/home_screen_controller.dart';
-import '../../../../core/constant/constatns_value.dart';
-import '../../../../core/shared/styles.dart';
 
 class AppbarItem extends GetView<HomeScreenControllerImp> {
   const AppbarItem({
     super.key,
-    required this.iconName,
+    this.iconName = "",
     required this.icon,
     required this.isactive,
   });
@@ -25,24 +23,24 @@ class AppbarItem extends GetView<HomeScreenControllerImp> {
         children: [
           IconButton(
             onPressed: () {
-              if (iconName == ConstanstValue.favourite) {
+              if (icon == Icons.card_travel) {
                 controller.changepage(1);
-              } else if (iconName == ConstanstValue.cart) {
+              } else if (icon == Icons.settings) {
                 controller.changepage(2);
-              } else if (iconName == ConstanstValue.setting) {
+              } else if (icon == Icons.person) {
                 controller.changepage(3);
               } else {
                 controller.changepage(0);
               }
             },
             icon: Icon(icon,
-                size: 28,
+                size: 30,
                 color: isactive ? ColorsApp.kprimaryColor1 : Colors.black),
           ),
-          Text(
-            iconName,
-            style: Styles.textStyle16,
-          ),
+          // Text(
+          //   iconName,
+          //   style: Styles.textStyle16,
+          // ),
         ],
       ),
     );
