@@ -8,7 +8,9 @@ class CartItemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 3,
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: 8,
       itemBuilder: (context, index) => const CartItem(itemCount: 3),
     );
   }

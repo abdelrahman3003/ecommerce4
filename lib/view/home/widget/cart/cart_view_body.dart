@@ -18,7 +18,7 @@ class CartViewBody extends StatelessWidget {
           CountItems(count: 2),
           SizedBox(height: 20),
           Expanded(child: CartItemsList()),
-          SubitemsList()
+          SubitemsList(),
         ],
       ),
     );
