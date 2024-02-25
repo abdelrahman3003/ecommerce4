@@ -1,4 +1,5 @@
 import 'package:eccommerce4/core/constant/colors.dart';
+import 'package:eccommerce4/core/constant/constatns_value.dart';
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,7 +23,7 @@ class HomeAppbar extends StatelessWidget {
                 filled: true,
                 fillColor: ColorsApp.kprimaryColor3,
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(kborderradius),
                     borderSide: BorderSide.none),
               ),
             ),
@@ -33,7 +34,7 @@ class HomeAppbar extends StatelessWidget {
             height: 55,
             width: 50,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(kborderradius),
                 color: ColorsApp.kprimaryColor3),
             child: IconButton(
               onPressed: () {},
@@ -48,7 +49,7 @@ class HomeAppbar extends StatelessWidget {
             height: 55,
             width: 50,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(kborderradius),
                 color: ColorsApp.kprimaryColor3),
             child: IconButton(
               onPressed: () {

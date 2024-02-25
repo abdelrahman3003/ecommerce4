@@ -2,6 +2,8 @@ import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constant/constatns_value.dart';
+
 // ignore: must_be_immutable
 class OnboardingButton extends StatelessWidget {
   const OnboardingButton({
@@ -10,7 +12,7 @@ class OnboardingButton extends StatelessWidget {
     this.width = 170,
     required this.onPressed,
     this.color = ColorsApp.kprimaryColor1,
-    this.borderRadius = 20,
+    this.borderRadius = kborderradius,
   });
 
   final Function()? onPressed;

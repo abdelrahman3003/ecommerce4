@@ -18,7 +18,7 @@ class OnboardingBody extends StatelessWidget {
             padding: EdgeInsets.only(top: 150),
             child: CustomOnboardingButton(),
           ),
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
         ],
       ),
     );
