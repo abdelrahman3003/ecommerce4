@@ -6,7 +6,7 @@ import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
 
-import '../../data/datasource/remote/items/myfavourites_data.dart';
+import '../../data/datasource/remote/favorite/myfavourites_data.dart';
 
 abstract class MyFavouritesCOntroller extends GetxController {
   viewMyfavourite();

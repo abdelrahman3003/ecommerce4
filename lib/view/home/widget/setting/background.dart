@@ -1,7 +1,6 @@
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class Background extends StatelessWidget {
   const Background({super.key});
@@ -19,7 +18,6 @@ class Background extends StatelessWidget {
           left: Get.width / 2.5,
           top: Get.width / 2.5,
           child: Container(
-            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
             ),
