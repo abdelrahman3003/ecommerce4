@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'appbar_cart.dart';
-import 'cart_item.dart';
+import 'cart_items_list.dart';
 import 'count_items.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -16,7 +16,7 @@ class CartViewBody extends StatelessWidget {
           AppbarCart(),
           CountItems(count: 2),
           SizedBox(height: 20),
-          CartItem(),
+          Expanded(child: CartItemsList()),
         ],
       ),
     );

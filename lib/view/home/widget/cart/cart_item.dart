@@ -4,8 +4,8 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
-
+  const CartItem({super.key, required this.itemCount});
+  final int itemCount;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -34,7 +34,7 @@ class CartItem extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.add),
             ),
-            Text("2",
+            Text("$itemCount",
                 style: Styles.textStyle25
                     .copyWith(color: ColorsApp.kprimaryColor1)),
             IconButton(
