@@ -33,7 +33,7 @@ class DiscountContainer extends StatelessWidget {
               style: Styles.textStyle20,
             ),
             subtitle: Text(
-              "Cashbacck %20",
+              "Cashback %20",
               style: Styles.textStyle30,
             ),
           ),
