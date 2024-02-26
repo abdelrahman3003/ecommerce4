@@ -6,6 +6,7 @@ import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
 import '../../core/shared/styles.dart';
 import '../../data/datasource/remote/cart/cart_data.dart';
+import '../../data/model/cart_model.dart';
 
 abstract class CartController extends GetxController {
   addCart(itemid);
@@ -18,7 +19,10 @@ class CartControllerImp extends CartController {
   StatusRequest statusRequest = StatusRequest.none;
   CartData cartData = CartData(Get.find());
   AppServices appServices = Get.find();
+  List<CartModel> cartmodelLsit = [];
 
+  int tolalprice = 0;
+  int tolalcount = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -64,7 +68,25 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  viewCart() {}
+  viewCart() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response =
+        await cartData.viewCart(appServices.sharedPreferences.getString("id")!);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        var data = response["data"];
+        cartmodelLsit.addAll(data.map((e) => CartModel.fromJson(e)));
+        tolalprice = response['countprice']['totalprice'];
+        tolalprice = response['countprice']['totalprice'];
+        tolalcount = response['countprice']['totalcount'];
+      }
+    }
+    update();
+  }
 
   @override
   getCountItem(itemid) async {

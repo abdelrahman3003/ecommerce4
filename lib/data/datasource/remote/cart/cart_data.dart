@@ -21,4 +21,9 @@ class CartData {
         .postData(getcounitemNameLink, {"itemid": itemid, "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
+
+  viewCart(String userid) async {
+    var response = await crud.postData(viewcartNameLink, {"userid": userid});
+    return response.fold((l) => l, (r) => r);
+  }
 }
