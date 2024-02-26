@@ -15,4 +15,10 @@ class CartData {
         .postData(removecartNameLink, {"itemid": itemid, "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
+
+  getCountItem(String itemid, String userid) async {
+    var response = await crud
+        .postData(getcounitemNameLink, {"itemid": itemid, "userid": userid});
+    return response.fold((l) => l, (r) => r);
+  }
 }
