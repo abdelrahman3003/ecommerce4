@@ -6,6 +6,8 @@ import '../cart/cart_controller.dart';
 
 abstract class ItemsDetailsController extends GetxController {
   inialData();
+  add();
+  remove();
 }
 
 class ItemsDetailsControllerImp extends ItemsDetailsController {
@@ -26,5 +28,19 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
     // TODO: implement onInit
     super.onInit();
     inialData();
+  }
+
+  @override
+  remove() {
+    cartControllerImp.addCart(itemModel.itemsCat);
+    if (count >= 0) count--;
+    update();
+  }
+
+  @override
+  add() {
+    cartControllerImp.removeCart(itemModel.itemsCat);
+    count++;
+    update();
   }
 }

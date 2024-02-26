@@ -17,8 +17,7 @@ class ItemPrice extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: () {
-                          controller.cartControllerImp
-                              .addCart(controller.itemModel.itemsId);
+                          controller.add();
                         },
                         icon: const Icon(
                           Icons.add,
@@ -46,8 +45,7 @@ class ItemPrice extends StatelessWidget {
                       ),
                       IconButton(
                         onPressed: () {
-                          controller.cartControllerImp
-                              .removeCart(controller.itemModel.itemsId);
+                          controller.remove();
                         },
                         icon: const Icon(
                           Icons.remove,
