@@ -1,4 +1,6 @@
+import 'package:eccommerce4/controller/cart/cart_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'appbar_cart.dart';
 import 'cart_button.dart';
@@ -6,19 +8,20 @@ import 'cart_items_list.dart';
 import 'count_items.dart';
 import 'subitems_list.dart';
 
-class CartViewBody extends StatelessWidget {
+class CartViewBody extends GetView<CartControllerImp> {
   const CartViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
-          AppbarCart(),
-          CountItems(count: 2),
-          SizedBox(height: 20),
-          Expanded(child: CartItemsList()),
+          const AppbarCart(),
+          CountItems(count: controller.tolalcount),
+          const SizedBox(height: 20),
+          Expanded(
+              child: CartItemsList(cartItemsList: controller.cartmodelLsit)),
           SubitemsList(),
           CartButton()
         ],

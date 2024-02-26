@@ -5,10 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
-import '../../../../core/constant/backlinks.dart';
 
 class CartItem extends GetView<ItemsDetailsControllerImp> {
-  const CartItem({super.key});
+  const CartItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.price,
+    required this.count,
+  });
+  final String image;
+  final String title;
+  final String price;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +25,7 @@ class CartItem extends GetView<ItemsDetailsControllerImp> {
       children: [
         SizedBox(
           child: CachedNetworkImage(
-            imageUrl: "$itemsImageNameLink/${controller.itemModel.itemsImage}",
+            imageUrl: image,
             fit: BoxFit.fill,
           ),
         ),
@@ -29,11 +38,11 @@ class CartItem extends GetView<ItemsDetailsControllerImp> {
         // ),
         Expanded(
           child: ListTile(
-            title: Text("${controller.itemModel.itemsName}",
+            title: Text(title,
                 style: Styles.textStyle20.copyWith(color: Colors.black)),
             subtitle: Opacity(
               opacity: .6,
-              child: Text("${controller.itemModel.itemsPrice}",
+              child: Text(price,
                   style: Styles.textStyle18.copyWith(color: Colors.black)),
             ),
           ),
@@ -44,7 +53,7 @@ class CartItem extends GetView<ItemsDetailsControllerImp> {
               onPressed: () {},
               icon: const Icon(Icons.add),
             ),
-            Text("3",
+            Text("$count",
                 style: Styles.textStyle25
                     .copyWith(color: ColorsApp.kprimaryColor1)),
             IconButton(
