@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eccommerce4/controller/items/myfavourites_controller.dart';
+import 'package:eccommerce4/controller/favorite/myfavourites_controller.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:eccommerce4/data/model/myfavourites_model.dart';
 import 'package:flutter/material.dart';

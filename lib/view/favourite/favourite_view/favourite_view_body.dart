@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/items/myfavourites_controller.dart';
+import 'package:eccommerce4/controller/favorite/myfavourites_controller.dart';
 import 'package:eccommerce4/core/class/data_handilng.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

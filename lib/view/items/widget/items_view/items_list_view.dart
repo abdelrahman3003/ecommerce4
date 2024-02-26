@@ -4,7 +4,7 @@ import 'package:eccommerce4/view/items/widget/items_view/item_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controller/items/favourite_controller.dart';
+import '../../../../controller/favorite/favourite_controller.dart';
 
 class ItemListView extends GetView<ItemsControllerImp> {
   const ItemListView({super.key});
