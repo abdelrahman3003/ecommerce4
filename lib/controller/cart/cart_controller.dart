@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
+import '../../core/shared/styles.dart';
 import '../../data/datasource/remote/cart/cart_data.dart';
 
 abstract class CartController extends GetxController {
@@ -17,7 +19,6 @@ class CartControllerImp extends CartController {
   CartData cartData = CartData(Get.find());
   AppServices appServices = Get.find();
 
-  int countfront = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -28,7 +29,14 @@ class CartControllerImp extends CartController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-      } else {}
+      } else {
+        Get.rawSnackbar(
+            title: "alarm",
+            messageText: Text(
+              "1 product is added to cart",
+              style: Styles.textStyle16.copyWith(color: Colors.white),
+            ));
+      }
     }
     update();
   }
@@ -43,7 +51,14 @@ class CartControllerImp extends CartController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-      } else {}
+      } else {
+        Get.rawSnackbar(
+            title: "alarm",
+            messageText: Text(
+              "1 product is removed from cart",
+              style: Styles.textStyle16.copyWith(color: Colors.white),
+            ));
+      }
     }
     update();
   }
