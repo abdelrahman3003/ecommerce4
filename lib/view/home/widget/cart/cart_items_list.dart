@@ -11,7 +11,7 @@ class CartItemsList extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
       itemCount: 8,
-      itemBuilder: (context, index) => const CartItem(itemCount: 3),
+      itemBuilder: (context, index) => const CartItem(),
     );
   }
 }

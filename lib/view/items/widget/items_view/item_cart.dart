@@ -54,11 +54,9 @@ class ItemCard extends GetView<ItemsControllerImp> {
                           if (controller.favourite[itemModel.itemsId] == 1) {
                             controller.setFavourite(itemModel.itemsId, 0);
                             controller.removeFavourite(itemModel.itemsId);
-                            print("removed");
                           } else {
                             controller.setFavourite(itemModel.itemsId, 1);
                             controller.addFavourite(itemModel.itemsId);
-                            print("added");
                           }
                         },
                         icon: Icon(

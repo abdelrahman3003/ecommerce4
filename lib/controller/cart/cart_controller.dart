@@ -1,5 +1,3 @@
-import 'package:eccommerce4/core/shared/styles.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -10,14 +8,15 @@ import '../../data/datasource/remote/cart/cart_data.dart';
 abstract class CartController extends GetxController {
   addCart(itemid);
   removeCart(itemid);
+  viewCart();
 }
 
 class CartControllerImp extends CartController {
   StatusRequest statusRequest = StatusRequest.none;
   CartData cartData = CartData(Get.find());
   AppServices appServices = Get.find();
-  Map favourite = {};
 
+  int count = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -28,15 +27,9 @@ class CartControllerImp extends CartController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-      } else {
-        Get.rawSnackbar(
-            title: "alarm",
-            messageText: Text(
-              "this product is removed to favourites",
-              style: Styles.textStyle16.copyWith(color: Colors.white),
-            ));
-      }
+      } else {}
     }
+    update();
   }
 
   @override
@@ -49,14 +42,14 @@ class CartControllerImp extends CartController {
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-      } else {
-        Get.rawSnackbar(
-            title: "alarm",
-            messageText: const Text(
-              "this product is added to favourites",
-              style: Styles.textStyle16,
-            ));
-      }
+      } else {}
     }
+    update();
+  }
+
+  @override
+  viewCart() {
+    // TODO: implement viewCart
+    throw UnimplementedError();
   }
 }

@@ -1,29 +1,39 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
-import 'package:eccommerce4/core/constant/constatns_value.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CartItem extends StatelessWidget {
-  const CartItem({super.key, required this.itemCount});
-  final int itemCount;
+import '../../../../controller/items/item_details_controller.dart';
+import '../../../../core/constant/backlinks.dart';
+
+class CartItem extends GetView<ItemsDetailsControllerImp> {
+  const CartItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 160,
-          height: 140,
-          decoration: BoxDecoration(
-              color: ColorsApp.kprimaryColor1,
-              borderRadius: BorderRadius.circular(kborderradius)),
+        SizedBox(
+          child: CachedNetworkImage(
+            imageUrl: "$itemsImageNameLink/${controller.itemModel.itemsImage}",
+            fit: BoxFit.fill,
+          ),
         ),
+        // Container(
+        //   width: 160,
+        //   height: 140,
+        //   decoration: BoxDecoration(
+        //       color: ColorsApp.kprimaryColor1,
+        //       borderRadius: BorderRadius.circular(kborderradius)),
+        // ),
         Expanded(
           child: ListTile(
-            title: Text("honer x9 lite ",
+            title: Text("${controller.itemModel.itemsName}",
                 style: Styles.textStyle20.copyWith(color: Colors.black)),
             subtitle: Opacity(
               opacity: .6,
-              child: Text("\$ 200 ",
+              child: Text("${controller.itemModel.itemsPrice}",
                   style: Styles.textStyle18.copyWith(color: Colors.black)),
             ),
           ),
@@ -34,7 +44,7 @@ class CartItem extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.add),
             ),
-            Text("$itemCount",
+            Text("3",
                 style: Styles.textStyle25
                     .copyWith(color: ColorsApp.kprimaryColor1)),
             IconButton(

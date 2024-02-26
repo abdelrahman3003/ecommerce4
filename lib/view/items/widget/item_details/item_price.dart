@@ -1,8 +1,10 @@
+import 'package:eccommerce4/controller/items/item_details_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ItemPrice extends StatelessWidget {
+class ItemPrice extends GetView<ItemsDetailsControllerImp> {
   const ItemPrice({super.key, required this.price});
   final String price;
   @override
@@ -13,7 +15,11 @@ class ItemPrice extends StatelessWidget {
           child: Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.cartControllerImp
+                      .addCart(controller.itemModel.itemsId);
+                  controller.cartControllerImp.count++;
+                },
                 icon: const Icon(
                   Icons.add,
                   color: Colors.black,
@@ -31,10 +37,18 @@ class ItemPrice extends StatelessWidget {
                       width: 3,
                     ),
                   ),
+                  child: const Text(
+                    "3",
+                    style: Styles.textStyle18,
+                  ),
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.cartControllerImp
+                      .removeCart(controller.itemModel.itemsId);
+                  controller.cartControllerImp.count++;
+                },
                 icon: const Icon(
                   Icons.remove,
                   color: Colors.black,
