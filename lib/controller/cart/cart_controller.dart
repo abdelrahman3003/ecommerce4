@@ -49,10 +49,7 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  viewCart() {
-    // TODO: implement viewCart
-    throw UnimplementedError();
-  }
+  viewCart() {}
 
   @override
   getCountItem(itemid) async {

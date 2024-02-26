@@ -38,7 +38,7 @@ class ItemPrice extends StatelessWidget {
                             ),
                           ),
                           child: Center(
-                            child: Text("${controller.cartControllerImp}",
+                            child: Text("${controller.count}",
                                 style: Styles.textStyle18
                                     .copyWith(fontWeight: FontWeight.bold)),
                           ),
