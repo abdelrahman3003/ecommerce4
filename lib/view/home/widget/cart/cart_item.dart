@@ -70,7 +70,7 @@ class CartItem extends GetView<ItemsDetailsControllerImp> {
           ],
         ),
         const Divider(
-          color: Colors.black,
+          color: Colors.grey,
         ),
       ],
     );

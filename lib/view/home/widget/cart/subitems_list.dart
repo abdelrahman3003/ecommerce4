@@ -14,7 +14,7 @@ class SubitemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SizedBox(
-        height: 150,
+        height: 110,
         child: Column(
           children: [
             Subitem(title: "Price", subTilte: "\$2000"),

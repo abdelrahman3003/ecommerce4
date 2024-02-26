@@ -11,12 +11,12 @@ class Subitem extends StatelessWidget {
       children: [
         Expanded(
             child: Text(title,
-                style: Styles.textStyle25black.copyWith(
+                style: Styles.textStyle18.copyWith(
                     fontWeight: title == "Total Price"
                         ? FontWeight.bold
                         : FontWeight.normal))),
         Text(subTilte,
-            style: Styles.textStyle20black.copyWith(
+            style: Styles.textStyle16.copyWith(
               fontWeight:
                   title == "Total Price" ? FontWeight.bold : FontWeight.normal,
             )),
