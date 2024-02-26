@@ -9,8 +9,7 @@ abstract class CartController extends GetxController {
   addCart(itemid);
   removeCart(itemid);
   viewCart();
-  incrementCount();
-  decrementCount();
+  getCountItem(itemid);
 }
 
 class CartControllerImp extends CartController {
@@ -18,7 +17,7 @@ class CartControllerImp extends CartController {
   CartData cartData = CartData(Get.find());
   AppServices appServices = Get.find();
 
-  int count = 0;
+  int countfront = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -56,14 +55,19 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  decrementCount() {
-    count++;
+  getCountItem(itemid) async {
+    statusRequest = StatusRequest.loading;
     update();
-  }
-
-  @override
-  incrementCount() {
-    if (count >= 0) count = count - 1;
+    var response = await cartData.getCountItem(
+        "$itemid", appServices.sharedPreferences.getString("id")!);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        return response["data"];
+      }
+    }
     update();
   }
 }
