@@ -22,47 +22,56 @@ class CartItem extends GetView<ItemsDetailsControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        SizedBox(
-          child: CachedNetworkImage(
-            imageUrl: "$categoriesImageNameLink$image",
-            fit: BoxFit.fill,
-          ),
-        ),
-        // Container(
-        //   width: 160,
-        //   height: 140,
-        //   decoration: BoxDecoration(
-        //       color: ColorsApp.kprimaryColor1,
-        //       borderRadius: BorderRadius.circular(kborderradius)),
-        // ),
-        Expanded(
-          child: ListTile(
-            title: Text(title,
-                style: Styles.textStyle20.copyWith(color: Colors.black)),
-            subtitle: Opacity(
-              opacity: .6,
-              child: Text(price,
-                  style: Styles.textStyle18.copyWith(color: Colors.black)),
-            ),
-          ),
-        ),
-        Column(
+        Row(
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.add),
+            SizedBox(
+              width: 100,
+              height: 100,
+              child: CachedNetworkImage(
+                imageUrl: "$itemsImageNameLink/$image",
+                fit: BoxFit.fill,
+              ),
             ),
-            Text("$count",
-                style: Styles.textStyle25
-                    .copyWith(color: ColorsApp.kprimaryColor1)),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.remove),
+            // Container(
+            //   width: 160,
+            //   height: 140,
+            //   decoration: BoxDecoration(
+            //       color: ColorsApp.kprimaryColor1,
+            //       borderRadius: BorderRadius.circular(kborderradius)),
+            // ),
+            Expanded(
+              child: ListTile(
+                title: Text(title,
+                    style: Styles.textStyle20.copyWith(color: Colors.black)),
+                subtitle: Opacity(
+                  opacity: .6,
+                  child: Text("\$ $price",
+                      style: Styles.textStyle18.copyWith(color: Colors.red)),
+                ),
+              ),
             ),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.add),
+                ),
+                Text("$count",
+                    style: Styles.textStyle25
+                        .copyWith(color: ColorsApp.kprimaryColor1)),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.remove),
+                ),
+              ],
+            )
           ],
-        )
+        ),
+        const Divider(
+          color: Colors.black,
+        ),
       ],
     );
   }
