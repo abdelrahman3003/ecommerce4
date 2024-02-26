@@ -32,14 +32,14 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
 
   @override
   remove() {
-    cartControllerImp.addCart(itemModel.itemsCat);
+    cartControllerImp.removeCart(itemModel.itemsCat);
     if (count >= 0) count--;
     update();
   }
 
   @override
   add() {
-    cartControllerImp.removeCart(itemModel.itemsCat);
+    cartControllerImp.addCart(itemModel.itemsCat);
     count++;
     update();
   }

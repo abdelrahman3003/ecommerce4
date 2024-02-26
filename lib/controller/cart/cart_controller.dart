@@ -33,7 +33,7 @@ class CartControllerImp extends CartController {
         Get.rawSnackbar(
             title: "alarm",
             messageText: Text(
-              "1 product is added to cart",
+              "1 product is added to your cart",
               style: Styles.textStyle16.copyWith(color: Colors.white),
             ));
       }
@@ -55,7 +55,7 @@ class CartControllerImp extends CartController {
         Get.rawSnackbar(
             title: "alarm",
             messageText: Text(
-              "1 product is removed from cart",
+              "1 product is removed from your cart",
               style: Styles.textStyle16.copyWith(color: Colors.white),
             ));
       }
