@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 import 'subitem.dart';
 
 class SubitemsList extends StatelessWidget {
-  const SubitemsList({super.key});
-
+  const SubitemsList(
+      {super.key,
+      required this.price,
+      required this.shopping,
+      required this.totalprice});
+  final String price;
+  final String shopping;
+  final String totalprice;
   @override
   Widget build(BuildContext context) {
     return const SizedBox(

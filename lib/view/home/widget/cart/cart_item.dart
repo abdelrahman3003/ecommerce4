@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/items/item_details_controller.dart';
+import '../../../../core/constant/backlinks.dart';
 
 class CartItem extends GetView<ItemsDetailsControllerImp> {
   const CartItem({
@@ -25,7 +26,7 @@ class CartItem extends GetView<ItemsDetailsControllerImp> {
       children: [
         SizedBox(
           child: CachedNetworkImage(
-            imageUrl: image,
+            imageUrl: "$categoriesImageNameLink$image",
             fit: BoxFit.fill,
           ),
         ),

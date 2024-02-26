@@ -78,11 +78,11 @@ class CartControllerImp extends CartController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
-        var data = response["data"];
+        List data = response["data"];
         cartmodelLsit.addAll(data.map((e) => CartModel.fromJson(e)));
         tolalprice = response['countprice']['totalprice'];
         tolalprice = response['countprice']['totalprice'];
-        tolalcount = response['countprice']['totalcount'];
+        tolalcount = int.parse(response['countprice']['totalcount']);
       }
     }
     update();
@@ -103,5 +103,12 @@ class CartControllerImp extends CartController {
       }
     }
     update();
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    viewCart();
   }
 }

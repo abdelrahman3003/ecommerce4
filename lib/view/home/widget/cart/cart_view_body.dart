@@ -14,7 +14,7 @@ class CartViewBody extends GetView<CartControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
           const AppbarCart(),
@@ -22,8 +22,12 @@ class CartViewBody extends GetView<CartControllerImp> {
           const SizedBox(height: 20),
           Expanded(
               child: CartItemsList(cartItemsList: controller.cartmodelLsit)),
-          SubitemsList(),
-          CartButton()
+          SubitemsList(
+            price: "${controller.tolalprice}",
+            shopping: "200",
+            totalprice: "1000",
+          ),
+          const CartButton()
         ],
       ),
     );
