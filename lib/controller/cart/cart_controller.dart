@@ -9,6 +9,8 @@ abstract class CartController extends GetxController {
   addCart(itemid);
   removeCart(itemid);
   viewCart();
+  incrementCount();
+  decrementCount();
 }
 
 class CartControllerImp extends CartController {
@@ -51,5 +53,17 @@ class CartControllerImp extends CartController {
   viewCart() {
     // TODO: implement viewCart
     throw UnimplementedError();
+  }
+
+  @override
+  decrementCount() {
+    count++;
+    update();
+  }
+
+  @override
+  incrementCount() {
+    if (count >= 0) count = count - 1;
+    update();
   }
 }

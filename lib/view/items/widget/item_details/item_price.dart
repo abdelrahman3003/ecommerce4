@@ -39,10 +39,9 @@ class ItemPrice extends StatelessWidget {
                             ),
                           ),
                           child: Center(
-                            child: Text(
-                              "${controller.cartControllerImp.count}",
-                              style: Styles.textStyle18,
-                            ),
+                            child: Text("${controller.cartControllerImp.count}",
+                                style: Styles.textStyle18
+                                    .copyWith(fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ),
