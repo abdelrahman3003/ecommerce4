@@ -19,7 +19,7 @@ class ItemPrice extends StatelessWidget {
                         onPressed: () {
                           controller.cartControllerImp
                               .addCart(controller.itemModel.itemsId);
-                          controller.cartControllerImp.count++;
+                          controller.cartControllerImp.decrementCount();
                         },
                         icon: const Icon(
                           Icons.add,
@@ -49,7 +49,7 @@ class ItemPrice extends StatelessWidget {
                         onPressed: () {
                           controller.cartControllerImp
                               .removeCart(controller.itemModel.itemsId);
-                          controller.cartControllerImp.count++;
+                          controller.cartControllerImp.decrementCount();
                         },
                         icon: const Icon(
                           Icons.remove,
