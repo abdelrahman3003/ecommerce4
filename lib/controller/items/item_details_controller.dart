@@ -14,6 +14,7 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
   late ItemModel itemModel;
   CartControllerImp cartControllerImp = Get.put(CartControllerImp());
   int count = 0;
+
   @override
   inialData() async {
     cartControllerImp.statusRequest = StatusRequest.loading;
@@ -31,15 +32,15 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
   }
 
   @override
-  remove() {
-    cartControllerImp.removeCart(itemModel.itemsCat);
+  remove() async {
+    await cartControllerImp.removeCart(itemModel.itemsCat);
     if (count >= 0) count--;
     update();
   }
 
   @override
-  add() {
-    cartControllerImp.addCart(itemModel.itemsCat);
+  add() async {
+    await cartControllerImp.addCart(itemModel.itemsCat);
     count++;
     update();
   }

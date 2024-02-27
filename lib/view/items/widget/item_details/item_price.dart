@@ -1,4 +1,5 @@
 import 'package:eccommerce4/controller/items/item_details_controller.dart';
+import 'package:eccommerce4/core/class/data_handilng.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,8 @@ class ItemPrice extends GetView<ItemsDetailsControllerImp> {
           child: Row(
             children: [
               IconButton(
-                onPressed: () {
-                  controller.add();
+                onPressed: () async {
+                  await controller.add();
                 },
                 icon: const Icon(
                   Icons.add,
@@ -27,25 +28,27 @@ class ItemPrice extends GetView<ItemsDetailsControllerImp> {
               Opacity(
                 opacity: .7,
                 child: Container(
-                  height: 40,
-                  width: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: ColorsApp.kprimaryColor2,
-                      width: 3,
+                    height: 40,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: ColorsApp.kprimaryColor2,
+                        width: 3,
+                      ),
                     ),
-                  ),
-                  child: Center(
-                    child: Text("$count",
-                        style: Styles.textStyle18
-                            .copyWith(fontWeight: FontWeight.bold)),
-                  ),
-                ),
+                    child: DataHandlingState(
+                      statusRequest: controller.cartControllerImp.statusRequest,
+                      widget: Center(
+                        child: Text("$count",
+                            style: Styles.textStyle18
+                                .copyWith(fontWeight: FontWeight.bold)),
+                      ),
+                    )),
               ),
               IconButton(
-                onPressed: () {
-                  controller.remove();
+                onPressed: () async {
+                  await controller.remove();
                 },
                 icon: const Icon(
                   Icons.remove,
