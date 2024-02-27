@@ -21,8 +21,8 @@ class CartControllerImp extends CartController {
   AppServices appServices = Get.find();
   List<CartModel> cartmodelLsit = [];
 
-  int tolalprice = 0;
-  int tolalcount = 0;
+  late int tolalprice;
+  late int tolalcount;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -80,7 +80,6 @@ class CartControllerImp extends CartController {
       } else {
         List data = response["data"];
         cartmodelLsit.addAll(data.map((e) => CartModel.fromJson(e)));
-        tolalprice = response['countprice']['totalprice'];
         tolalprice = response['countprice']['totalprice'];
         tolalcount = int.parse(response['countprice']['totalcount']);
       }

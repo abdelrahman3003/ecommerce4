@@ -12,7 +12,9 @@ class AppbarCart extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             icon: const Icon(
               Icons.arrow_back,
               size: 30,

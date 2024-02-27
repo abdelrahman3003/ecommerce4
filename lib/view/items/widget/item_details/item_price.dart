@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ItemPrice extends GetView<ItemsDetailsControllerImp> {
-  const ItemPrice({super.key, required this.price});
+  const ItemPrice({super.key, required this.price, required this.count});
   final String price;
+  final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,7 +37,7 @@ class ItemPrice extends GetView<ItemsDetailsControllerImp> {
                     ),
                   ),
                   child: Center(
-                    child: Text("${controller.count}",
+                    child: Text("$count",
                         style: Styles.textStyle18
                             .copyWith(fontWeight: FontWeight.bold)),
                   ),
