@@ -13,6 +13,7 @@ class CartItemsList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: cartItemsList.length,
       itemBuilder: (context, index) => CartItem(
+          id: "${cartItemsList[index].itemsId!}",
           image: cartItemsList[index].itemsImage!,
           title: cartItemsList[index].itemsName!,
           price: "${cartItemsList[index].itemsPrice!}",
