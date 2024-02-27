@@ -92,7 +92,7 @@ class CartControllerImp extends CartController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await cartData.getCountItem(
-        "$itemid", appServices.sharedPreferences.getString("id")!);
+        itemid, appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {

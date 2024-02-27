@@ -17,10 +17,9 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
 
   @override
   inialData() async {
-    cartControllerImp.statusRequest = StatusRequest.loading;
     itemModel = Get.arguments['itemModel'];
-    count = await cartControllerImp.getCountItem(itemModel.itemsId);
-    cartControllerImp.statusRequest = StatusRequest.success;
+    cartControllerImp.statusRequest = StatusRequest.loading;
+    count = await cartControllerImp.getCountItem(itemModel.itemsId!);
     update();
   }
 
@@ -32,15 +31,15 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
   }
 
   @override
-  remove() async {
-    await cartControllerImp.removeCart(itemModel.itemsCat);
+  remove() {
+    cartControllerImp.removeCart(itemModel.itemsId);
     if (count >= 0) count--;
     update();
   }
 
   @override
-  add() async {
-    await cartControllerImp.addCart(itemModel.itemsCat);
+  add() {
+    cartControllerImp.addCart(itemModel.itemsId);
     count++;
     update();
   }
