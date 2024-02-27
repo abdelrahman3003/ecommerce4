@@ -13,7 +13,7 @@ class AddCartButton extends GetView<ItemsDetailsControllerImp> {
       child: OnboardingButton(
         text: "Add To Cart",
         onPressed: () {
-          controller.cartControllerImp.addCart(controller.itemModel.itemsId);
+          controller.cartControllerImp.addCart(controller.itemModel.itemsId!);
         },
         width: double.infinity,
         borderRadius: 10,

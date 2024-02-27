@@ -9,10 +9,10 @@ import '../../data/datasource/remote/cart/cart_data.dart';
 import '../../data/model/cart_model.dart';
 
 abstract class CartController extends GetxController {
-  addCart(itemid);
-  removeCart(itemid);
+  addCart(int itemid);
+  removeCart(int itemid);
   viewCart();
-  getCountItem(itemid);
+  getCountItem(int itemid);
 }
 
 class CartControllerImp extends CartController {
@@ -28,7 +28,7 @@ class CartControllerImp extends CartController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await cartData.addCart(
-        "$itemid", appServices.sharedPreferences.getString("id")!);
+        itemid, appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {

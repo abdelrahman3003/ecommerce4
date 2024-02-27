@@ -4,21 +4,21 @@ import 'package:eccommerce4/core/constant/backlinks.dart';
 class CartData {
   Crud crud;
   CartData(this.crud);
-  addCart(String itemid, String userid) async {
-    var response = await crud
-        .postData(addcartNameLink, {"itemid": itemid, "userid": userid});
+  addCart(int itemid, String userid) async {
+    var response = await crud.postData(
+        addcartNameLink, {"itemid": itemid.toString(), "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
 
-  removeCart(String itemid, String userid) async {
-    var response = await crud
-        .postData(removecartNameLink, {"itemid": itemid, "userid": userid});
+  removeCart(itemid, String userid) async {
+    var response = await crud.postData(
+        removecartNameLink, {"itemid": itemid.toString(), "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
 
-  getCountItem(String itemid, String userid) async {
-    var response = await crud
-        .postData(getcounitemNameLink, {"itemid": itemid, "userid": userid});
+  getCountItem(itemid, String userid) async {
+    var response = await crud.postData(
+        getcounitemNameLink, {"itemid": itemid.toString(), "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
 

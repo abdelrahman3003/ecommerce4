@@ -17,7 +17,7 @@ class CartItem extends GetView<CartControllerImp> {
     required this.count,
   });
   final String image;
-  final String id;
+  final int id;
   final String title;
   final String price;
   final int count;
@@ -57,8 +57,9 @@ class CartItem extends GetView<CartControllerImp> {
             Column(
               children: [
                 IconButton(
-                  onPressed: () {
-                    controller.addCart(id);
+                  onPressed: () async {
+                    await controller.addCart(id);
+                    await controller.viewCart();
                   },
                   icon: const Icon(Icons.add),
                 ),
@@ -66,8 +67,9 @@ class CartItem extends GetView<CartControllerImp> {
                     style: Styles.textStyle25
                         .copyWith(color: ColorsApp.kprimaryColor1)),
                 IconButton(
-                  onPressed: () {
-                    controller.removeCart(id);
+                  onPressed: () async {
+                    await controller.removeCart(id);
+                    await controller.viewCart();
                   },
                   icon: const Icon(Icons.remove),
                 ),
