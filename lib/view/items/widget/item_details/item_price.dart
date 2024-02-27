@@ -1,5 +1,4 @@
 import 'package:eccommerce4/controller/items/item_details_controller.dart';
-import 'package:eccommerce4/core/class/data_handilng.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';

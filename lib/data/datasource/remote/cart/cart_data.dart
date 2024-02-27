@@ -16,7 +16,7 @@ class CartData {
     return response.fold((l) => l, (r) => r);
   }
 
-  getCountItem(int itemid, String userid) async {
+  getCountItem(String itemid, String userid) async {
     var response = await crud
         .postData(getcounitemNameLink, {"itemid": itemid, "userid": userid});
     return response.fold((l) => l, (r) => r);
