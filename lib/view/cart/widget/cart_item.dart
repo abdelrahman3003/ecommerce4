@@ -9,19 +9,11 @@ import '../../../core/constant/backlinks.dart';
 
 class CartItem extends GetView<CartControllerImp> {
   const CartItem({
+    required this.index,
     super.key,
-    required this.id,
-    required this.image,
-    required this.title,
-    required this.price,
-    required this.count,
   });
-  final String image;
-  final int id;
-  final String title;
-  final String price;
-  final int count;
 
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +24,8 @@ class CartItem extends GetView<CartControllerImp> {
               width: 100,
               height: 100,
               child: CachedNetworkImage(
-                imageUrl: "$itemsImageNameLink/$image",
+                imageUrl:
+                    "$itemsImageNameLink/${controller.cartmodelLsit[index].itemsImage}",
                 fit: BoxFit.fill,
               ),
             ),
@@ -45,11 +38,12 @@ class CartItem extends GetView<CartControllerImp> {
             // ),
             Expanded(
               child: ListTile(
-                title: Text(title,
+                title: Text("${controller.cartmodelLsit[index].itemsName}",
                     style: Styles.textStyle20.copyWith(color: Colors.black)),
                 subtitle: Opacity(
                   opacity: .6,
-                  child: Text("\$ $price",
+                  child: Text(
+                      "\$ ${controller.cartmodelLsit[index].itemsprice}",
                       style: Styles.textStyle18.copyWith(color: Colors.red)),
                 ),
               ),
@@ -57,17 +51,21 @@ class CartItem extends GetView<CartControllerImp> {
             Column(
               children: [
                 IconButton(
-                  onPressed: () {
-                    controller.addCart(id);
+                  onPressed: () async {
+                    controller
+                        .addCart(controller.cartmodelLsit[index].itemsId!);
+                    await controller.refreshCart();
                   },
                   icon: const Icon(Icons.add),
                 ),
-                Text("$count",
+                Text("${controller.cartmodelLsit[index].itemcount}",
                     style: Styles.textStyle25
                         .copyWith(color: ColorsApp.kprimaryColor1)),
                 IconButton(
-                  onPressed: () {
-                    controller.removeCart(id);
+                  onPressed: () async {
+                    controller
+                        .removeCart(controller.cartmodelLsit[index].itemsId!);
+                    await controller.refreshCart();
                   },
                   icon: const Icon(Icons.remove),
                 ),

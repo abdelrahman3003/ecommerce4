@@ -9,15 +9,9 @@ class CartItemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: const BouncingScrollPhysics(),
-      shrinkWrap: true,
-      itemCount: cartItemsList.length,
-      itemBuilder: (context, index) => CartItem(
-          id: cartItemsList[index].itemsId!,
-          image: cartItemsList[index].itemsImage!,
-          title: cartItemsList[index].itemsName!,
-          price: "${cartItemsList[index].itemsprice!}",
-          count: cartItemsList[index].itemcount!),
-    );
+        physics: const BouncingScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: cartItemsList.length,
+        itemBuilder: (context, index) => CartItem(index: index));
   }
 }

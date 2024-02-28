@@ -14,6 +14,7 @@ abstract class CartController extends GetxController {
   viewCart();
   getCountItem(int itemid);
   refreshCart();
+  resetCart();
 }
 
 class CartControllerImp extends CartController {
@@ -80,9 +81,12 @@ class CartControllerImp extends CartController {
         statusRequest = StatusRequest.failure;
       } else {
         List data = response["data"];
+        cartmodelLsit.clear();
         cartmodelLsit.addAll(data.map((e) => CartModel.fromJson(e)));
         tolalprice = response['countprice']['totalprice'];
         tolalcount = int.parse(response['countprice']['totalcount']);
+        print(
+            "===============================count item ${cartmodelLsit[1].itemcount}");
       }
     }
     update();
@@ -106,9 +110,9 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  refreshCart() async {
-    await viewCart();
-    update();
+  refreshCart() {
+    resetCart();
+    viewCart();
   }
 
   @override
@@ -116,5 +120,12 @@ class CartControllerImp extends CartController {
     // TODO: implement onInit
     super.onInit();
     viewCart();
+  }
+
+  @override
+  resetCart() {
+    tolalprice = 0;
+    tolalcount = 0;
+    cartmodelLsit.clear();
   }
 }
