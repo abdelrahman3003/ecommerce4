@@ -109,5 +109,6 @@ class CartControllerImp extends CartController {
     // TODO: implement onInit
     super.onInit();
     viewCart();
+    update();
   }
 }

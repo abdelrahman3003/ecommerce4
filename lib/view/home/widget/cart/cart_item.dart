@@ -57,20 +57,14 @@ class CartItem extends GetView<CartControllerImp> {
             Column(
               children: [
                 IconButton(
-                  onPressed: () async {
-                    await controller.addCart(id);
-                    await controller.viewCart();
-                  },
+                  onPressed: () {},
                   icon: const Icon(Icons.add),
                 ),
                 Text("$count",
                     style: Styles.textStyle25
                         .copyWith(color: ColorsApp.kprimaryColor1)),
                 IconButton(
-                  onPressed: () async {
-                    await controller.removeCart(id);
-                    await controller.viewCart();
-                  },
+                  onPressed: () {},
                   icon: const Icon(Icons.remove),
                 ),
               ],

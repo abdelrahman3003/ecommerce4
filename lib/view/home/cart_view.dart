@@ -10,6 +10,7 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("==============6666");
     Get.put(CartControllerImp());
     return GetBuilder<CartControllerImp>(
         builder: (controller) => DataHandlingState(

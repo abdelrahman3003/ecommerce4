@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
-import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../controller/favorite/favourite_controller.dart';
 import '../../../../controller/items/items_view_controller.dart';
 import '../../../../core/constant/backlinks.dart';
+import '../../../../data/model/items_model.dart';
 
 class ItemCard extends GetView<ItemsControllerImp> {
   const ItemCard({super.key, required this.itemModel});

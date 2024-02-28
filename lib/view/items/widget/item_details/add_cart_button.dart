@@ -3,6 +3,8 @@ import 'package:eccommerce4/core/shared/widgets/buttons/onboarding_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/constant/routsApp.dart';
+
 class AddCartButton extends GetView<ItemsDetailsControllerImp> {
   const AddCartButton({super.key});
 
@@ -11,9 +13,9 @@ class AddCartButton extends GetView<ItemsDetailsControllerImp> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: OnboardingButton(
-        text: "Add To Cart",
+        text: "Go To Cart",
         onPressed: () {
-          controller.cartControllerImp.addCart(controller.itemModel.itemsId!);
+          Get.toNamed(kCartView);
         },
         width: double.infinity,
         borderRadius: 10,
