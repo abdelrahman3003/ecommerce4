@@ -39,12 +39,23 @@ class CartItem extends GetView<CartControllerImp> {
             Expanded(
               child: ListTile(
                 title: Text("${controller.cartmodelLsit[index].itemsName}",
-                    style: Styles.textStyle20.copyWith(color: Colors.black)),
+                    style: Styles.textStyle25.copyWith(color: Colors.black)),
                 subtitle: Opacity(
                   opacity: .6,
-                  child: Text(
-                      "\$ ${controller.cartmodelLsit[index].itemsprice}",
-                      style: Styles.textStyle18.copyWith(color: Colors.red)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 2),
+                      Text("${controller.cartmodelLsit[index].itemsPrice} \$ ",
+                          style:
+                              Styles.textStyle16.copyWith(color: Colors.black)),
+                      Text(
+                          "Total : ${controller.cartmodelLsit[index].itemsprice} \$ ",
+                          style: Styles.textStyle18.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                    ],
+                  ),
                 ),
               ),
             ),

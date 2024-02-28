@@ -9,7 +9,7 @@ class Subitem extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-            child: Text("Totla Price",
+            child: Text("Shopping",
                 style:
                     Styles.textStyle18.copyWith(fontWeight: FontWeight.bold))),
         Text("\$ $totalprice",
