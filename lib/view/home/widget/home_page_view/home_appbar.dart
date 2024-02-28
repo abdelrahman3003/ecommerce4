@@ -1,6 +1,7 @@
 import 'package:eccommerce4/controller/search/search_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/constant/constatns_value.dart';
+import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/view/home/widget/home_page_view/icon_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,9 +39,17 @@ class HomeAppbar extends GetView<SearchControllerImp> {
           ),
         ),
         const SizedBox(width: 10),
-        IconAppbar(icon: Icons.card_travel, onPressed: () {}),
+        IconAppbar(
+            icon: Icons.card_travel,
+            onPressed: () {
+              Get.toNamed(kCartView);
+            }),
         const SizedBox(width: 10),
-        IconAppbar(icon: Icons.favorite_outline_outlined, onPressed: () {}),
+        IconAppbar(
+            icon: Icons.favorite_outline_outlined,
+            onPressed: () {
+              Get.toNamed(kfavouroteview);
+            }),
       ],
     );
   }

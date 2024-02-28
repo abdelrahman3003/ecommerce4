@@ -16,16 +16,17 @@ class HomePageView extends StatelessWidget {
     Get.put(SearchControllerImp());
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const HomeAppbar(),
-              GetBuilder<SearchControllerImp>(
-                builder: (controller) => !controller.isSearch
+        child: GetBuilder<SearchControllerImp>(
+          builder: (controller) => SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                const HomeAppbar(),
+                !controller.isSearch
                     ? const HomeViewBody()
                     : const SearchView(),
-              )
-            ],
+              ],
+            ),
           ),
         ));
   }

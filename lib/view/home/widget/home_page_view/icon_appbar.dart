@@ -16,7 +16,7 @@ class IconAppbar extends StatelessWidget {
             borderRadius: BorderRadius.circular(kborderradius),
             color: ColorsApp.kprimaryColor3),
         child: IconButton(
-          onPressed: () {},
+          onPressed: onPressed,
           icon: Icon(
             icon,
             size: 30,
