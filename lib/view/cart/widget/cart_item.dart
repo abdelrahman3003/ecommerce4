@@ -52,9 +52,9 @@ class CartItem extends GetView<CartControllerImp> {
               children: [
                 IconButton(
                   onPressed: () async {
-                    controller
+                    await controller
                         .addCart(controller.cartmodelLsit[index].itemsId!);
-                    await controller.refreshCart();
+                    controller.refreshCart();
                   },
                   icon: const Icon(Icons.add),
                 ),
@@ -63,9 +63,9 @@ class CartItem extends GetView<CartControllerImp> {
                         .copyWith(color: ColorsApp.kprimaryColor1)),
                 IconButton(
                   onPressed: () async {
-                    controller
+                    await controller
                         .removeCart(controller.cartmodelLsit[index].itemsId!);
-                    await controller.refreshCart();
+                    controller.refreshCart();
                   },
                   icon: const Icon(Icons.remove),
                 ),

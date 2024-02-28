@@ -81,12 +81,9 @@ class CartControllerImp extends CartController {
         statusRequest = StatusRequest.failure;
       } else {
         List data = response["data"];
-        cartmodelLsit.clear();
         cartmodelLsit.addAll(data.map((e) => CartModel.fromJson(e)));
         tolalprice = response['countprice']['totalprice'];
         tolalcount = int.parse(response['countprice']['totalcount']);
-        print(
-            "===============================count item ${cartmodelLsit[1].itemcount}");
       }
     }
     update();
