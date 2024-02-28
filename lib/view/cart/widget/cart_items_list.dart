@@ -16,7 +16,7 @@ class CartItemsList extends StatelessWidget {
           id: cartItemsList[index].itemsId!,
           image: cartItemsList[index].itemsImage!,
           title: cartItemsList[index].itemsName!,
-          price: "${cartItemsList[index].itemsPrice!}",
+          price: "${cartItemsList[index].itemsprice!}",
           count: cartItemsList[index].itemcount!),
     );
   }

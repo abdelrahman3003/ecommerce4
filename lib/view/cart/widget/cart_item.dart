@@ -4,8 +4,8 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/cart/cart_controller.dart';
-import '../../core/constant/backlinks.dart';
+import '../../../controller/cart/cart_controller.dart';
+import '../../../core/constant/backlinks.dart';
 
 class CartItem extends GetView<CartControllerImp> {
   const CartItem({
@@ -57,14 +57,18 @@ class CartItem extends GetView<CartControllerImp> {
             Column(
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.addCart(id);
+                  },
                   icon: const Icon(Icons.add),
                 ),
                 Text("$count",
                     style: Styles.textStyle25
                         .copyWith(color: ColorsApp.kprimaryColor1)),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.removeCart(id);
+                  },
                   icon: const Icon(Icons.remove),
                 ),
               ],

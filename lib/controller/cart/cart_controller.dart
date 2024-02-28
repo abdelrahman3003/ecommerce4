@@ -106,8 +106,8 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  refreshCart() {
-    viewCart();
+  refreshCart() async {
+    await viewCart();
     update();
   }
 
