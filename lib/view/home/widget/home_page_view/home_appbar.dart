@@ -1,11 +1,11 @@
+import 'package:eccommerce4/controller/search/search_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/constant/constatns_value.dart';
-import 'package:eccommerce4/core/constant/routsApp.dart';
+import 'package:eccommerce4/view/home/widget/home_page_view/icon_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-class HomeAppbar extends StatelessWidget {
+class HomeAppbar extends GetView<SearchControllerImp> {
   const HomeAppbar({super.key});
 
   @override
@@ -16,9 +16,17 @@ class HomeAppbar extends StatelessWidget {
           child: SizedBox(
             height: 60,
             child: TextFormField(
+              controller: controller.searchText,
+              onChanged: (value) {
+                controller.checkSearch(value);
+              },
               decoration: InputDecoration(
                 prefix: IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.search)),
+                    onPressed: () {
+                      controller.search();
+                    },
+                    icon:
+                        const Icon(Icons.search, color: Colors.grey, size: 30)),
                 hintText: "Find product",
                 filled: true,
                 fillColor: ColorsApp.kprimaryColor3,
@@ -30,39 +38,9 @@ class HomeAppbar extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        Container(
-            height: 55,
-            width: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(kborderradius),
-                color: ColorsApp.kprimaryColor3),
-            child: IconButton(
-              onPressed: () {
-                Get.toNamed(kCartView);
-              },
-              icon: const Icon(
-                Icons.card_travel,
-                size: 30,
-                color: Colors.grey,
-              ),
-            )),
+        IconAppbar(icon: Icons.card_travel, onPressed: () {}),
         const SizedBox(width: 10),
-        Container(
-            height: 55,
-            width: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(kborderradius),
-                color: ColorsApp.kprimaryColor3),
-            child: IconButton(
-              onPressed: () {
-                Get.toNamed(kfavouroteview);
-              },
-              icon: const Icon(
-                Icons.favorite_outline_outlined,
-                size: 30,
-                color: Colors.grey,
-              ),
-            )),
+        IconAppbar(icon: Icons.favorite_outline_outlined, onPressed: () {}),
       ],
     );
   }
