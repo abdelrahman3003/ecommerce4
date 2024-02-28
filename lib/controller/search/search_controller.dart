@@ -53,6 +53,7 @@ class SearchControllerImp extends SearchController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
+        searchItemsList.clear();
         List responseData = response['data'];
         searchItemsList.addAll(responseData.map((e) => ItemModel.fromJson(e)));
       }

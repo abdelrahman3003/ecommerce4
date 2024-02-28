@@ -1,6 +1,8 @@
 import 'package:eccommerce4/data/model/items_model.dart';
 import 'package:flutter/material.dart';
 
+import 'widget/search_item_card.dart';
+
 class SearchView extends StatelessWidget {
   const SearchView({super.key, required this.itemsSearch});
   final List<ItemModel> itemsSearch;
@@ -11,7 +13,12 @@ class SearchView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: itemsSearch.length,
       itemBuilder: (context, index) {
-        return Text("${itemsSearch[index].itemsName}");
+        return SearchItemCard(
+          image: itemsSearch[index].itemsImage!,
+          subtilte: itemsSearch[index].categoriesName!,
+          title: itemsSearch[index].itemsName!,
+          price: itemsSearch[index].itemsPrice!,
+        );
       },
     );
   }
