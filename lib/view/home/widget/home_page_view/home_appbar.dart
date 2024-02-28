@@ -41,7 +41,7 @@ class HomeAppbar extends StatelessWidget {
                 Get.toNamed(kCartView);
               },
               icon: const Icon(
-                Icons.notifications_none_outlined,
+                Icons.card_travel,
                 size: 30,
                 color: Colors.grey,
               ),

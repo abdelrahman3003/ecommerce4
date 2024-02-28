@@ -23,7 +23,7 @@ class AppbarItem extends GetView<HomeScreenControllerImp> {
         children: [
           IconButton(
             onPressed: () {
-              if (icon == Icons.card_travel) {
+              if (icon == Icons.notifications) {
                 controller.changepage(1);
               } else if (icon == Icons.settings) {
                 controller.changepage(2);

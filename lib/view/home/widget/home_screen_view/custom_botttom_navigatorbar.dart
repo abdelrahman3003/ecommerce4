@@ -22,7 +22,7 @@ class AppBottomNavigatorBar extends StatelessWidget {
               isactive: controller.pageCount == 0 ? true : false,
             ),
             AppbarItem(
-              icon: Icons.card_travel,
+              icon: Icons.notifications,
               // iconName: ConstanstValue.favourite,
               isactive: controller.pageCount == 1 ? true : false,
             ),
