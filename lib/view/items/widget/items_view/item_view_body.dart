@@ -9,7 +9,6 @@ import 'items_list_view.dart';
 
 class ItemsViewBody extends StatelessWidget {
   const ItemsViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp);

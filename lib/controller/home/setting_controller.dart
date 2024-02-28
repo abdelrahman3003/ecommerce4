@@ -13,4 +13,10 @@ class SettingControllerImp extends SettingController {
     appServices.sharedPreferences.setString("step", "1");
     Get.toNamed(kSignin);
   }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
 }

@@ -13,6 +13,7 @@ abstract class CartController extends GetxController {
   removeCart(int itemid);
   viewCart();
   getCountItem(int itemid);
+  refreshCart();
 }
 
 class CartControllerImp extends CartController {
@@ -21,8 +22,8 @@ class CartControllerImp extends CartController {
   AppServices appServices = Get.find();
   List<CartModel> cartmodelLsit = [];
 
-  late int tolalprice;
-  late int tolalcount;
+  int tolalprice = 0;
+  int tolalcount = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -105,10 +106,15 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
+  refreshCart() {
     viewCart();
     update();
+  }
+
+  @override
+  void onInit() {
+    print("============ oninit cartview");
+    // TODO: implement onInit
+    super.onInit();
   }
 }

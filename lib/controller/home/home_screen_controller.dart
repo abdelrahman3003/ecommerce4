@@ -2,8 +2,7 @@ import 'package:eccommerce4/view/home/home_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-import '../../view/home/cart_view.dart';
-
+import '../../view/home/notification.dart';
 import '../../view/home/profile_view.dart';
 import '../../view/home/setting_view.dart';
 
@@ -15,7 +14,7 @@ class HomeScreenControllerImp extends HomeScreenController {
   int pageCount = 0;
   List<Widget> pageList = [
     const HomePageView(),
-    const CartView(),
+    const NotificationView(),
     const SettingView(),
     const ProfileView(),
   ];

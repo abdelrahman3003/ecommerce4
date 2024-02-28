@@ -2,7 +2,7 @@ import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
+import '../../core/shared/widgets/buttons/onboarding_Button.dart';
 
 class CartButton extends StatelessWidget {
   const CartButton({super.key});

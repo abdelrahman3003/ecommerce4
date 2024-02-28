@@ -37,7 +37,9 @@ class HomeAppbar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(kborderradius),
                 color: ColorsApp.kprimaryColor3),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(kCartView);
+              },
               icon: const Icon(
                 Icons.notifications_none_outlined,
                 size: 30,

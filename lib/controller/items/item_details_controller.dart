@@ -24,13 +24,6 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
   }
 
   @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-    inialData();
-  }
-
-  @override
   remove() {
     cartControllerImp.removeCart(itemModel.itemsId!);
     if (count >= 0) count--;
@@ -42,5 +35,12 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
     cartControllerImp.addCart(itemModel.itemsId!);
     count++;
     update();
+  }
+
+  @override
+  void onInit() {
+    print("============= 888 on itemdetails");
+    // TODO: implement onInit
+    super.onInit();
   }
 }
