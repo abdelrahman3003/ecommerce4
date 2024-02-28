@@ -25,6 +25,7 @@ class HomeAppbar extends GetView<SearchControllerImp> {
                 prefix: IconButton(
                     onPressed: () {
                       controller.search();
+                      controller.getSearch(controller.searchText!.text);
                     },
                     icon:
                         const Icon(Icons.search, color: Colors.grey, size: 30)),

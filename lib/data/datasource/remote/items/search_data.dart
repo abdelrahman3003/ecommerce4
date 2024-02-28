@@ -4,7 +4,7 @@ import 'package:eccommerce4/core/constant/backlinks.dart';
 class SearchData {
   Crud crud;
   SearchData(this.crud);
-  getItemData(String search) async {
+  searchData(String search) async {
     var response = await crud.postData(searchNameLink, {"search": search});
     return response.fold((l) => l, (r) => r);
   }
