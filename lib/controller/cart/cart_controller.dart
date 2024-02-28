@@ -113,8 +113,8 @@ class CartControllerImp extends CartController {
 
   @override
   void onInit() {
-    print("============ oninit cartview");
     // TODO: implement onInit
     super.onInit();
+    viewCart();
   }
 }

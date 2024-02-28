@@ -1,3 +1,4 @@
+import 'package:eccommerce4/view/items/widget/item_details/item_details_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +11,7 @@ class ItemDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ItemsDetailsControllerImp());
     return const Scaffold(
-      body: SafeArea(child: Text("itemdetails")),
+      body: SafeArea(child: ItemDetailsViewBody()),
     );
   }
 }

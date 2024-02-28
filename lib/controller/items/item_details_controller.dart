@@ -39,7 +39,7 @@ class ItemsDetailsControllerImp extends ItemsDetailsController {
 
   @override
   void onInit() {
-    print("============= 888 on itemdetails");
+    inialData();
     // TODO: implement onInit
     super.onInit();
   }
