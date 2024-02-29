@@ -1,5 +1,6 @@
 class CartModel {
-  int? itemsprice;
+  dynamic itempricediscount;
+  dynamic itemsprice;
   int? itemcount;
   int? cartId;
   int? cartUserid;
@@ -18,7 +19,8 @@ class CartModel {
   int? itemsCat;
 
   CartModel(
-      {this.itemsprice,
+      {this.itempricediscount,
+      this.itemsprice,
       this.itemcount,
       this.cartId,
       this.cartUserid,
@@ -37,6 +39,7 @@ class CartModel {
       this.itemsCat});
 
   CartModel.fromJson(Map<String, dynamic> json) {
+    itempricediscount = json['itempricediscount'];
     itemsprice = json['itemsprice'];
     itemcount = json['itemcount'];
     cartId = json['cart_id'];
@@ -58,6 +61,7 @@ class CartModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['itempricediscount'] = this.itempricediscount;
     data['itemsprice'] = this.itemsprice;
     data['itemcount'] = this.itemcount;
     data['cart_id'] = this.cartId;

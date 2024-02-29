@@ -23,8 +23,8 @@ class CartControllerImp extends CartController {
   AppServices appServices = Get.find();
   List<CartModel> cartmodelLsit = [];
 
-  int tolalprice = 0;
-  int tolalcount = 0;
+  dynamic tolalprice = 0;
+  dynamic tolalcount = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;

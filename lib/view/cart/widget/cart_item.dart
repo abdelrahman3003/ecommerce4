@@ -46,7 +46,8 @@ class CartItem extends GetView<CartControllerImp> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 2),
-                      Text("${controller.cartmodelLsit[index].itemsPrice} \$ ",
+                      Text(
+                          "${controller.cartmodelLsit[index].itempricediscount} \$ ",
                           style:
                               Styles.textStyle16.copyWith(color: Colors.black)),
                       Text(

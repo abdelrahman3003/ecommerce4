@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ItemPrice extends GetView<ItemsDetailsControllerImp> {
-  const ItemPrice({super.key, required this.price, required this.count});
+  const ItemPrice(
+      {super.key,
+      required this.price,
+      required this.count,
+      required this.discountprice});
   final String price;
+  final String discountprice;
   final int count;
   @override
   Widget build(BuildContext context) {
@@ -55,9 +60,18 @@ class ItemPrice extends GetView<ItemsDetailsControllerImp> {
             ],
           ),
         ),
-        Text(
-          "\$ $price",
-          style: Styles.textStyle25.copyWith(color: Colors.red),
+        Column(
+          children: [
+            Text(
+              "\$ $price",
+              style: Styles.textStyle16.copyWith(
+                  color: Colors.red, decoration: TextDecoration.lineThrough),
+            ),
+            Text(
+              "\$ $discountprice",
+              style: Styles.textStyle20.copyWith(color: Colors.red),
+            ),
+          ],
         )
       ],
     );

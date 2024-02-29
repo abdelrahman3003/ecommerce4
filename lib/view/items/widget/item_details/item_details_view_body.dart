@@ -28,6 +28,8 @@ class ItemDetailsViewBody extends StatelessWidget {
                   ItemTitle(text: controller.itemModel.itemsName!),
                   const SizedBox(height: 12),
                   ItemPrice(
+                      discountprice:
+                          "${controller.itemModel.itempricediscount!}",
                       price: "${controller.itemModel.itemsPrice!}",
                       count: controller.count),
                   const SizedBox(height: 30),
