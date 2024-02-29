@@ -11,32 +11,37 @@ class SearchItemCard extends StatelessWidget {
       required this.image,
       required this.title,
       required this.subtilte,
-      required this.price});
+      required this.price,
+      required this.onTap});
   final String image;
   final String title;
   final String subtilte;
   final int price;
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Row(
-        children: [
-          SizedBox(
-            height: Get.height / 7,
-            width: Get.width / 7,
-            child: CachedNetworkImage(imageUrl: "$itemsImageNameLink/$image"),
-          ),
-          const SizedBox(width: 15),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: Styles.textStyle20black),
-              Text(subtilte, style: Styles.textStyle18),
-            ],
-          ),
-          Spacer(),
-          Text("$price \$", style: Styles.textStyle20black),
-        ],
+    return InkWell(
+      onTap: onTap,
+      child: Card(
+        child: Row(
+          children: [
+            SizedBox(
+              height: Get.height / 7,
+              width: Get.width / 7,
+              child: CachedNetworkImage(imageUrl: "$itemsImageNameLink/$image"),
+            ),
+            const SizedBox(width: 15),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: Styles.textStyle20black),
+                Text(subtilte, style: Styles.textStyle18),
+              ],
+            ),
+            Spacer(),
+            Text("$price \$", style: Styles.textStyle20black),
+          ],
+        ),
       ),
     );
   }

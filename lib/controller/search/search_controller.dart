@@ -5,12 +5,14 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/class/statuscode.dart';
+import '../../core/constant/routsApp.dart';
 import '../../core/functions/handling _data.dart';
 
 abstract class SearchController extends GetxController {
   checkSearch(String val);
   search();
   getSearch(String search);
+  goToItemDetails(ItemModel itemModel);
 }
 
 class SearchControllerImp extends SearchController {
@@ -24,6 +26,7 @@ class SearchControllerImp extends SearchController {
   checkSearch(String val) {
     if (val == "") {
       isSearch = false;
+      statusRequest = StatusRequest.none;
     } else {
       isSearch = true;
     }
@@ -38,7 +41,6 @@ class SearchControllerImp extends SearchController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     searchText = TextEditingController();
   }
@@ -58,6 +60,12 @@ class SearchControllerImp extends SearchController {
         searchItemsList.addAll(responseData.map((e) => ItemModel.fromJson(e)));
       }
     }
+    update();
+  }
+
+  @override
+  goToItemDetails(itemModel) {
+    Get.toNamed(kItemDetailsView, arguments: {"itemModel": itemModel});
     update();
   }
 }

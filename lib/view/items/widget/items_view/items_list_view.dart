@@ -6,27 +6,28 @@ import 'package:get/get.dart';
 
 import '../../../../controller/favorite/favourite_controller.dart';
 
-class ItemListView extends GetView<ItemsControllerImp> {
+class ItemListView extends StatelessWidget {
   const ItemListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     var favouriteController = Get.put(FavouriteControllerImp());
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
-      scrollDirection: Axis.vertical,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
-      itemCount: controller.items.length,
-      itemBuilder: (context, index) {
-        favouriteController.favourite[controller.items[index]['items_id']] =
-            controller.items[index]['favourite'];
-        print("itemid= ${controller.items[index]['favourite']}");
-        return ItemCard(
-          itemModel: ItemModel.fromJson(controller.items[index]),
-        );
-      },
-    );
+    return GetBuilder<ItemsControllerImp>(
+        builder: (controller) => GridView.builder(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, childAspectRatio: 1.5 / 2.8),
+              itemCount: controller.items.length,
+              itemBuilder: (context, index) {
+                favouriteController
+                        .favourite[controller.items[index]['items_id']] =
+                    controller.items[index]['favourite'];
+                return ItemCard(
+                  itemModel: ItemModel.fromJson(controller.items[index]),
+                );
+              },
+            ));
   }
 }

@@ -1,4 +1,6 @@
+import 'package:eccommerce4/controller/search/search_controller.dart';
 import 'package:eccommerce4/core/class/data_handilng.dart';
+import 'package:eccommerce4/view/search/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,27 +14,22 @@ class ItemsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp);
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        const SliverToBoxAdapter(
-          child: Column(
-            children: [
-              SizedBox(height: 30),
-              HomeAppbar(),
-              SizedBox(height: 30),
-              CategoriesTextList(),
-            ],
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: GetBuilder<ItemsControllerImp>(
-            builder: (controller) => DataHandlingState(
-                statusRequest: controller.statusRequest,
-                widget: const ItemListView()),
-          ),
-        )
-      ],
-    );
+    return ListView(children: [
+      const HomeAppbar(),
+      GetBuilder<SearchControllerImp>(
+          builder: (controller) => DataHandlingState(
+              statusRequest: controller.statusRequest,
+              widget: !controller.isSearch
+                  ? const Column(
+                      children: [
+                        SizedBox(height: 30),
+                        CategoriesTextList(),
+                        ItemListView(),
+                      ],
+                    )
+                  : SearchView(
+                      itemsSearch: controller.searchItemsList,
+                    )))
+    ]);
   }
 }
