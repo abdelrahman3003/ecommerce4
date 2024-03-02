@@ -6,6 +6,7 @@ import 'appbar_cart.dart';
 import 'cart_button.dart';
 import 'cart_items_list.dart';
 import 'count_items.dart';
+import 'coupon.dart';
 import 'subitem.dart';
 
 class CartViewBody extends GetView<CartControllerImp> {
@@ -14,7 +15,7 @@ class CartViewBody extends GetView<CartControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: [
           const AppbarCart(),
@@ -22,9 +23,8 @@ class CartViewBody extends GetView<CartControllerImp> {
           const SizedBox(height: 20),
           Expanded(
               child: CartItemsList(cartItemsList: controller.cartmodelLsit)),
-          Subitem(
-            totalprice: "${controller.tolalprice}",
-          ),
+          const Cpoupon(),
+          Subitem(totalprice: "${controller.tolalprice}"),
           const CartButton()
         ],
       ),

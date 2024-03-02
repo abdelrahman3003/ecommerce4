@@ -13,7 +13,7 @@ class Subitem extends StatelessWidget {
                 style:
                     Styles.textStyle18.copyWith(fontWeight: FontWeight.bold))),
         Text("\$ $totalprice",
-            style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold)),
+            style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold)),
       ],
     );
   }

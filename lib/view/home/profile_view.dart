@@ -5,8 +5,11 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("profile"),
+    return Column(
+      children: [
+        Container(height: 300),
+        ElevatedButton(onPressed: () {}, child: Text("data")),
+      ],
     );
   }
 }
