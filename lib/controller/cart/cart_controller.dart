@@ -7,6 +7,7 @@ import '../../core/services/services.dart';
 import '../../core/shared/styles.dart';
 import '../../data/datasource/remote/cart/cart_data.dart';
 import '../../data/model/cart_model.dart';
+import '../../data/model/coupon_model.dart';
 
 abstract class CartController extends GetxController {
   addCart(int itemid);
@@ -15,6 +16,8 @@ abstract class CartController extends GetxController {
   getCountItem(int itemid);
   refreshCart();
   resetCart();
+  checkCoupon();
+  gettotlaprice();
 }
 
 class CartControllerImp extends CartController {
@@ -22,9 +25,10 @@ class CartControllerImp extends CartController {
   CartData cartData = CartData(Get.find());
   AppServices appServices = Get.find();
   List<CartModel> cartmodelLsit = [];
-
+  CouponModel? couponModel;
   dynamic tolalprice = 0;
   dynamic tolalcount = 0;
+  TextEditingController? textEditingController;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -114,9 +118,9 @@ class CartControllerImp extends CartController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     viewCart();
+    textEditingController = TextEditingController();
   }
 
   @override
@@ -124,5 +128,27 @@ class CartControllerImp extends CartController {
     tolalprice = 0;
     tolalcount = 0;
     cartmodelLsit.clear();
+  }
+
+  @override
+  checkCoupon() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await cartData.checkcoupon(textEditingController!.text);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        couponModel = CouponModel.fromJson(response['data']);
+      }
+    }
+    update();
+  }
+
+  @override
+  gettotlaprice() {
+    tolalprice = tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
+    update();
   }
 }

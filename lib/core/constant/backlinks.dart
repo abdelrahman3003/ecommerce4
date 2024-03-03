@@ -23,3 +23,4 @@ const String addcartNameLink = "$serverNameLink/cart/add.php";
 const String removecartNameLink = "$serverNameLink/cart/delete.php";
 const String viewcartNameLink = "$serverNameLink/cart/view.php";
 const String getcounitemNameLink = "$serverNameLink/cart/getCountItem.php";
+const String checkcouponNameLink = "$serverNameLink/coupo/checkCoupon.php";
