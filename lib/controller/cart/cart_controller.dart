@@ -29,6 +29,7 @@ class CartControllerImp extends CartController {
   dynamic tolalprice = 0;
   dynamic tolalcount = 0;
   TextEditingController? textEditingController;
+  int coupondiscount = 0;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -140,7 +141,8 @@ class CartControllerImp extends CartController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
-        couponModel = CouponModel.fromJson(response['data']);
+        couponModel = CouponModel.fromJson(response['data'][0]);
+        coupondiscount = couponModel!.couponDiscount!;
       }
     }
     update();

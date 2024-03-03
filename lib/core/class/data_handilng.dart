@@ -17,7 +17,7 @@ class DataHandlingState extends StatelessWidget {
         : statusRequest == StatusRequest.offlineFailure
             ? const Offline()
             : statusRequest == StatusRequest.serverFailure
-                ? const Error404()
+                ? const Center(child: Error404())
                 : statusRequest == StatusRequest.failure
                     ? const Center(child: EmptyLottie())
                     : widget;
