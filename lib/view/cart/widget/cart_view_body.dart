@@ -6,7 +6,7 @@ import 'appbar_cart.dart';
 import 'cart_button.dart';
 import 'cart_items_list.dart';
 import 'count_items.dart';
-import 'coupon.dart';
+import 'coupon_state_handiling.dart';
 import 'subitem.dart';
 
 class CartViewBody extends GetView<CartControllerImp> {
@@ -23,7 +23,7 @@ class CartViewBody extends GetView<CartControllerImp> {
           const SizedBox(height: 20),
           Expanded(
               child: CartItemsList(cartItemsList: controller.cartmodelLsit)),
-          const Cpoupon(),
+          const CouponStateHandling(),
           Subitem(totalprice: "${controller.tolalprice}"),
           const CartButton()
         ],

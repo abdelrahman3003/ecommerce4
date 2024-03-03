@@ -1,4 +1,4 @@
-import 'package:eccommerce4/core/class/data_handilng.dart';
+import 'package:eccommerce4/core/class/data_handling_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,7 @@ class CartView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: GetBuilder<CartControllerImp>(
-        builder: (controller) => DataHandlingState(
+        builder: (controller) => DataHandlingRequsetState(
           statusRequest: controller.statusRequest,
           widget: const CartViewBody(),
         ),

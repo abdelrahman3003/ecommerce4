@@ -31,7 +31,6 @@ class Cpoupon extends GetView<CartControllerImp> {
         OnboardingButton(
           onPressed: () async {
             await controller.checkCoupon();
-            controller.gettotlaprice();
           },
           text: "Apply",
           width: Get.height * .14,

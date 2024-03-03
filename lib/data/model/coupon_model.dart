@@ -4,6 +4,7 @@ class CouponModel {
   int? couponCount;
   int? couponDiscount;
   String? couponExpiredate;
+  int? approved;
 
   CouponModel(
       {this.couponId,
@@ -18,6 +19,7 @@ class CouponModel {
     couponCount = json['coupon_count'];
     couponDiscount = json['coupon_discount'];
     couponExpiredate = json['coupon_expiredate'];
+    approved = json['approved'];
   }
 
   Map<String, dynamic> toJson() {

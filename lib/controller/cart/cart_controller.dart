@@ -30,6 +30,7 @@ class CartControllerImp extends CartController {
   dynamic tolalcount = 0;
   TextEditingController? textEditingController;
   int coupondiscount = 0;
+  String? couponing;
   @override
   addCart(itemid) async {
     statusRequest = StatusRequest.loading;
@@ -139,10 +140,13 @@ class CartControllerImp extends CartController {
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
-        statusRequest = StatusRequest.failure;
+        couponing = "failure";
       } else {
         couponModel = CouponModel.fromJson(response['data'][0]);
         coupondiscount = couponModel!.couponDiscount!;
+        tolalprice =
+            tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
+        couponing = "true";
       }
     }
     update();
@@ -150,7 +154,11 @@ class CartControllerImp extends CartController {
 
   @override
   gettotlaprice() {
-    tolalprice = tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
-    update();
+    // if (couponModel != null) {
+    //   tolalprice =
+    //       tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
+    // }
+
+    // update();
   }
 }
