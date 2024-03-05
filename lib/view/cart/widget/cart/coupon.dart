@@ -2,9 +2,9 @@ import 'package:eccommerce4/controller/cart/cart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/colors.dart';
-import '../../../core/constant/constatns_value.dart';
-import '../../../core/shared/widgets/buttons/onboarding_Button.dart';
+import '../../../../core/constant/colors.dart';
+import '../../../../core/constant/constatns_value.dart';
+import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 
 class Cpoupon extends GetView<CartControllerImp> {
   const Cpoupon({super.key});

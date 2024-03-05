@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/cart/cart_controller.dart';
-import 'widget/cart_view_body.dart';
+import 'widget/cart/cart_view_body.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});

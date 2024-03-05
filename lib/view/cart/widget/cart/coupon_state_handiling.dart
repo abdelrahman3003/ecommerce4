@@ -1,6 +1,6 @@
 import 'package:eccommerce4/controller/cart/cart_controller.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
-import 'package:eccommerce4/view/cart/widget/coupon.dart';
+import 'package:eccommerce4/view/cart/widget/cart/coupon.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

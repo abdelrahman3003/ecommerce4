@@ -13,6 +13,7 @@ import 'package:eccommerce4/view/onboarding/onboarding.dart';
 import 'package:get/route_manager.dart';
 
 import '../../view/auth/verifycode.dart';
+import '../../view/cart/checkout_view.dart';
 import '../../view/home/home_screen_view.dart';
 import '../../view/home/profile_view.dart';
 import '../../view/items/item_details_view.dart';
@@ -29,6 +30,7 @@ const kRestPassword = "/RestPassword";
 const kHomePageView = "/HomePageView";
 const kHomeScreenView = "/HomeScreenView";
 const kCartView = "/CartView";
+const kCheckout = "/Checkout";
 const kSettingView = "/SettingView";
 const kProfileView = "/ProfileView";
 const kfavouroteview = "/favouroteview";
@@ -50,6 +52,7 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kHomePageView, page: () => const HomePageView()),
   GetPage(name: kHomeScreenView, page: () => const HomeScreenView()),
   GetPage(name: kCartView, page: () => const CartView()),
+  GetPage(name: kCheckout, page: () => const CheckoutView()),
   GetPage(name: kSettingView, page: () => const SettingView()),
   GetPage(name: kItemsView, page: () => const ItemsView()),
   GetPage(name: kItemDetailsView, page: () => const ItemDetailsView()),

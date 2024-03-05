@@ -4,8 +4,8 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/cart/cart_controller.dart';
-import '../../../core/constant/backlinks.dart';
+import '../../../../controller/cart/cart_controller.dart';
+import '../../../../core/constant/backlinks.dart';
 
 class CartItem extends GetView<CartControllerImp> {
   const CartItem({
