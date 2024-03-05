@@ -26,7 +26,11 @@ class HomePageView extends StatelessWidget {
                 children: [
                   const HomeAppbar(),
                   !controller.isSearch
-                      ? const HomeViewBody()
+                      ? GetBuilder<HomePageControllerImp>(
+                          builder: (controller) => DataHandlingState(
+                                widget: const HomeViewBody(),
+                                statusRequest: controller.statusRequest,
+                              ))
                       : SearchView(itemsSearch: controller.searchItemsList),
                 ],
               ),
