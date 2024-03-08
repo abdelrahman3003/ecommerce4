@@ -10,6 +10,7 @@ class AppbarCart extends StatelessWidget {
     return SizedBox(
       height: 70,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
             onPressed: () {
@@ -20,13 +21,10 @@ class AppbarCart extends StatelessWidget {
               size: 30,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: Get.width / 3.5),
-            child: Text(
-              title,
-              style: Styles.textStyle25
-                  .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
-            ),
+          Text(
+            title,
+            style: Styles.textStyle25
+                .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 import '../../../../core/shared/widgets/buttons/onboarding_Button.dart';
 
 class CartButton extends StatelessWidget {
-  const CartButton({super.key});
-
+  const CartButton({super.key, required this.tilte});
+  final String tilte;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +15,7 @@ class CartButton extends StatelessWidget {
       child: OnboardingButton(
         color: ColorsApp.kprimaryColor1,
         width: Get.width,
-        text: "Order",
+        text: tilte,
         onPressed: () {
           Get.toNamed(kCheckout);
         },
