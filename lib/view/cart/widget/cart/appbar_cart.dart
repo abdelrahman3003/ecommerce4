@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AppbarCart extends StatelessWidget {
-  const AppbarCart({super.key});
-
+  const AppbarCart({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,7 +23,7 @@ class AppbarCart extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: Get.width / 3.5),
             child: Text(
-              "My Cart",
+              title,
               style: Styles.textStyle25
                   .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
             ),

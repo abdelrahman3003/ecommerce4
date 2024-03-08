@@ -2,6 +2,8 @@ import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../cart/appbar_cart.dart';
+import 'address.dart';
 import 'delivery_type.dart';
 import 'payway.dart';
 
@@ -13,6 +15,7 @@ class CheckoutViewBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const AppbarCart(title: "CheckOut"),
         Text("Choose your pay way",
             style:
                 Styles.textStyle25.copyWith(color: ColorsApp.kprimaryColor1)),
@@ -32,11 +35,25 @@ class CheckoutViewBody extends StatelessWidget {
             ),
             SizedBox(width: 12),
             DeliveryType(
-              color: ColorsApp.kprimaryColor2,
+              color: Colors.white,
               text: "Rcivee",
             ),
           ],
-        )
+        ),
+        Text("shipping address ",
+            style:
+                Styles.textStyle25.copyWith(color: ColorsApp.kprimaryColor1)),
+        const Shoppingaddress(
+          color: ColorsApp.kprimaryColor1,
+          address: "Home",
+          subaddress: "qena , dishna",
+        ),
+        const SizedBox(height: 12),
+        const Shoppingaddress(
+          color: Colors.white,
+          address: "Campany",
+          subaddress: "Cairo , ain shams",
+        ),
       ],
     );
   }

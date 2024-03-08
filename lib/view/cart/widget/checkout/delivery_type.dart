@@ -15,7 +15,9 @@ class DeliveryType extends StatelessWidget {
       height: Get.height / 6,
       width: Get.width / 2.5,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kborderradius), color: color),
+          borderRadius: BorderRadius.circular(kborderradius),
+          color: color,
+          border: Border.all(color: ColorsApp.kprimaryColor1)),
       child: Column(
         children: [
           Icon(

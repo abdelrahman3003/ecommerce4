@@ -9,7 +9,8 @@ class PayWay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      alignment: Alignment.centerLeft,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 50,
       width: double.infinity,
       decoration:

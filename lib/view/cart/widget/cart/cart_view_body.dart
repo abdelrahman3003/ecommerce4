@@ -18,7 +18,7 @@ class CartViewBody extends GetView<CartControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: [
-          const AppbarCart(),
+          const AppbarCart(title: "My Cart"),
           CountItems(count: controller.tolalcount),
           const SizedBox(height: 20),
           Expanded(
