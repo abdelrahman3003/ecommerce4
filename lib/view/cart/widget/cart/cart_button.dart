@@ -1,4 +1,5 @@
 import 'package:eccommerce4/core/constant/colors.dart';
+import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,9 @@ class CartButton extends StatelessWidget {
         color: ColorsApp.kprimaryColor1,
         width: Get.width,
         text: "Order",
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(kCheckout);
+        },
       ),
     );
   }
