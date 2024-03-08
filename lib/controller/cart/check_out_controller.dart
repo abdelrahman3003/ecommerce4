@@ -15,7 +15,7 @@ class CheckoutControllerImp extends CheckoutController {
   String? address;
   @override
   chooseAddress(val) {
-    payWay = val;
+    address = val;
     update();
   }
 
@@ -27,7 +27,7 @@ class CheckoutControllerImp extends CheckoutController {
 
   @override
   choosePayWay(val) {
-    address = val;
+    payWay = val;
     update();
   }
 }

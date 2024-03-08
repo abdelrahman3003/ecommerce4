@@ -10,7 +10,7 @@ class AppbarCart extends StatelessWidget {
     return SizedBox(
       height: 70,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           IconButton(
             onPressed: () {

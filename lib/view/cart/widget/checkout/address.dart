@@ -1,3 +1,4 @@
+import 'package:eccommerce4/controller/cart/check_out_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/constant/constatns_value.dart';
 
-class Shoppingaddress extends StatelessWidget {
+class Shoppingaddress extends GetView<CheckoutControllerImp> {
   const Shoppingaddress(
       {super.key,
       required this.isActive,
@@ -16,23 +17,28 @@ class Shoppingaddress extends StatelessWidget {
   final String subaddress;
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        height: Get.height / 9,
-        width: Get.width,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kborderradius),
-            color: isActive ? ColorsApp.kprimaryColor1 : Colors.white,
-            border: Border.all(color: ColorsApp.kprimaryColor1)),
-        child: ListTile(
-          title: Text(address,
-              style: Styles.textStyle25.copyWith(
-                  color: isActive ? Colors.white : ColorsApp.kprimaryColor1,
-                  fontWeight: FontWeight.bold)),
-          subtitle: Text(subaddress,
-              style: Styles.textStyle20.copyWith(
-                  color: isActive ? Colors.white : ColorsApp.kprimaryColor1,
-                  fontWeight: FontWeight.bold)),
-        ));
+    return InkWell(
+      onTap: () {
+        controller.chooseAddress(address);
+      },
+      child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          height: Get.height / 9,
+          width: Get.width,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(kborderradius),
+              color: isActive ? ColorsApp.kprimaryColor1 : Colors.white,
+              border: Border.all(color: ColorsApp.kprimaryColor1)),
+          child: ListTile(
+            title: Text(address,
+                style: Styles.textStyle25.copyWith(
+                    color: isActive ? Colors.white : ColorsApp.kprimaryColor1,
+                    fontWeight: FontWeight.bold)),
+            subtitle: Text(subaddress,
+                style: Styles.textStyle20.copyWith(
+                    color: isActive ? Colors.white : ColorsApp.kprimaryColor1,
+                    fontWeight: FontWeight.bold)),
+          )),
+    );
   }
 }

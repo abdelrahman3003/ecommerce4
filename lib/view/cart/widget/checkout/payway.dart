@@ -20,12 +20,12 @@ class PayWay extends GetView<CheckoutControllerImp> {
         height: 50,
         width: double.infinity,
         decoration: BoxDecoration(
-            color:
-                isActive ? ColorsApp.kprimaryColor1 : ColorsApp.kprimaryColor2,
-            borderRadius: BorderRadius.circular(30)),
+            color: isActive ? ColorsApp.kprimaryColor1 : Colors.white,
+            borderRadius: BorderRadius.circular(30),
+            border: Border.all(color: ColorsApp.kprimaryColor1)),
         child: Text(text,
             style: Styles.textStyle18.copyWith(
-                color: isActive ? ColorsApp.kprimaryColor1 : Colors.white,
+                color: isActive ? Colors.white : ColorsApp.kprimaryColor1,
                 fontWeight: FontWeight.bold)),
       ),
     );

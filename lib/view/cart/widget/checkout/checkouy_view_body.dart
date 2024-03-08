@@ -28,29 +28,34 @@ class CheckoutViewBody extends StatelessWidget {
                 PayWay(
                     text: "On delivery",
                     isActive:
-                        controller.payWay == "Cash On delivery" ? true : false),
+                        controller.payWay == "On delivery" ? true : false),
                 const SizedBox(height: 12),
                 PayWay(
                     text: "on Card",
                     isActive: controller.payWay == "on Card" ? true : false),
                 const SizedBox(height: 12),
                 const TextTitle(text: "Choose delivery type "),
+                const SizedBox(height: 12),
                 Row(
                   children: [
                     DeliveryType(
+                        icon: Icons.delivery_dining,
                         isActive: controller.deliveryType == "Delivery"
                             ? true
                             : false,
                         text: "Delivery"),
                     const SizedBox(width: 12),
                     DeliveryType(
+                        icon: Icons.drive_file_rename_outline,
                         isActive: controller.deliveryType == "Drive Thru"
                             ? true
                             : false,
                         text: "Drive Thru"),
                   ],
                 ),
+                const SizedBox(height: 12),
                 const TextTitle(text: "Shipping address"),
+                const SizedBox(height: 12),
                 Shoppingaddress(
                   isActive: controller.address == "Home" ? true : false,
                   address: "Home",
