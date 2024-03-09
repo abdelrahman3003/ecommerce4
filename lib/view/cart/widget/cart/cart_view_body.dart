@@ -19,6 +19,7 @@ class CartViewBody extends GetView<CartControllerImp> {
       child: Column(
         children: [
           const AppbarCart(title: "My Cart"),
+          const SizedBox(height: 12),
           CountItems(count: controller.tolalcount),
           const SizedBox(height: 20),
           Expanded(

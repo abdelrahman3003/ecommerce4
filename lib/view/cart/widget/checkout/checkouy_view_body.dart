@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../cart/appbar_cart.dart';
-import '../cart/cart_button.dart';
 import 'address.dart';
+import 'checkoutButton.dart';
 import 'delivery_type.dart';
 import 'payway.dart';
 import 'text_title.dart';
@@ -23,6 +23,7 @@ class CheckoutViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const AppbarCart(title: "CheckOut"),
+                const SizedBox(height: 12),
                 const TextTitle(text: "Choose your pay way"),
                 const SizedBox(height: 12),
                 PayWay(
@@ -67,7 +68,7 @@ class CheckoutViewBody extends StatelessWidget {
                     address: "Campany",
                     subaddress: "Cairo , ain shams"),
                 const Spacer(),
-                const CartButton(tilte: "Checkout"),
+                const CheckoutButton(tilte: "Checkout"),
               ],
             )));
   }

@@ -1,3 +1,4 @@
+import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,7 @@ abstract class CartController extends GetxController {
   resetCart();
   checkCoupon();
   gettotlaprice();
+  gotocheckout();
 }
 
 class CartControllerImp extends CartController {
@@ -28,6 +30,7 @@ class CartControllerImp extends CartController {
   CouponModel? couponModel;
   dynamic tolalprice = 0;
   dynamic tolalcount = 0;
+  int? couponid;
   TextEditingController? textEditingController;
   int coupondiscount = 0;
   String? couponing;
@@ -147,6 +150,7 @@ class CartControllerImp extends CartController {
         tolalprice =
             tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
         couponing = "true";
+        couponid = couponModel!.couponId;
       }
     }
     update();
@@ -160,5 +164,14 @@ class CartControllerImp extends CartController {
     // }
 
     // update();
+  }
+
+  @override
+  gotocheckout() {
+    if (cartmodelLsit.isEmpty) {
+      return Get.snackbar("alarm", "cart is empty");
+    }
+    Get.toNamed(kCheckout,
+        arguments: {"priceorder": tolalprice, "couponid": couponid});
   }
 }

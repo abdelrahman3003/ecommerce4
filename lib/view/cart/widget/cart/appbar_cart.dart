@@ -7,27 +7,28 @@ class AppbarCart extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              size: 30,
+    return Row(
+      children: [
+        IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            size: 30,
+          ),
+        ),
+        Expanded(
+          child: Center(
+            child: Text(
+              title,
+              style: Styles.textStyle25
+                  .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
             ),
           ),
-          Text(
-            title,
-            style: Styles.textStyle25
-                .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(width: 32)
+      ],
     );
   }
 }
