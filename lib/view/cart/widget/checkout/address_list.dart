@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/cart/check_out_controller.dart';
+import 'package:eccommerce4/controller/cart/order_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +9,7 @@ class AddressList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CheckoutControllerImp>(
+    return GetBuilder<OrderControllerImp>(
         builder: (controller) => Column(
               children: [
                 AddessCard(

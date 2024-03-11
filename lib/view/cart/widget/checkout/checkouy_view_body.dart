@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/cart/check_out_controller.dart';
+import 'package:eccommerce4/controller/cart/order_controller.dart';
 import 'package:eccommerce4/core/class/data_handling_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,8 +15,8 @@ class CheckoutViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(CheckoutControllerImp());
-    return GetBuilder<CheckoutControllerImp>(
+    Get.put(OrderControllerImp());
+    return GetBuilder<OrderControllerImp>(
         builder: (controller) => DataHandlingRequsetState(
             statusRequest: controller.statusRequest,
             widget: Column(

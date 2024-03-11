@@ -5,15 +5,17 @@ import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
 import '../../data/datasource/remote/order/order_data.dart';
+import '../../data/model/order_model.dart';
 
-abstract class CheckoutController extends GetxController {
+abstract class OrderController extends GetxController {
   choosePayWay(String val);
   chooseDeliveryType(String val);
   chooseAddress(String val);
   checkout();
+  viewOrder();
 }
 
-class CheckoutControllerImp extends CheckoutController {
+class OrderControllerImp extends OrderController {
   StatusRequest statusRequest = StatusRequest.none;
   OrderData orderData = OrderData(Get.find());
   AppServices appServices = Get.find();
@@ -22,6 +24,7 @@ class CheckoutControllerImp extends CheckoutController {
   String address = "0";
   dynamic priceorder;
   String? ordercoupon;
+  List<OrderModel> orderList = [];
   @override
   void onInit() {
     super.onInit();
@@ -74,11 +77,26 @@ class CheckoutControllerImp extends CheckoutController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
         Get.snackbar("alarm", "there was an error");
-        print("======== failure");
       } else {
-        print("======== sucess");
         Get.offAllNamed(kHomeScreenView);
         Get.snackbar("alarm", "cart is empty");
+      }
+    }
+    update();
+  }
+
+  @override
+  viewOrder() async {
+    statusRequest = StatusRequest.loading;
+    var response = await orderData
+        .viewOrder(appServices.sharedPreferences.getString("id")!);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+      } else {
+        print("========== 1");
+        List data = response["data"];
+        orderList.addAll(data.map((e) => OrderModel.fromJson(e)));
       }
     }
     update();

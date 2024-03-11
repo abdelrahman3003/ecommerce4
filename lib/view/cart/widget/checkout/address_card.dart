@@ -1,4 +1,4 @@
-import 'package:eccommerce4/controller/cart/check_out_controller.dart';
+import 'package:eccommerce4/controller/cart/order_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/constant/constatns_value.dart';
 
-class AddessCard extends GetView<CheckoutControllerImp> {
+class AddessCard extends GetView<OrderControllerImp> {
   const AddessCard(
       {super.key,
       required this.isActive,

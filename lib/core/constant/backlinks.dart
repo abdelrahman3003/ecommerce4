@@ -25,3 +25,4 @@ const String viewcartNameLink = "$serverNameLink/cart/view.php";
 const String getcounitemNameLink = "$serverNameLink/cart/getCountItem.php";
 const String checkcouponNameLink = "$serverNameLink/coupon/checkCoupon.php";
 const String checkoutOrderNameLink = "$serverNameLink/order/checkout.php";
+const String viewOrderNameLink = "$serverNameLink/order/orders.php";
