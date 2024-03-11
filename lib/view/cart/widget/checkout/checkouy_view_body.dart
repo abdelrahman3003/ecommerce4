@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../cart/appbar_cart.dart';
-import 'address.dart';
+import 'address_list.dart';
 import 'checkoutButton.dart';
 import 'delivery_type.dart';
 import 'payway.dart';
@@ -28,45 +28,34 @@ class CheckoutViewBody extends StatelessWidget {
                 const SizedBox(height: 12),
                 PayWay(
                     text: "On delivery",
-                    isActive:
-                        controller.payWay == "On delivery" ? true : false),
+                    isActive: controller.payWay == "0" ? true : false),
                 const SizedBox(height: 12),
                 PayWay(
                     text: "on Card",
-                    isActive: controller.payWay == "on Card" ? true : false),
+                    isActive: controller.payWay == "1" ? true : false),
                 const SizedBox(height: 12),
                 const TextTitle(text: "Choose delivery type "),
                 const SizedBox(height: 12),
                 Row(
                   children: [
                     DeliveryType(
-                        icon: Icons.delivery_dining,
-                        isActive: controller.deliveryType == "Delivery"
-                            ? true
-                            : false,
-                        text: "Delivery"),
+                        icon: Icons.drive_file_rename_outline,
+                        isActive: controller.deliveryType == "0" ? true : false,
+                        text: "Drive Thru"),
                     const SizedBox(width: 12),
                     DeliveryType(
-                        icon: Icons.drive_file_rename_outline,
-                        isActive: controller.deliveryType == "Drive Thru"
-                            ? true
-                            : false,
-                        text: "Drive Thru"),
+                        icon: Icons.delivery_dining,
+                        isActive: controller.deliveryType == "1" ? true : false,
+                        text: "Delivery"),
                   ],
                 ),
                 const SizedBox(height: 12),
                 const TextTitle(text: "Shipping address"),
                 const SizedBox(height: 12),
-                Shoppingaddress(
-                  isActive: controller.address == "Home" ? true : false,
-                  address: "Home",
-                  subaddress: "qena , dishna",
-                ),
+                controller.deliveryType == "1"
+                    ? const AddressList()
+                    : const SizedBox(height: 12),
                 const SizedBox(height: 12),
-                Shoppingaddress(
-                    isActive: controller.address == "Campany" ? true : false,
-                    address: "Campany",
-                    subaddress: "Cairo , ain shams"),
                 const Spacer(),
                 const CheckoutButton(tilte: "Checkout"),
               ],

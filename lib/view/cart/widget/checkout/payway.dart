@@ -12,7 +12,12 @@ class PayWay extends GetView<CheckoutControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.choosePayWay(text);
+        if (text == "On delivery") {
+          controller.choosePayWay("0");
+        }
+        if (text == "on Card") {
+          controller.choosePayWay("1");
+        }
       },
       child: Container(
         alignment: Alignment.centerLeft,

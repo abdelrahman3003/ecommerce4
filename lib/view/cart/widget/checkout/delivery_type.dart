@@ -19,7 +19,12 @@ class DeliveryType extends GetView<CheckoutControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.chooseDeliveryType(text);
+        if (text == "Drive Thru") {
+          controller.chooseDeliveryType("0");
+        }
+        if (text == "Delivery") {
+          controller.chooseDeliveryType("1");
+        }
       },
       child: Container(
         height: Get.height / 6,

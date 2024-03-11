@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 import '../../../../core/constant/constatns_value.dart';
 
-class Shoppingaddress extends GetView<CheckoutControllerImp> {
-  const Shoppingaddress(
+class AddessCard extends GetView<CheckoutControllerImp> {
+  const AddessCard(
       {super.key,
       required this.isActive,
       required this.address,

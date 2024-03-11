@@ -19,7 +19,7 @@ class CheckoutControllerImp extends CheckoutController {
   AppServices appServices = Get.find();
   String? payWay;
   String? deliveryType;
-  String? address;
+  String address = "0";
   dynamic priceorder;
   int? ordercoupon;
   @override
@@ -49,25 +49,33 @@ class CheckoutControllerImp extends CheckoutController {
 
   @override
   checkout() async {
+    if (payWay == null) {
+      return Get.snackbar("alarm", "please payway to checkout ");
+    }
+
+    if (deliveryType == null) {
+      return Get.snackbar("alarm", "please order type  to checkout ");
+    }
     statusRequest = StatusRequest.loading;
     update();
     Map data = {
       "userid": appServices.sharedPreferences.getString("id")!,
-      "addressid": '1',
+      "addressid": address.toString(),
       "orderprice": priceorder.toString(),
       "orderpricedelivery": '10',
       "ordercoupon": ordercoupon.toString(),
-      "ordertype": '1',
-      "orderspaymentmethod": '1',
+      "ordertype": deliveryType.toString(),
+      "orderspaymentmethod": payWay.toString(),
     };
     var response = await orderData.checkout(data);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-        print("=============== failure");
+        Get.snackbar("alarm", "there was an error");
       } else {
-        Get.offNamed(kCartView);
+        Get.offAllNamed(kHomeScreenView);
+        Get.snackbar("alarm", "cart is empty");
       }
     }
     update();
