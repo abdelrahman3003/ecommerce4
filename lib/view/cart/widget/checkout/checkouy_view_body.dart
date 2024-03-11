@@ -3,7 +3,7 @@ import 'package:eccommerce4/core/class/data_handling_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../cart/appbar_cart.dart';
+import '../cart/custom_abbpar.dart';
 import 'address_list.dart';
 import 'checkoutButton.dart';
 import 'delivery_type.dart';
@@ -22,7 +22,7 @@ class CheckoutViewBody extends StatelessWidget {
             widget: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const AppbarCart(title: "CheckOut"),
+                const CustomAbbpar(title: "CheckOut"),
                 const SizedBox(height: 12),
                 const TextTitle(text: "Choose your pay way"),
                 const SizedBox(height: 12),

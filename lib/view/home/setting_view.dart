@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 
-import 'widget/setting/setting_view_body.dart';
+import 'widget/setting/setting_vew_widget/setting_view_body.dart';
 
 class SettingView extends StatelessWidget {
   const SettingView({super.key});

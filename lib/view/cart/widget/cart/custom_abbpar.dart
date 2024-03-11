@@ -2,8 +2,8 @@ import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AppbarCart extends StatelessWidget {
-  const AppbarCart({super.key, required this.title});
+class CustomAbbpar extends StatelessWidget {
+  const CustomAbbpar({super.key, required this.title});
   final String title;
   @override
   Widget build(BuildContext context) {

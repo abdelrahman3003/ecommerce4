@@ -18,7 +18,6 @@ abstract class CartController extends GetxController {
   refreshCart();
   resetCart();
   checkCoupon();
-  gettotlaprice();
   gotocheckout();
 }
 
@@ -30,7 +29,7 @@ class CartControllerImp extends CartController {
   CouponModel? couponModel;
   dynamic tolalprice = 0;
   dynamic tolalcount = 0;
-  int? couponid;
+  String? couponName;
   TextEditingController? textEditingController;
   int coupondiscount = 0;
   String? couponing;
@@ -139,7 +138,8 @@ class CartControllerImp extends CartController {
   checkCoupon() async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await cartData.checkcoupon(textEditingController!.text);
+    var response = await cartData.checkcoupon(textEditingController!.text,
+        appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
@@ -150,20 +150,10 @@ class CartControllerImp extends CartController {
         tolalprice =
             tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
         couponing = "true";
-        couponid = couponModel!.couponId;
+        couponName = couponModel!.couponName;
       }
     }
     update();
-  }
-
-  @override
-  gettotlaprice() {
-    // if (couponModel != null) {
-    //   tolalprice =
-    //       tolalprice - (tolalprice * couponModel!.couponDiscount / 100);
-    // }
-
-    // update();
   }
 
   @override
@@ -172,6 +162,6 @@ class CartControllerImp extends CartController {
       return Get.snackbar("alarm", "cart is empty");
     }
     Get.toNamed(kCheckout,
-        arguments: {"priceorder": tolalprice, "couponid": couponid});
+        arguments: {"priceorder": tolalprice, "couponName": couponName});
   }
 }

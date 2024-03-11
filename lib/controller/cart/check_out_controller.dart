@@ -21,12 +21,13 @@ class CheckoutControllerImp extends CheckoutController {
   String? deliveryType;
   String address = "0";
   dynamic priceorder;
-  int? ordercoupon;
+  String? ordercoupon;
   @override
   void onInit() {
     super.onInit();
     priceorder = Get.arguments['priceorder'];
-    ordercoupon = Get.arguments['couponid'];
+    ordercoupon = Get.arguments['couponName'];
+    ordercoupon ?? "null";
   }
 
   @override
@@ -73,7 +74,9 @@ class CheckoutControllerImp extends CheckoutController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
         Get.snackbar("alarm", "there was an error");
+        print("======== failure");
       } else {
+        print("======== sucess");
         Get.offAllNamed(kHomeScreenView);
         Get.snackbar("alarm", "cart is empty");
       }

@@ -2,7 +2,7 @@ import 'package:eccommerce4/controller/cart/cart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'appbar_cart.dart';
+import 'custom_abbpar.dart';
 import 'cart_button.dart';
 import 'cart_items_list.dart';
 import 'count_items.dart';
@@ -18,7 +18,7 @@ class CartViewBody extends GetView<CartControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: [
-          const AppbarCart(title: "My Cart"),
+          const CustomAbbpar(title: "My Cart"),
           const SizedBox(height: 12),
           CountItems(count: controller.tolalcount),
           const SizedBox(height: 20),

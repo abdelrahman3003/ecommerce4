@@ -27,9 +27,9 @@ class CartData {
     return response.fold((l) => l, (r) => r);
   }
 
-  checkcoupon(String couponname) async {
-    var response =
-        await crud.postData(checkcouponNameLink, {"couponname": couponname});
+  checkcoupon(String couponname, String userid) async {
+    var response = await crud.postData(
+        checkcouponNameLink, {"couponname": couponname, "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
 }
