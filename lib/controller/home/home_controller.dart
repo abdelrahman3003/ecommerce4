@@ -1,5 +1,6 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/data/datasource/remote/home/home_data.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
@@ -39,6 +40,7 @@ class HomePageControllerImp extends HomeController {
   void onInit() {
     super.onInit();
     getAllDataHome();
+    FirebaseMessaging.instance.subscribeToTopic("users");
   }
 
   @override

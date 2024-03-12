@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jiffy/jiffy.dart';
 
 import '../../../../../../data/model/order_model.dart';
 import '../../../../../cart/widget/cart/custom_abbpar.dart';
@@ -23,6 +24,8 @@ class OrderViewBody extends StatelessWidget {
               orderType:
                   orderList[index].ordersType == 0 ? "Receive" : "Delivery",
               ordernumber: "${orderList[index].ordersId}",
+              orderdate:
+                  " ${Jiffy.parse(orderList[index].ordersDatetime!).fromNow()}",
               orderStatus: orderList[index].ordersStatus == 0
                   ? "approving"
                   : orderList[index].ordersStatus == 1

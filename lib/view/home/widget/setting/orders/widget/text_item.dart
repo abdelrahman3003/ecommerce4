@@ -8,10 +8,19 @@ class TextItem extends StatelessWidget {
   final String subtilte;
   @override
   Widget build(BuildContext context) {
-    return Text("$tilte : $subtilte ",
-        style: Styles.textStyle25black.copyWith(
-            fontSize: tilte == "Order Number" ? 25 : 20,
-            fontWeight:
-                tilte == "Order Number" ? FontWeight.bold : FontWeight.normal));
+    return Row(
+      children: [
+        Text("$tilte : ",
+            style: Styles.textStyle25black.copyWith(
+              fontSize: tilte == "Order Number" ? 25 : 20,
+              fontWeight:
+                  tilte == "Order Number" ? FontWeight.bold : FontWeight.w500,
+            )),
+        Text(subtilte,
+            style: Styles.textStyle20black.copyWith(
+              fontSize: tilte == "Order Number" ? 25 : 18,
+            )),
+      ],
+    );
   }
 }

@@ -7,6 +7,7 @@ import '../../data/model/order_model.dart';
 
 abstract class OrderController extends GetxController {
   viewOrder();
+  refreshOrderpage();
 }
 
 class OrderControllerImp extends OrderController {
@@ -18,6 +19,7 @@ class OrderControllerImp extends OrderController {
   @override
   viewOrder() async {
     statusRequest = StatusRequest.loading;
+    update();
     var response = await orderData
         .viewOrder(appServices.sharedPreferences.getString("id")!);
     statusRequest = handlingApiData(response);
@@ -35,5 +37,11 @@ class OrderControllerImp extends OrderController {
   void onInit() {
     super.onInit();
     viewOrder();
+  }
+
+  @override
+  refreshOrderpage() async {
+    orderList.clear();
+    await viewOrder();
   }
 }

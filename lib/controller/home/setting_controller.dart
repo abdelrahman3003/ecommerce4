@@ -1,5 +1,6 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/services/services.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
 abstract class SettingController extends GetxController {
@@ -10,13 +11,10 @@ class SettingControllerImp extends SettingController {
   AppServices appServices = Get.find();
   @override
   logout() {
-    appServices.sharedPreferences.setString("step", "1");
-    Get.toNamed(kSignin);
-  }
-
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
+    String userid = appServices.sharedPreferences.getString("id")!;
+    FirebaseMessaging.instance.subscribeToTopic("users");
+    FirebaseMessaging.instance.subscribeToTopic("users$userid");
+    Get.offAllNamed(kSignin);
+    appServices.sharedPreferences.clear();
   }
 }

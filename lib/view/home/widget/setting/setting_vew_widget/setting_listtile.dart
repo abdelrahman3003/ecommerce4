@@ -26,12 +26,11 @@ class SeetingListTile extends GetView<SettingControllerImp> {
         const SettinItemCard(
             title: "Contact us", icon: Icons.phone_callback_outlined),
         SettinItemCard(
-          onTap: () {
-            Get.offAllNamed(kSignin);
-          },
-          title: "Logout",
-          icon: Icons.logout,
-        ),
+            onTap: () {
+              controller.logout();
+            },
+            title: "Logout",
+            icon: Icons.logout),
       ],
     );
   }

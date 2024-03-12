@@ -1,5 +1,6 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/services/services.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
 import '../../core/class/statuscode.dart';
@@ -31,12 +32,14 @@ class SigninController extends GetxController {
             .setString("username", "${response['data'][0]['users_name']}");
         appServices.sharedPreferences
             .setString("id", "${response['data'][0]['users_id']}");
+        String userid = appServices.sharedPreferences.getString("id")!;
         appServices.sharedPreferences
             .setString("email", response['data'][0]['users_email']);
         appServices.sharedPreferences
             .setString("phone", response['data'][0]['users_phone']);
         appServices.sharedPreferences.setString("step", "2");
-
+        FirebaseMessaging.instance.subscribeToTopic("users");
+        FirebaseMessaging.instance.subscribeToTopic("users$userid");
         Get.offNamed(kHomeScreenView);
       }
 

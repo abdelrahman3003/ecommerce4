@@ -12,9 +12,11 @@ class OrderCard extends StatelessWidget {
       required this.paymentMethod,
       required this.orderStatus,
       required this.totalPrice,
-      required this.deliveryprice});
-  final String ordernumber;
+      required this.deliveryprice,
+      required this.orderdate});
   final String orderType;
+  final String ordernumber;
+  final String orderdate;
   final String orderPrice;
   final String deliveryprice;
   final String paymentMethod;
@@ -26,6 +28,7 @@ class OrderCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         TextItem(tilte: "Order Number", subtilte: " $ordernumber"),
+        TextItem(tilte: "Order date", subtilte: " $orderdate"),
         TextItem(tilte: "Order Type ", subtilte: " $orderType"),
         TextItem(tilte: "Order Price", subtilte: " $orderPrice \$"),
         orderType == "Receive"
