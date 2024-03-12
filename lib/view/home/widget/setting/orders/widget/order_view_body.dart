@@ -13,16 +13,26 @@ class OrderViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomAbbpar(title: "Orders"),
-        ListView.builder(
-          itemCount: orderList.length,
-          itemBuilder: (context, index) => OrderCard(
-            orderPrice: "${orderList[index].ordersPrice}",
-            deliveryprice: "${orderList[index].ordersPricedelivery}",
-            orderType: "${orderList[index].ordersType}",
-            ordernumber: "${orderList[index].ordersId}",
-            orderStatus: "${orderList[index].ordersStatus}",
-            paymentMethod: "${orderList[index].ordersPaymentmethod}",
-            totalPrice: "${orderList[index].ordersPrice}",
+        Expanded(
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: orderList.length,
+            itemBuilder: (context, index) => OrderCard(
+              orderPrice: "${orderList[index].ordersPrice}",
+              deliveryprice: "${orderList[index].ordersPricedelivery}",
+              orderType:
+                  orderList[index].ordersType == 0 ? "Receive" : "Delivery",
+              ordernumber: "${orderList[index].ordersId}",
+              orderStatus: orderList[index].ordersStatus == 0
+                  ? "approving"
+                  : orderList[index].ordersStatus == 1
+                      ? "On Road"
+                      : "Archived",
+              paymentMethod: orderList[index].ordersPaymentmethod == 0
+                  ? "On Delivery"
+                  : "On Card",
+              totalPrice: "${orderList[index].totalprice}",
+            ),
           ),
         )
       ],

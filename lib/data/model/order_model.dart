@@ -9,6 +9,7 @@ class OrderModel {
   int? ordersType;
   int? ordersPaymentmethod;
   int? ordersStatus;
+  int? totalprice;
 
   OrderModel(
       {this.ordersId,
@@ -20,7 +21,8 @@ class OrderModel {
       this.ordersDatetime,
       this.ordersType,
       this.ordersPaymentmethod,
-      this.ordersStatus});
+      this.ordersStatus,
+      this.totalprice});
 
   OrderModel.fromJson(Map<String, dynamic> json) {
     ordersId = json['orders_id'];
@@ -33,6 +35,7 @@ class OrderModel {
     ordersType = json['orders_type'];
     ordersPaymentmethod = json['orders_paymentmethod'];
     ordersStatus = json['orders_status'];
+    totalprice = json['totalprice'];
   }
 
   Map<String, dynamic> toJson() {
@@ -47,6 +50,7 @@ class OrderModel {
     data['orders_type'] = this.ordersType;
     data['orders_paymentmethod'] = this.ordersPaymentmethod;
     data['orders_status'] = this.ordersStatus;
+    data['totalprice'] = this.totalprice;
     return data;
   }
 }

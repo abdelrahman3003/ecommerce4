@@ -7,7 +7,7 @@ import '../../core/services/services.dart';
 import '../../data/datasource/remote/order/order_data.dart';
 import '../../data/model/order_model.dart';
 
-abstract class OrderController extends GetxController {
+abstract class CheckoutController extends GetxController {
   choosePayWay(String val);
   chooseDeliveryType(String val);
   chooseAddress(String val);
@@ -15,7 +15,7 @@ abstract class OrderController extends GetxController {
   viewOrder();
 }
 
-class OrderControllerImp extends OrderController {
+class CheckoutControllerImp extends CheckoutController {
   StatusRequest statusRequest = StatusRequest.none;
   OrderData orderData = OrderData(Get.find());
   AppServices appServices = Get.find();
@@ -93,8 +93,8 @@ class OrderControllerImp extends OrderController {
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
-      } else {
         print("========== 1");
+      } else {
         List data = response["data"];
         orderList.addAll(data.map((e) => OrderModel.fromJson(e)));
       }

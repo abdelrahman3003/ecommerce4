@@ -28,7 +28,9 @@ class OrderCard extends StatelessWidget {
         TextItem(tilte: "Order Number", subtilte: " $ordernumber"),
         TextItem(tilte: "Order Type ", subtilte: " $orderType"),
         TextItem(tilte: "Order Price", subtilte: " $orderPrice \$"),
-        TextItem(tilte: "Delivery Price", subtilte: " $deliveryprice \$"),
+        orderType == "Receive"
+            ? const SizedBox()
+            : TextItem(tilte: "Delivery Price", subtilte: " $deliveryprice \$"),
         TextItem(tilte: "Payment Method ", subtilte: " $paymentMethod"),
         TextItem(tilte: "Order Status", subtilte: " $orderStatus"),
         const SizedBox(height: 15),

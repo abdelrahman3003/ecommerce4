@@ -1,11 +1,11 @@
-import 'package:eccommerce4/controller/cart/order_controller.dart';
+import 'package:eccommerce4/controller/cart/checkout_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/constant/constatns_value.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DeliveryType extends GetView<OrderControllerImp> {
+class DeliveryType extends GetView<CheckoutControllerImp> {
   const DeliveryType({
     super.key,
     required this.text,

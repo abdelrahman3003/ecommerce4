@@ -47,11 +47,11 @@ class CartItem extends GetView<CartControllerImp> {
                     children: [
                       const SizedBox(height: 2),
                       Text(
-                          "${controller.cartmodelLsit[index].itempricediscount} \$ ",
+                          "${controller.cartmodelLsit[index].itemdiscountprice} \$ ",
                           style:
                               Styles.textStyle16.copyWith(color: Colors.black)),
                       Text(
-                          "Total : ${controller.cartmodelLsit[index].itemsprice} \$ ",
+                          "Total : ${controller.cartmodelLsit[index].sumitemdiscountprice} \$ ",
                           style: Styles.textStyle18.copyWith(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),

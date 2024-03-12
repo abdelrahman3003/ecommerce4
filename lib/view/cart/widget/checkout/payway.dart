@@ -1,10 +1,10 @@
-import 'package:eccommerce4/controller/cart/order_controller.dart';
+import 'package:eccommerce4/controller/cart/checkout_controller.dart';
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PayWay extends GetView<OrderControllerImp> {
+class PayWay extends GetView<CheckoutControllerImp> {
   const PayWay({super.key, required this.text, required this.isActive});
   final String text;
   final bool isActive;
