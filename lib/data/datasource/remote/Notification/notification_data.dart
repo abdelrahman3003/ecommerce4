@@ -6,7 +6,7 @@ class NotificationData {
   NotificationData(this.crud);
   getNotifications(String userid) async {
     var response =
-        await crud.getData(getNotifcationsNameLink, {"userid": userid});
+        await crud.postData(getNotifcationsNameLink, {"userid": userid});
     return response.fold((l) => l, (r) => r);
   }
 }
