@@ -8,6 +8,7 @@ import 'package:eccommerce4/view/auth/widgets/signup/success_signup.dart';
 import 'package:eccommerce4/view/favourite/favourite_view.dart';
 import 'package:eccommerce4/view/cart/cart_view.dart';
 import 'package:eccommerce4/view/home/home_page_view.dart';
+import 'package:eccommerce4/view/home/widget/setting/orders/order_details_view.dart';
 import 'package:eccommerce4/view/home/widget/setting/setting_view.dart';
 import 'package:eccommerce4/view/home/widget/setting/orders/order_view.dart';
 import 'package:eccommerce4/view/onboarding/onboarding.dart';
@@ -38,6 +39,7 @@ const kfavouroteview = "/favouroteview";
 const kItemsView = "/ItemsView";
 const kItemDetailsView = "/ItemsDetailsView";
 const kOrderView = "/OrderView";
+const kOrderDetailsView = "/OrderDetailsView";
 
 List<GetPage<dynamic>>? getPages = [
   GetPage(
@@ -61,4 +63,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kfavouroteview, page: () => const FavouriteView()),
   GetPage(name: kProfileView, page: () => const ProfileView()),
   GetPage(name: kOrderView, page: () => const OrderView()),
+  GetPage(name: kOrderDetailsView, page: () => const OrderdetailsView()),
 ];

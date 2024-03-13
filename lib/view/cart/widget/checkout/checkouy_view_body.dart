@@ -50,8 +50,6 @@ class CheckoutViewBody extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                const TextTitle(text: "Shipping address"),
-                const SizedBox(height: 12),
                 controller.deliveryType == "1"
                     ? const AddressList()
                     : const SizedBox(height: 12),

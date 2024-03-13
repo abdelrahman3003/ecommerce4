@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
 
-import '../../../../../../data/model/order_model.dart';
-import '../../../../../cart/widget/cart/custom_abbpar.dart';
+import '../../../../../../../data/model/order_model.dart';
+import '../../../../../../cart/widget/cart/custom_abbpar.dart';
 import 'order_card.dart';
 
 class OrderViewBody extends StatelessWidget {

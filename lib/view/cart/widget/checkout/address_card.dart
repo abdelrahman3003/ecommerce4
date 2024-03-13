@@ -19,7 +19,9 @@ class AddessCard extends GetView<CheckoutControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.chooseAddress(address);
+        if (controller.deliveryType == "Delivery") {
+          controller.chooseAddress(address);
+        }
       },
       child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),

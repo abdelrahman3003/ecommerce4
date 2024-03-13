@@ -1,7 +1,7 @@
 class CartModel {
-  int? sumitemdiscountprice;
+  num? sumitemdiscountprice;
   int? itemcount;
-  int? itemdiscountprice;
+  num? itemdiscountprice;
   int? cartId;
   int? cartUserid;
   int? cartItemid;

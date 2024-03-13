@@ -21,7 +21,8 @@ class CheckoutControllerImp extends CheckoutController {
   AppServices appServices = Get.find();
   String? payWay;
   String? deliveryType;
-  String address = "0";
+  int address = 10;
+  String? addressName;
   dynamic priceorder;
   String? ordercoupon;
   List<OrderModel> orderList = [];
@@ -35,7 +36,14 @@ class CheckoutControllerImp extends CheckoutController {
 
   @override
   chooseAddress(val) {
-    address = val;
+    if (val == "Home") {
+      address = appServices.sharedPreferences.getInt("home")!;
+      addressName = "Home";
+    } else if (val == "company") {
+      address = appServices.sharedPreferences.getInt("company")!;
+      addressName = "Company";
+    }
+
     update();
   }
 
@@ -53,6 +61,7 @@ class CheckoutControllerImp extends CheckoutController {
 
   @override
   checkout() async {
+    print("==========$address");
     if (payWay == null) {
       return Get.snackbar("alarm", "please payway to checkout ");
     }

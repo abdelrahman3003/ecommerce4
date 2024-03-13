@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/shared/styles.dart';
+import '../../../../../../../core/shared/styles.dart';
 
 class TextItem extends StatelessWidget {
   const TextItem({super.key, required this.tilte, required this.subtilte});
