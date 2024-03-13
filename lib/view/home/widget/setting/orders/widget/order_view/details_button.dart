@@ -1,11 +1,19 @@
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:eccommerce4/core/shared/widgets/buttons/onboarding_Button.dart';
+import 'package:eccommerce4/data/model/order_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DetailsButton extends StatelessWidget {
-  const DetailsButton({super.key, required this.totlaPrice});
+import '../../../../../../../controller/setting/orders_controller.dart';
+
+class DetailsButton extends GetView<OrderController> {
+  const DetailsButton({
+    super.key,
+    required this.totlaPrice,
+    required this.orderModel,
+  });
   final String totlaPrice;
+  final OrderModel orderModel;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,7 +27,11 @@ class DetailsButton extends StatelessWidget {
         ),
         SizedBox(
             width: Get.width / 4,
-            child: OnboardingButton(text: "Details", onPressed: () {}))
+            child: OnboardingButton(
+                text: "Details",
+                onPressed: () {
+                  controller.goToOrederDetails(orderModel);
+                }))
       ],
     );
   }

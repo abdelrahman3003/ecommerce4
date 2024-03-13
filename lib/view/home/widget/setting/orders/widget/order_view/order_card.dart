@@ -1,3 +1,4 @@
+import 'package:eccommerce4/data/model/order_model.dart';
 import 'package:flutter/material.dart';
 
 import 'details_button.dart';
@@ -13,7 +14,8 @@ class OrderCard extends StatelessWidget {
       required this.orderStatus,
       required this.totalPrice,
       required this.deliveryprice,
-      required this.orderdate});
+      required this.orderdate,
+      required this.orderModel});
   final String orderType;
   final String ordernumber;
   final String orderdate;
@@ -22,6 +24,7 @@ class OrderCard extends StatelessWidget {
   final String paymentMethod;
   final String orderStatus;
   final String totalPrice;
+  final OrderModel orderModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,7 +40,7 @@ class OrderCard extends StatelessWidget {
         TextItem(tilte: "Payment Method ", subtilte: " $paymentMethod"),
         TextItem(tilte: "Order Status", subtilte: " $orderStatus"),
         const SizedBox(height: 15),
-        DetailsButton(totlaPrice: totalPrice),
+        DetailsButton(totlaPrice: totalPrice, orderModel: orderModel),
         const SizedBox(height: 5),
         const Divider(color: Colors.grey, thickness: 1.5),
       ]),

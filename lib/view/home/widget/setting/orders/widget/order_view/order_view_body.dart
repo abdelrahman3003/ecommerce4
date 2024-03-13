@@ -19,6 +19,7 @@ class OrderViewBody extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: orderList.length,
             itemBuilder: (context, index) => OrderCard(
+              orderModel: orderList[index],
               orderPrice: "${orderList[index].ordersPrice}",
               deliveryprice: "${orderList[index].ordersPricedelivery}",
               orderType:

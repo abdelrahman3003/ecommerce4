@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
+import '../../core/constant/routsApp.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
 import '../../data/datasource/remote/order/order_data.dart';
@@ -8,6 +9,7 @@ import '../../data/model/order_model.dart';
 abstract class OrderController extends GetxController {
   viewOrder();
   refreshOrderpage();
+  goToOrederDetails(OrderModel orderModel);
 }
 
 class OrderControllerImp extends OrderController {
@@ -43,5 +45,11 @@ class OrderControllerImp extends OrderController {
   refreshOrderpage() async {
     orderList.clear();
     await viewOrder();
+  }
+
+  @override
+  goToOrederDetails(orderModel) {
+    Get.toNamed(kOrderDetailsView, arguments: {"ordermodel": orderModel});
+    update();
   }
 }

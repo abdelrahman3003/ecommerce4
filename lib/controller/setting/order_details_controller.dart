@@ -13,7 +13,14 @@ class OrderDetailsControllerImp extends OrderDetailsController {
   OrderData orderData = OrderData(Get.find());
   AppServices appServices = Get.find();
   List<OrderModel> orderDtailsList = [];
+  OrderModel? orderModel;
 
   @override
   getOrderDetails() {}
+
+  @override
+  void onInit() {
+    super.onInit();
+    orderModel = Get.arguments["ordermodel"];
+  }
 }
