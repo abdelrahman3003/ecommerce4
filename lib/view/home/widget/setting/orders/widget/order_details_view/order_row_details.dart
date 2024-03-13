@@ -9,12 +9,15 @@ class OrderDetailsRow extends StatelessWidget {
   final String price;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Table(
       children: [
-        TextItemOrderCard(title: item),
-        TextItemOrderCard(title: qty),
-        TextItemOrderCard(title: price)
+        TableRow(
+          children: [
+            TextItemOrderCard(title: item),
+            TextItemOrderCard(title: qty),
+            TextItemOrderCard(title: price)
+          ],
+        )
       ],
     );
   }

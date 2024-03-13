@@ -9,13 +9,15 @@ class CardOrderDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-      child: Column(
-        children: [
-          OrderDetailsRow(item: "Item", qty: "QTY", price: "Price"),
-          Expanded(child: OrderDetailsList()),
-          TotalPrice(totalPrice: "2000 \$")
-        ],
+    return const SizedBox(
+      child: Card(
+        child: Column(
+          children: [
+            OrderDetailsRow(item: "Item", qty: "QTY", price: "Price"),
+            OrderDetailsList(),
+            TotalPrice(totalPrice: "1000\$")
+          ],
+        ),
       ),
     );
   }

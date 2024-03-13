@@ -9,15 +9,19 @@ class OrderDetailsList extends GetView<OrderDetailsControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: controller.orderDtailsList.length,
-      itemBuilder: (context, index) => Opacity(
-          opacity: .6,
-          child: OrderDetailsRow(
-              item: controller.orderDtailsList[index].itemsName!,
-              qty: "${controller.orderDtailsList[index].itemcount!}",
-              price:
-                  "${controller.orderDtailsList[index].sumitemdiscountprice!} \$")),
+    return SizedBox(
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: controller.orderDtailsList.length,
+        itemBuilder: (context, index) => Opacity(
+            opacity: .6,
+            child: OrderDetailsRow(
+                item: controller.orderDtailsList[index].itemsName!,
+                qty: "${controller.orderDtailsList[index].itemcount!}",
+                price:
+                    "${controller.orderDtailsList[index].sumitemdiscountprice!} \$")),
+      ),
     );
   }
 }
