@@ -12,7 +12,8 @@ class OrederDetailsViewBody extends StatelessWidget {
       children: [
         CustomAbbpar(title: "Order Details"),
         SizedBox(height: 20),
-        CardOrderDetails()
+        Expanded(child: CardOrderDetails()),
+        Spacer(),
       ],
     );
   }

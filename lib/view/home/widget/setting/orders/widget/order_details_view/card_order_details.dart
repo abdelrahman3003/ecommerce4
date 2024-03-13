@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'order_detail_list.dart';
 import 'order_row_details.dart';
+import 'totalprice.dart';
 
 class CardOrderDetails extends StatelessWidget {
   const CardOrderDetails({super.key});
@@ -8,17 +10,12 @@ class CardOrderDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Card(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        child: Column(
-          children: [
-            OrderDetailsRow(item: "Item", qty: "QTY", price: "Price"),
-            Opacity(
-                opacity: .6,
-                child: OrderDetailsRow(
-                    item: "iphone", qty: "12", price: "150 \$")),
-          ],
-        ),
+      child: Column(
+        children: [
+          OrderDetailsRow(item: "Item", qty: "QTY", price: "Price"),
+          Expanded(child: OrderDetailsList()),
+          TotalPrice(totalPrice: "2000 \$")
+        ],
       ),
     );
   }

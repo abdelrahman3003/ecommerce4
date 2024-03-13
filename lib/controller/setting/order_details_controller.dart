@@ -3,6 +3,7 @@ import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
 import '../../data/datasource/remote/order/order_data.dart';
+import '../../data/model/order_details_model.dart';
 import '../../data/model/order_model.dart';
 
 abstract class OrderDetailsController extends GetxController {
@@ -13,7 +14,7 @@ class OrderDetailsControllerImp extends OrderDetailsController {
   StatusRequest statusRequest = StatusRequest.none;
   OrderData orderData = OrderData(Get.find());
   AppServices appServices = Get.find();
-  List<OrderModel> orderDtailsList = [];
+  List<OrderDetailsModel> orderDtailsList = [];
   OrderModel? orderModel;
 
   @override
@@ -27,7 +28,7 @@ class OrderDetailsControllerImp extends OrderDetailsController {
       if (response["status"] == "failure") {
       } else {
         List data = response["data"];
-        orderDtailsList.addAll(data.map((e) => OrderModel.fromJson(e)));
+        orderDtailsList.addAll(data.map((e) => OrderDetailsModel.fromJson(e)));
       }
     }
     update();
@@ -37,5 +38,6 @@ class OrderDetailsControllerImp extends OrderDetailsController {
   void onInit() {
     super.onInit();
     orderModel = Get.arguments["ordermodel"];
+    getOrderDetails();
   }
 }
