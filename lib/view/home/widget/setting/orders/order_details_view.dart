@@ -1,4 +1,5 @@
 import 'package:eccommerce4/controller/setting/order_details_controller.dart';
+import 'package:eccommerce4/core/class/data_handilng.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,9 +11,16 @@ class OrderdetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(OrderDetailsControllerImp());
-    return const SafeArea(
+    return SafeArea(
         child: Scaffold(
-      body: OrederDetailsViewBody(),
+      body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          child: GetBuilder<OrderDetailsControllerImp>(
+            builder: (controller) => DataHandlingState(
+              statusRequest: controller.statusRequest,
+              widget: const OrederDetailsViewBody(),
+            ),
+          )),
     ));
   }
 }

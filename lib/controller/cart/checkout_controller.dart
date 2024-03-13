@@ -39,7 +39,7 @@ class CheckoutControllerImp extends CheckoutController {
     if (val == "Home") {
       address = appServices.sharedPreferences.getInt("home")!;
       addressName = "Home";
-    } else if (val == "company") {
+    } else if (val == "Company") {
       address = appServices.sharedPreferences.getInt("company")!;
       addressName = "Company";
     }
@@ -50,6 +50,7 @@ class CheckoutControllerImp extends CheckoutController {
   @override
   chooseDeliveryType(val) {
     deliveryType = val;
+    addressName = "";
     update();
   }
 
@@ -61,7 +62,6 @@ class CheckoutControllerImp extends CheckoutController {
 
   @override
   checkout() async {
-    print("==========$address");
     if (payWay == null) {
       return Get.snackbar("alarm", "please payway to checkout ");
     }

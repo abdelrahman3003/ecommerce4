@@ -26,7 +26,7 @@ class AddressList extends StatelessWidget {
                 AddessCard(
                     isActive:
                         controller.addressName == "Company" ? true : false,
-                    address: "Campany",
+                    address: "Company",
                     subaddress: "Cairo , ain shams"),
               ],
             ));

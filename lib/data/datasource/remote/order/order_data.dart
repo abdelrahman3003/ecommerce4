@@ -13,4 +13,10 @@ class OrderData {
     var response = await crud.postData(viewOrderNameLink, {"userid": userid});
     return response.fold((l) => l, (r) => r);
   }
+
+  viewOrderDetail(String orderid) async {
+    var response =
+        await crud.postData(viewOrderDetailsNameLink, {"orderid": orderid});
+    return response.fold((l) => l, (r) => r);
+  }
 }

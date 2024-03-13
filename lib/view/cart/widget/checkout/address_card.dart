@@ -19,7 +19,7 @@ class AddessCard extends GetView<CheckoutControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        if (controller.deliveryType == "Delivery") {
+        if (controller.deliveryType == "1") {
           controller.chooseAddress(address);
         }
       },

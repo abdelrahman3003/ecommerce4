@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../../../../../controller/setting/orders_controller.dart';
 
-class DetailsButton extends GetView<OrderController> {
+class DetailsButton extends GetView<OrderControllerImp> {
   const DetailsButton({
     super.key,
     required this.totlaPrice,

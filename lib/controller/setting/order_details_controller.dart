@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
+import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
 import '../../data/datasource/remote/order/order_data.dart';
 import '../../data/model/order_model.dart';
@@ -16,7 +17,21 @@ class OrderDetailsControllerImp extends OrderDetailsController {
   OrderModel? orderModel;
 
   @override
-  getOrderDetails() {}
+  getOrderDetails() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response =
+        await orderData.viewOrderDetail(orderModel!.ordersId.toString());
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+      } else {
+        List data = response["data"];
+        orderDtailsList.addAll(data.map((e) => OrderModel.fromJson(e)));
+      }
+    }
+    update();
+  }
 
   @override
   void onInit() {
