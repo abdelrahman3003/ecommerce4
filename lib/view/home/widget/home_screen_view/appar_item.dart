@@ -27,7 +27,7 @@ class AppbarItem extends GetView<HomeScreenControllerImp> {
                 controller.changepage(1);
               } else if (icon == Icons.settings) {
                 controller.changepage(2);
-              } else if (icon == Icons.person) {
+              } else if (icon == Icons.offline_bolt_outlined) {
                 controller.changepage(3);
               } else {
                 controller.changepage(0);

@@ -9,4 +9,9 @@ class GetItemData {
         itemsNameLink, {"categoryId": id.toString(), "userid": userid});
     return response.fold((l) => l, (r) => r);
   }
+
+  getIteOffermData() async {
+    var response = await crud.postData(itemsOffersNameLink, {});
+    return response.fold((l) => l, (r) => r);
+  }
 }
