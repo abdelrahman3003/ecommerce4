@@ -23,11 +23,8 @@ class OrderList extends GetView<OrderControllerImp> {
         ordernumber: controller.orderList[index].ordersId!,
         orderdate:
             " ${Jiffy.parse(controller.orderList[index].ordersDatetime!).fromNow()}",
-        orderStatus: controller.orderList[index].ordersStatus == 0
-            ? "approving"
-            : controller.orderList[index].ordersStatus == 1
-                ? "On Road"
-                : "Archived",
+        orderStatus: controller
+            .printOrderStatus(controller.orderList[index].ordersStatus),
         paymentMethod: controller.orderList[index].ordersPaymentmethod == 0
             ? "On Delivery"
             : "On Card",

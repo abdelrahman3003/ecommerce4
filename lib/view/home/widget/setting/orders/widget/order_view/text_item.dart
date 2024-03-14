@@ -18,8 +18,10 @@ class TextItem extends StatelessWidget {
             )),
         Text(subtilte,
             style: Styles.textStyle20black.copyWith(
-              fontSize: tilte == "Order Number" ? 25 : 18,
-            )),
+                fontSize: tilte == "Order Number" ? 25 : 18,
+                fontWeight: tilte == "Order Status"
+                    ? FontWeight.bold
+                    : FontWeight.normal)),
       ],
     );
   }

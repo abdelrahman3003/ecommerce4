@@ -1,6 +1,7 @@
 import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../controller/home/setting_controller.dart';
 import 'setting_item_card.dart';
@@ -23,8 +24,12 @@ class SeetingListTile extends GetView<SettingControllerImp> {
             title: "Address", icon: Icons.location_city_outlined),
         const SettinItemCard(
             title: "About u", icon: Icons.help_outline_rounded),
-        const SettinItemCard(
-            title: "Contact us", icon: Icons.phone_callback_outlined),
+        SettinItemCard(
+            onTap: () async {
+              await launchUrl(Uri.parse("tel:+201050536359"));
+            },
+            title: "Contact us",
+            icon: Icons.phone_callback_outlined),
         SettinItemCard(
             onTap: () {
               controller.logout();
