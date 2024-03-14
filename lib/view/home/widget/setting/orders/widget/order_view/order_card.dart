@@ -1,6 +1,7 @@
 import 'package:eccommerce4/data/model/order_model.dart';
 import 'package:flutter/material.dart';
 
+import 'delete_order_button.dart';
 import 'details_button.dart';
 import 'text_item.dart';
 
@@ -17,7 +18,7 @@ class OrderCard extends StatelessWidget {
       required this.orderdate,
       required this.orderModel});
   final String orderType;
-  final String ordernumber;
+  final int ordernumber;
   final String orderdate;
   final String orderPrice;
   final String deliveryprice;
@@ -30,7 +31,13 @@ class OrderCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        TextItem(tilte: "Order Number", subtilte: " $ordernumber"),
+        Row(children: [
+          TextItem(tilte: "Order Number", subtilte: " $ordernumber"),
+          const Spacer(),
+          DeleteOrderButton(
+            orderid: ordernumber,
+          )
+        ]),
         TextItem(tilte: "Order date", subtilte: " $orderdate"),
         TextItem(tilte: "Order Type ", subtilte: " $orderType"),
         TextItem(tilte: "Order Price", subtilte: " $orderPrice \$"),

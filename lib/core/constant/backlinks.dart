@@ -26,6 +26,7 @@ const String getcounitemNameLink = "$serverNameLink/cart/getCountItem.php";
 const String checkcouponNameLink = "$serverNameLink/coupon/checkCoupon.php";
 const String checkoutOrderNameLink = "$serverNameLink/order/checkout.php";
 const String viewOrderNameLink = "$serverNameLink/order/orders.php";
+const String deleteOrderNameLink = "$serverNameLink/order/delete.php";
 const String viewOrderDetailsNameLink =
     "$serverNameLink/order/orderDetails.php";
 const String getNotifcationsNameLink = "$serverNameLink/notification/view.php";

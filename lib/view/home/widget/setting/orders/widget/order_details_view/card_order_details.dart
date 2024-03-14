@@ -15,7 +15,8 @@ class CardOrderDetails extends StatelessWidget {
           children: [
             OrderDetailsRow(item: "Item", qty: "QTY", price: "Price"),
             OrderDetailsList(),
-            TotalPrice(totalPrice: "1000\$")
+            SizedBox(height: 20),
+            TotalPrice()
           ],
         ),
       ),

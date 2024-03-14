@@ -5,8 +5,7 @@ import '../../../../../../../controller/setting/order_details_controller.dart';
 import '../../../../../../../core/shared/styles.dart';
 
 class TotalPrice extends GetView<OrderDetailsControllerImp> {
-  const TotalPrice({super.key, required this.totalPrice});
-  final String totalPrice;
+  const TotalPrice({super.key});
   @override
   Widget build(BuildContext context) {
     return Row(

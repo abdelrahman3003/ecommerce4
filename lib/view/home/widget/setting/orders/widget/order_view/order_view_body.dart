@@ -1,43 +1,23 @@
+import 'package:eccommerce4/controller/setting/orders_controller.dart';
+import 'package:eccommerce4/core/class/data_handilng.dart';
 import 'package:flutter/material.dart';
-import 'package:jiffy/jiffy.dart';
+import 'package:get/get.dart';
 
-import '../../../../../../../data/model/order_model.dart';
 import '../../../../../../cart/widget/cart/custom_abbpar.dart';
-import 'order_card.dart';
+import 'order_list.dart';
 
 class OrderViewBody extends StatelessWidget {
-  const OrderViewBody({super.key, required this.orderList});
-  final List<OrderModel> orderList;
+  const OrderViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomAbbpar(title: "Orders"),
-        Expanded(
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: orderList.length,
-            itemBuilder: (context, index) => OrderCard(
-              orderModel: orderList[index],
-              orderPrice: "${orderList[index].ordersPrice}",
-              deliveryprice: "${orderList[index].ordersPricedelivery}",
-              orderType:
-                  orderList[index].ordersType == 0 ? "Receive" : "Delivery",
-              ordernumber: "${orderList[index].ordersId}",
-              orderdate:
-                  " ${Jiffy.parse(orderList[index].ordersDatetime!).fromNow()}",
-              orderStatus: orderList[index].ordersStatus == 0
-                  ? "approving"
-                  : orderList[index].ordersStatus == 1
-                      ? "On Road"
-                      : "Archived",
-              paymentMethod: orderList[index].ordersPaymentmethod == 0
-                  ? "On Delivery"
-                  : "On Card",
-              totalPrice: "${orderList[index].totalprice}",
-            ),
-          ),
+        GetBuilder<OrderControllerImp>(
+          builder: (controller) => DataHandlingState(
+              statusRequest: controller.statusRequest,
+              widget: const Expanded(child: OrderList())),
         )
       ],
     );

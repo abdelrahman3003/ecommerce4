@@ -14,6 +14,12 @@ class OrderData {
     return response.fold((l) => l, (r) => r);
   }
 
+  deleteOrder(int orderid) async {
+    var response = await crud
+        .postData(deleteOrderNameLink, {"orderid": orderid.toString()});
+    return response.fold((l) => l, (r) => r);
+  }
+
   viewOrderDetail(String orderid) async {
     var response =
         await crud.postData(viewOrderDetailsNameLink, {"orderid": orderid});

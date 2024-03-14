@@ -13,12 +13,14 @@ class OnboardingButton extends StatelessWidget {
     required this.onPressed,
     this.color = ColorsApp.kprimaryColor1,
     this.borderRadius = kborderradius,
+    this.textColor = Colors.white,
   });
 
   final Function()? onPressed;
   final String text;
   final double width;
   final Color color;
+  final Color textColor;
   final double borderRadius;
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,8 @@ class OnboardingButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: Styles.textStyle18.copyWith(color: Colors.white),
+          style: Styles.textStyle18
+              .copyWith(color: textColor, fontWeight: FontWeight.bold),
         ),
       ),
     );

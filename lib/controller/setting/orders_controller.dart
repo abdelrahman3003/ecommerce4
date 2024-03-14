@@ -8,6 +8,7 @@ import '../../data/model/order_model.dart';
 
 abstract class OrderController extends GetxController {
   viewOrder();
+  deleteOrder(int orderid);
   refreshOrderpage();
   goToOrederDetails(OrderModel orderModel);
 }
@@ -27,9 +28,25 @@ class OrderControllerImp extends OrderController {
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
       } else {
         List data = response["data"];
         orderList.addAll(data.map((e) => OrderModel.fromJson(e)));
+      }
+    }
+    update();
+  }
+
+  @override
+  deleteOrder(orderid) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await orderData.deleteOrder(orderid);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+      } else {
+        refreshOrderpage();
       }
     }
     update();
