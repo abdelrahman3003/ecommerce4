@@ -16,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
         SizedBox(height: 20),
         CategoriesListView(),
         SizedBox(height: 20),
-        ProductListView(text: "Product For Your"),
+        ProductListView(text: "Top Selling"),
         SizedBox(height: 20),
         ProductListView(text: "Offer"),
         SizedBox(height: 50),

@@ -25,4 +25,13 @@ class OrderData {
         await crud.postData(viewOrderDetailsNameLink, {"orderid": orderid});
     return response.fold((l) => l, (r) => r);
   }
+
+  orderRating(int orderid, double rate, String comment) async {
+    var response = await crud.postData(orderRatingNameLink, {
+      "orderid": orderid.toString(),
+      "rate": rate.toString(),
+      "comment": comment.toString(),
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }

@@ -14,6 +14,7 @@ abstract class OrderController extends GetxController {
   refreshOrderpage();
   goToOrederDetails(OrderModel orderModel);
   String printOrderStatus(val);
+  rating(int orderid, double rate, String comment);
 }
 
 class OrderControllerImp extends OrderController {
@@ -91,5 +92,26 @@ class OrderControllerImp extends OrderController {
       return "On the way";
     }
     return "Archived";
+  }
+
+  @override
+  rating(orderid, rate, comment) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await orderData.orderRating(orderid, rate, comment);
+    statusRequest = handlingApiData(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response["status"] == "failure") {
+        statusRequest = StatusRequest.failure;
+      } else {
+        Get.rawSnackbar(
+            title: "alarm",
+            messageText: Text(
+              "rating is added",
+              style: Styles.textStyle16.copyWith(color: Colors.white),
+            ));
+      }
+    }
+    update();
   }
 }

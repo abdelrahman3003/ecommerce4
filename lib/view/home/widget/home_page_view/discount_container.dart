@@ -1,8 +1,11 @@
 import 'package:eccommerce4/core/constant/colors.dart';
 import 'package:eccommerce4/core/shared/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class DiscountContainer extends StatelessWidget {
+import '../../../../controller/home/home_controller.dart';
+
+class DiscountContainer extends GetView<HomePageControllerImp> {
   const DiscountContainer({super.key});
 
   @override
@@ -27,13 +30,13 @@ class DiscountContainer extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.center,
-          child: const ListTile(
+          child: ListTile(
             title: Text(
-              "A summer surprise",
+              "${controller.textDiscount[controller.textDiscount.length - 1]['textdiscount_title']}",
               style: Styles.textStyle20,
             ),
             subtitle: Text(
-              "Cashback %20",
+              "${controller.textDiscount[controller.textDiscount.length - 1]['textdiscount_body']}",
               style: Styles.textStyle30,
             ),
           ),

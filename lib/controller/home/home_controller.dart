@@ -18,6 +18,7 @@ class HomePageControllerImp extends HomeController {
   int pageCount = 0;
   List categories = [];
   List items = [];
+  List textDiscount = [];
 
   @override
   getAllDataHome() async {
@@ -31,6 +32,7 @@ class HomePageControllerImp extends HomeController {
       } else {
         categories.addAll(response['categories']);
         items.addAll(response['items']);
+        textDiscount.addAll(response['textdiscount']);
       }
     }
     update();

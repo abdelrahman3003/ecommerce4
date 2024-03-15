@@ -38,7 +38,10 @@ class OrderCard extends GetView<OrderControllerImp> {
           subtilte:
               orderModel.ordersPaymentmethod == 0 ? "On Delivery" : "On Card",
         ),
-        OrderStatus(orderStatus: orderModel.ordersStatus!),
+        OrderStatus(
+          orderStatus: orderModel.ordersStatus!,
+          orderid: orderModel.ordersId!,
+        ),
         const SizedBox(height: 15),
         DetailsButton(
             totlaPrice: "${orderModel.totalprice}", orderModel: orderModel),

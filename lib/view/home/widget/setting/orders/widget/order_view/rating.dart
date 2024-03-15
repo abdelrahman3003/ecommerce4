@@ -1,11 +1,14 @@
+import 'package:eccommerce4/controller/setting/orders_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
+int? orderid;
 final _dialog = RatingDialog(
   initialRating: 1.0,
   // your app's name?
   title: const Text(
-    'Rating Dialog',
+    'Order Rating',
     textAlign: TextAlign.center,
     style: TextStyle(
       fontSize: 25,
@@ -16,7 +19,7 @@ final _dialog = RatingDialog(
   message: const Text(
     'Tap a star to set your rating. Add more description here if you want.',
     textAlign: TextAlign.center,
-    style: const TextStyle(fontSize: 15),
+    style: TextStyle(fontSize: 15),
   ),
   // your app's logo?
   image: const FlutterLogo(size: 100),
@@ -24,8 +27,8 @@ final _dialog = RatingDialog(
   commentHint: 'Set your custom comment hint',
   onCancelled: () => print('cancelled'),
   onSubmitted: (response) {
-    print('rating: ${response.rating}, comment: ${response.comment}');
-
+    OrderControllerImp controller = Get.find();
+    controller.rating(orderid!, response.rating, response.comment);
     // TODO: add your own logic
     if (response.rating < 3.0) {
       // send their comments to your email or anywhere you wish
@@ -35,10 +38,13 @@ final _dialog = RatingDialog(
 );
 
 // show the dialog
-shoratingDialog(BuildContext context) {
+showratingDialog(BuildContext context, id) {
   showDialog(
-    context: context,
-    barrierDismissible: true, // set to false if you want to force a rating
-    builder: (context) => _dialog,
-  );
+      context: context,
+      barrierDismissible: true, // set to false if you want to force a rating
+      builder: (context) {
+        print("========= id = $id");
+        orderid = id;
+        return _dialog;
+      });
 }

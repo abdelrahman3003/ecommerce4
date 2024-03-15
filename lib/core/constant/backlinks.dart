@@ -10,6 +10,7 @@ const String homeNameLink = "$serverNameLink/home/getalldata.php";
 const String categoriesImageNameLink = "$serverNameLink/upload/categories";
 const String itemsImageNameLink = "$serverNameLink/upload/items";
 const String itemsNameLink = "$serverNameLink/items/item.php";
+const String topSellingNameLink = "$serverNameLink/items/topselling.php";
 const String itemsOffersNameLink = "$serverNameLink/items/offer.php";
 const String searchNameLink = "$serverNameLink/items/search.php";
 const String addtofavouriteNameLink =
@@ -30,4 +31,5 @@ const String viewOrderNameLink = "$serverNameLink/order/orders.php";
 const String deleteOrderNameLink = "$serverNameLink/order/delete.php";
 const String viewOrderDetailsNameLink =
     "$serverNameLink/order/orderDetails.php";
+const String orderRatingNameLink = "$serverNameLink/order/rating.php";
 const String getNotifcationsNameLink = "$serverNameLink/notification/view.php";
