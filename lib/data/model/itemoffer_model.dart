@@ -11,6 +11,7 @@ class ItemOfferModel {
   String? itemsDes;
   String? itemsDesAr;
   int? itemsCat;
+  num? itemDiscountPrice;
 
   ItemOfferModel(
       {this.itemsId,
@@ -24,7 +25,8 @@ class ItemOfferModel {
       this.itemsDate,
       this.itemsDes,
       this.itemsDesAr,
-      this.itemsCat});
+      this.itemsCat,
+      this.itemDiscountPrice});
 
   ItemOfferModel.fromJson(Map<String, dynamic> json) {
     itemsId = json['items_id'];
@@ -39,6 +41,7 @@ class ItemOfferModel {
     itemsDes = json['items_des'];
     itemsDesAr = json['items_des_ar'];
     itemsCat = json['items_cat'];
+    itemDiscountPrice = json['itemDiscountPrice'];
   }
 
   Map<String, dynamic> toJson() {
@@ -55,6 +58,7 @@ class ItemOfferModel {
     data['items_des'] = this.itemsDes;
     data['items_des_ar'] = this.itemsDesAr;
     data['items_cat'] = this.itemsCat;
+    data['itemDiscountPrice'] = this.itemDiscountPrice;
     return data;
   }
 }

@@ -1,4 +1,3 @@
-import 'package:eccommerce4/core/constant/routsApp.dart';
 import 'package:eccommerce4/core/services/services.dart';
 import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
@@ -14,25 +13,20 @@ class ItemsOfferControllerImp extends ItemsOfferController {
   AppServices appServices = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
   late int selectedCat;
-  List items = [];
-  List categories = [];
+  List itemsoffer = [];
 
   @override
   getOfferItems() async {
-    items = [];
+    itemsoffer = [];
     statusRequest = StatusRequest.loading;
     update();
-    var response = await getItemData.getItemData(
-        1, appServices.sharedPreferences.getString("id")!);
+    var response = await getItemData.getIteOffermData();
     statusRequest = handlingApiData(response);
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
-
-        Get.toNamed(kItemsView);
       } else {
-        items.addAll(response['data']);
-        Get.toNamed(kItemsView);
+        itemsoffer.addAll(response['data']);
       }
       update();
     }
