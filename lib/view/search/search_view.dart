@@ -16,9 +16,7 @@ class SearchView extends GetView<SearchControllerImp> {
       itemCount: itemsSearch.length,
       itemBuilder: (context, index) {
         return SearchItemCard(
-          onTap: () {
-            controller.goToItemDetails(itemsSearch[index]);
-          },
+          onTap: () {},
           image: itemsSearch[index].itemsImage!,
           subtilte: itemsSearch[index].categoriesName!,
           title: itemsSearch[index].itemsName!,

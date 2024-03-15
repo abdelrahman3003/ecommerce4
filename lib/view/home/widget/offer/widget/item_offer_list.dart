@@ -18,12 +18,9 @@ class ItemOfferList extends StatelessWidget {
                   crossAxisCount: 1, childAspectRatio: 1 / .8),
               itemCount: controller.itemsoffer.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: ItemOfferCard(
-                    itemOfferModel:
-                        ItemOfferModel.fromJson(controller.itemsoffer[index]),
-                  ),
+                return ItemOfferCard(
+                  itemOfferModel:
+                      ItemOfferModel.fromJson(controller.itemsoffer[index]),
                 );
               },
             ));
