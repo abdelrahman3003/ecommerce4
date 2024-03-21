@@ -69,12 +69,22 @@ dependencies:
   show_up_animation: ^2.0.0
   sqflite: ^2.0.2
   url_launcher: ^6.1.2
+  flutter_native_splash: 2.3.7
 
 dev_dependencies:
   flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
-
+  flutter_launcher_icons: ^0.13.1
+flutter_native_splash:
+  color: "#42a5f5"
+  image: assets/images/logoapp.png
+  android_gravity: fill
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logoapp.png"
+  min_sdk_android: 21
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
