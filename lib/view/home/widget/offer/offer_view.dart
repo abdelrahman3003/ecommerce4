@@ -21,11 +21,7 @@ class OfferView extends StatelessWidget {
           children: [
             const HomeAppbar(),
             !controller.isSearch
-                ? GetBuilder<ItemsOfferControllerImp>(
-                    builder: (controller) => DataHandlingState(
-                          widget: const Expanded(child: OfferViewBody()),
-                          statusRequest: controller.statusRequest,
-                        ))
+                ? const Expanded(child: OfferViewBody())
                 : SearchView(itemsSearch: controller.searchItemsList),
           ],
         ),
