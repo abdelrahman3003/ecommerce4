@@ -17,29 +17,19 @@ class HomePageView extends StatelessWidget {
     Get.put(SearchControllerImp());
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: GetBuilder<SearchControllerImp>(
-            builder: (controller) => DataHandlingState(
-              statusRequest: controller.statusRequest,
-              widget: Column(
-                children: [
-                  const HomeAppbar(),
-                  !controller.isSearch
-                      ? GetBuilder<HomePageControllerImp>(
-                          builder: (controller) => Column(
-                                children: [
-                                  DataHandlingState(
-                                    widget: const HomeViewBody(),
-                                    statusRequest: controller.statusRequest,
-                                  ),
-                                ],
-                              ))
-                      : SearchView(itemsSearch: controller.searchItemsList),
-                ],
-              ),
-            ),
-          )),
+      child: GetBuilder<SearchControllerImp>(
+        builder: (controller) => DataHandlingState(
+          statusRequest: controller.statusRequest,
+          widget: Column(
+            children: [
+              const HomeAppbar(),
+              !controller.isSearch
+                  ? const Expanded(child: HomeViewBody())
+                  : SearchView(itemsSearch: controller.searchItemsList),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

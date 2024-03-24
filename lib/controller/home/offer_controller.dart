@@ -32,8 +32,8 @@ class ItemsOfferControllerImp extends ItemsOfferController {
         List data = response["data"];
         itemsoffer.addAll(data.map((e) => ItemModel.fromJson(e)));
       }
-      update();
     }
+    update();
   }
 
   @override

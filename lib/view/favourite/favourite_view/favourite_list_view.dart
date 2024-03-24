@@ -21,8 +21,7 @@ class FavouriteListView extends GetView<MyFavouritesCOntrollerImp> {
                 itemCount: controller.myfavouritesList.length,
                 itemBuilder: (context, index) {
                   return ItemCard(
-                    myfavouritesModel: controller.myfavouritesList[index],
-                  );
+                      myfavouritesModel: controller.myfavouritesList[index]);
                 },
               )
             : const EmptyLottie());

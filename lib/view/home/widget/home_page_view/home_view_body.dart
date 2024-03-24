@@ -1,4 +1,7 @@
+import 'package:eccommerce4/controller/home/home_controller.dart';
+import 'package:eccommerce4/core/class/data_handilng.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'categories_listview.dart';
 import 'discount_container.dart';
@@ -9,18 +12,22 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(height: 20),
-        DiscountContainer(),
-        SizedBox(height: 20),
-        CategoriesListView(),
-        SizedBox(height: 20),
-        ProductListView(text: "Top Selling"),
-        SizedBox(height: 20),
-        ProductListView(text: "Offer"),
-        SizedBox(height: 50),
-      ],
+    return GetBuilder<HomePageControllerImp>(
+      builder: (controller) => DataHandlingState(
+          statusRequest: controller.statusRequest,
+          widget: ListView(
+            children: const [
+              SizedBox(height: 20),
+              DiscountContainer(),
+              SizedBox(height: 20),
+              CategoriesListView(),
+              SizedBox(height: 20),
+              ProductListView(text: "Top Selling"),
+              SizedBox(height: 20),
+              ProductListView(text: "Offer"),
+              SizedBox(height: 50),
+            ],
+          )),
     );
   }
 }
