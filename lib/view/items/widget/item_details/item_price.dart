@@ -68,7 +68,7 @@ class ItemPrice extends GetView<ItemsDetailsControllerImp> {
                   color: Colors.red, decoration: TextDecoration.lineThrough),
             ),
             Text(
-              "\$ $discountprice",
+              "\$ 200",
               style: Styles.textStyle20.copyWith(color: Colors.red),
             ),
           ],

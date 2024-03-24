@@ -24,10 +24,10 @@ class ProductListView extends GetView<HomePageControllerImp> {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            itemCount: controller.items.length,
+            itemCount: controller.topselling.length,
             itemBuilder: (context, index) => ProductCart(
                 itemImage:
-                    "$itemsImageNameLink/${controller.items[index]['items_image']}"),
+                    "$itemsImageNameLink/${controller.topselling[index].itemsImage}"),
           ),
         ),
       ],

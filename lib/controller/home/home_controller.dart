@@ -5,10 +5,13 @@ import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../data/datasource/remote/items/items_data.dart';
+import '../../data/model/items_model.dart';
+import '../../data/model/toSellingModel.dart';
 
 abstract class HomeController extends GetxController {
   getAllDataHome();
   goToItems(List categoreis, int selectedCa);
+  goToItemDetails(ItemModel itemModel);
 }
 
 class HomePageControllerImp extends HomeController {
@@ -17,7 +20,7 @@ class HomePageControllerImp extends HomeController {
   StatusRequest statusRequest = StatusRequest.none;
   int pageCount = 0;
   List categories = [];
-  List items = [];
+  List<TopSellingModel> topselling = [];
   List textDiscount = [];
 
   @override
@@ -31,7 +34,8 @@ class HomePageControllerImp extends HomeController {
         statusRequest = StatusRequest.failure;
       } else {
         categories.addAll(response['categories']);
-        items.addAll(response['items']);
+        topselling.addAll(
+            response['topselling'].map((e) => TopSellingModel.fromJson(e)));
         textDiscount.addAll(response['textdiscount']);
       }
     }
@@ -51,6 +55,12 @@ class HomePageControllerImp extends HomeController {
       kItemsView,
       arguments: {"categories": categories, "selectedCat": selectedCa},
     );
+    update();
+  }
+
+  @override
+  goToItemDetails(ItemModel itemModel) {
+    Get.toNamed(kItemDetailsView, arguments: {"itemModel": itemModel});
     update();
   }
 }
