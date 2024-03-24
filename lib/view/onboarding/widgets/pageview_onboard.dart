@@ -27,7 +27,7 @@ class PageViewOnboarding extends StatelessWidget {
                 const SizedBox(height: 30),
                 Text(
                   onboardingmodeList[index].title,
-                  style: Styles.textStyle25.copyWith(color: Colors.black),
+                  style: Styles.textStyle25black,
                 ),
                 const SizedBox(height: 100),
                 SizedBox(
@@ -46,7 +46,7 @@ class PageViewOnboarding extends StatelessWidget {
                     child: Text(
                       textAlign: TextAlign.center,
                       onboardingmodeList[index].subtitle,
-                      style: Styles.textStyle20,
+                      style: Styles.textStyle20black,
                     ),
                   ),
                 ),

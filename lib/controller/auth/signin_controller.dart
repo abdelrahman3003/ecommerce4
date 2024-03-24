@@ -11,6 +11,7 @@ class SigninController extends GetxController {
   PostDataSignin postDataSignup = PostDataSignin(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
   AppServices appServices = Get.find();
+
   signin(String email, String password) async {
     statusRequest = StatusRequest.loading;
     update();

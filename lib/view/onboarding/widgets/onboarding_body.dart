@@ -12,7 +12,7 @@ class OnboardingBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: Get.height * .6, child: PageViewOnboarding()),
+          SizedBox(height: Get.height * .7, child: const PageViewOnboarding()),
           const Spotes(),
           const Padding(
             padding: EdgeInsets.only(top: 150),

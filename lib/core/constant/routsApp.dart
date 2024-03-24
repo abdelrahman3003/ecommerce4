@@ -42,10 +42,9 @@ const kOrderView = "/OrderView";
 const kOrderDetailsView = "/OrderDetailsView";
 
 List<GetPage<dynamic>>? getPages = [
-  GetPage(
-      name: "/",
-      page: () => const Onboarding(),
-      middlewares: [AppMiddleWare()]),
+  GetPage(name: "/", page: () => const Onboarding(), middlewares: [
+    AppMiddleWare(),
+  ]),
   GetPage(name: kSignin, page: () => const Signin()),
   GetPage(name: kSignup, page: () => const Signup()),
   GetPage(name: kCheckEmail, page: () => const CheckEmail()),
