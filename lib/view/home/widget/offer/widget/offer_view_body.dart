@@ -4,14 +4,16 @@ import 'package:get/get.dart';
 import '../../../../../controller/home/offer_controller.dart';
 import 'item_offer_list.dart';
 
-class OfferViewBody extends GetView<ItemsOfferControllerImp> {
+class OfferViewBody extends StatelessWidget {
   const OfferViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return DataHandlingState(
-      statusRequest: controller.statusRequest,
-      widget: const ItemOfferList(),
+    return GetBuilder<ItemsOfferControllerImp>(
+      builder: (controller) => DataHandlingState(
+        statusRequest: controller.statusRequest,
+        widget: const ItemOfferList(),
+      ),
     );
   }
 }
