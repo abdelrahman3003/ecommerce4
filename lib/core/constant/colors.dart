@@ -5,4 +5,5 @@ class ColorsApp {
   static const Color kprimaryColor2 = Color(0xffBBDEFB);
   static const Color kprimaryColor3 = Color(0xffEEEEEE);
   static const Color kprimaryColor4 = Colors.orange;
+  static const Color kprimaryColor5 = Colors.white;
 }

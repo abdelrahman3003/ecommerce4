@@ -77,9 +77,9 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
 flutter_native_splash:
-  color: "#42a5f5"
+  color: "#FFFFFF"
   image: assets/images/taswaq4.png
-  android_gravity: fill
+  android_gravity: center
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
