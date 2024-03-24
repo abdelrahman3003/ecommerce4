@@ -10,6 +10,8 @@ class OfferViewBody extends GetView<ItemsOfferControllerImp> {
   @override
   Widget build(BuildContext context) {
     return DataHandlingState(
-        statusRequest: controller.statusRequest, widget: const ItemOfferList());
+      statusRequest: controller.statusRequest,
+      widget: const ItemOfferList(),
+    );
   }
 }
