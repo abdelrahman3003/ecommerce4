@@ -13,6 +13,7 @@ class FavouriteViewBody extends StatelessWidget {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 5),
           const HomeAppbar(),

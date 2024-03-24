@@ -16,7 +16,7 @@ class TopSellingModel {
   String? itemsDesAr;
   int? itemsCat;
   int? itemcount;
-  int? itemdiscountprice;
+  num? itemdiscountprice;
 
   TopSellingModel(
       {this.cartId,

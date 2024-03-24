@@ -14,15 +14,11 @@ class DataHandlingRequsetState extends StatelessWidget {
     return Center(
       child: statusRequest == StatusRequest.loading
           ? const LoadingLottie()
-          : Center(
-              child: statusRequest == StatusRequest.offlineFailure
-                  ? const Offline()
-                  : Center(
-                      child: statusRequest == StatusRequest.serverFailure
-                          ? const Center(child: Error404())
-                          : widget,
-                    ),
-            ),
+          : statusRequest == StatusRequest.offlineFailure
+              ? const Offline()
+              : statusRequest == StatusRequest.serverFailure
+                  ? const Error404()
+                  : widget,
     );
   }
 }

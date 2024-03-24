@@ -6,7 +6,6 @@ import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../data/datasource/remote/items/items_data.dart';
 import '../../data/model/items_model.dart';
-import '../../data/model/toSellingModel.dart';
 
 abstract class HomeController extends GetxController {
   getAllDataHome();
@@ -20,7 +19,7 @@ class HomePageControllerImp extends HomeController {
   StatusRequest statusRequest = StatusRequest.none;
   int pageCount = 0;
   List categories = [];
-  List<TopSellingModel> topselling = [];
+  List<ItemModel> topselling = [];
   List textDiscount = [];
 
   @override
@@ -33,9 +32,9 @@ class HomePageControllerImp extends HomeController {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;
       } else {
+        List data = response['topselling'];
         categories.addAll(response['categories']);
-        topselling.addAll(
-            response['topselling'].map((e) => TopSellingModel.fromJson(e)));
+        topselling.addAll(data.map((e) => ItemModel.fromJson(e)));
         textDiscount.addAll(response['textdiscount']);
       }
     }

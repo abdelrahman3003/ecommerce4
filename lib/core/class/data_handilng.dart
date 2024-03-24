@@ -12,14 +12,16 @@ class DataHandlingState extends StatelessWidget {
   final Widget widget;
   @override
   Widget build(BuildContext context) {
-    return statusRequest == StatusRequest.loading
-        ? const Center(child: LoadingLottie())
-        : statusRequest == StatusRequest.offlineFailure
-            ? const Offline()
-            : statusRequest == StatusRequest.serverFailure
-                ? const Center(child: Error404())
-                : statusRequest == StatusRequest.failure
-                    ? const Center(child: EmptyLottie())
-                    : widget;
+    return Center(
+      child: statusRequest == StatusRequest.loading
+          ? const LoadingLottie()
+          : statusRequest == StatusRequest.offlineFailure
+              ? const Offline()
+              : statusRequest == StatusRequest.serverFailure
+                  ? const Error404()
+                  : statusRequest == StatusRequest.failure
+                      ? const EmptyLottie()
+                      : widget,
+    );
   }
 }
